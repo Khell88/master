@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * SolicitudTransfusion
  *
- * @ORM\Table(name="solicitud_transfusion", indexes={@ORM\Index(name="IDX_50FA1E8409D1C63", columns={"serviciosid"}), @ORM\Index(name="IDX_50FA1E864FDF06E", columns={"medicoid"})})
+ * @ORM\Table(name="solicitud_transfusion", indexes={@ORM\Index(name="IDX_50FA1E8409D1C63", columns={"serviciosid"}), @ORM\Index(name="IDX_50FA1E864FDF06E", columns={"usuarioid"})})
  * @ORM\Entity
  */
 class SolicitudTransfusion
@@ -124,14 +124,14 @@ class SolicitudTransfusion
     private $serviciosid;
 
     /**
-     * @var \Medico
+     * @var \Usuario
      *
-     * @ORM\ManyToOne(targetEntity="Medico")
+     * @ORM\ManyToOne(targetEntity="Usuario")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="medicoid", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="usuarioid", referencedColumnName="id")
      * })
      */
-    private $medicoid;
+    private $usuarioid;
 
 
 }

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * RecepcionSolicitud
  *
- * @ORM\Table(name="recepcion_solicitud", indexes={@ORM\Index(name="IDX_A902C000884F88C5", columns={"solicitud_transfusionid"}), @ORM\Index(name="IDX_A902C00088EF46FF", columns={"transfusionistaid"})})
+ * @ORM\Table(name="recepcion_solicitud", indexes={@ORM\Index(name="IDX_A902C000884F88C5", columns={"solicitud_transfusionid"}), @ORM\Index(name="IDX_A902C00088EF46FF", columns={"usuarioid"})})
  * @ORM\Entity
  */
 class RecepcionSolicitud
@@ -194,14 +194,14 @@ class RecepcionSolicitud
     private $solicitudTransfusionid;
 
     /**
-     * @var \Transfusionista
+     * @var \Usuario
      *
-     * @ORM\ManyToOne(targetEntity="Transfusionista")
+     * @ORM\ManyToOne(targetEntity="Usuario")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="transfusionistaid", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="usuarioid", referencedColumnName="id")
      * })
      */
-    private $transfusionistaid;
+    private $usuarioid;
 
     /**
      * @var \Doctrine\Common\Collections\Collection

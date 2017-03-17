@@ -44,6 +44,27 @@ class Usuario implements UserInterface, \Serializable
      */
     private $password;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="no_identificacion", type="bigint", nullable=false)
+     */
+    private $no_identificacion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellidos", type="string", length=255, nullable=false)
+     */
+    private $apellidos;
+
     public function __construct()
     {
 
@@ -100,6 +121,76 @@ class Usuario implements UserInterface, \Serializable
             // $this->salt
             ) = unserialize($serialized);
     }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nombreUsuario
+     *
+     * @param string $nombreUsuario
+     *
+     * @return Usuario
+     */
+    public function setNombreUsuario($nombreUsuario)
+    {
+        $this->nombreUsuario = $nombreUsuario;
+
+        return $this;
+    }
+
+    /**
+     * Get nombreUsuario
+     *
+     * @return string
+     */
+    public function getNombreUsuario()
+    {
+        return $this->nombreUsuario;
+    }
+
+    /**
+     * Set rol
+     *
+     * @param string $rol
+     *
+     * @return Usuario
+     */
+    public function setRol($rol)
+    {
+        $this->rol = $rol;
+
+        return $this;
+    }
+
+    /**
+     * Get rol
+     *
+     * @return string
+     */
+    public function getRol()
+    {
+        return $this->rol;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return Usuario
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
 }
-
-

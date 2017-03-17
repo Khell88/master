@@ -44,6 +44,27 @@ class Usuario implements UserInterface, \Serializable
      */
     private $password;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="no_identificacion", type="bigint", nullable=false)
+     */
+    private $no_identificacion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellidos", type="string", length=255, nullable=false)
+     */
+    private $apellidos;
+
     public function __construct()
     {
 
@@ -171,5 +192,77 @@ class Usuario implements UserInterface, \Serializable
         $this->password = $password;
 
         return $this;
+    }
+
+    /**
+     * Set noIdentificacion
+     *
+     * @param integer $noIdentificacion
+     *
+     * @return Usuario
+     */
+    public function setNoIdentificacion($noIdentificacion)
+    {
+        $this->no_identificacion = $noIdentificacion;
+
+        return $this;
+    }
+
+    /**
+     * Get noIdentificacion
+     *
+     * @return integer
+     */
+    public function getNoIdentificacion()
+    {
+        return $this->no_identificacion;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     *
+     * @return Usuario
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set apellidos
+     *
+     * @param string $apellidos
+     *
+     * @return Usuario
+     */
+    public function setApellidos($apellidos)
+    {
+        $this->apellidos = $apellidos;
+
+        return $this;
+    }
+
+    /**
+     * Get apellidos
+     *
+     * @return string
+     */
+    public function getApellidos()
+    {
+        return $this->apellidos;
     }
 }

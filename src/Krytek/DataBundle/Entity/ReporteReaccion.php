@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ReporteReaccion
  *
- * @ORM\Table(name="reporte_reaccion", indexes={@ORM\Index(name="IDX_16BC525864FDF06E", columns={"medicoid"})})
+ * @ORM\Table(name="reporte_reaccion", indexes={@ORM\Index(name="IDX_16BC525864FDF06E", columns={"usuarioid"})})
  * @ORM\Entity
  */
 class ReporteReaccion
@@ -207,12 +207,12 @@ class ReporteReaccion
     /**
      * @var \Medico
      *
-     * @ORM\ManyToOne(targetEntity="Medico")
+     * @ORM\ManyToOne(targetEntity="Usuario")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="medicoid", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="usuarioid", referencedColumnName="id")
      * })
      */
-    private $medicoid;
+    private $usuarioid;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
