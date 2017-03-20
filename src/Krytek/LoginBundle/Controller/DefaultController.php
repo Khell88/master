@@ -12,6 +12,17 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('KrytekLoginBundle:Default:index.html.twig');
+        $authenticationUtils = $this->get('security.authentication_utils');
+
+        // obtener el error de login si hay
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        // último nombre de usuario introducido por el usuario
+        $lastUsername = $authenticationUtils->getLastUsername();
+        return $this->render('KrytekLoginBundle:Default:index.html.twig',array(
+            // last username entered by the user
+            'last_username' => $lastUsername,
+            'error' => $error,
+        ));
     }
 }

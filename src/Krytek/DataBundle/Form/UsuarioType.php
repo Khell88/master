@@ -10,6 +10,7 @@ namespace Krytek\DataBundle\Form;
 
 
 
+use Doctrine\ORM\Mapping\Entity;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -39,12 +40,16 @@ class UsuarioType extends AbstractType
             ))
             ->add('rol', ChoiceType::class, array(
                 'choices'=>array(
-                    'Seleccione'=>empty(true),
                     'Transfusionista' => 'ROLE_TRANSFUSIONISTA',
-                    'Médico' => 'ROLE_MEDICO',
-                ),'expanded'=>false,
+                    'Médico' => 'Medico',
+                ),
             ));
+
+
+
     }
+
+
 
 
 }

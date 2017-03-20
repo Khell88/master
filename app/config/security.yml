@@ -15,6 +15,7 @@ security:
 
         main:
             anonymous: ~
+            provider: master_provider
             form_login:
                 login_path: /login
                 check_path: /login_check
@@ -31,9 +32,13 @@ security:
 
     encoders:
         Krytek\DataBundle\Entity\Usuario:
-            algorithm: bccrypt
+            algorithm: bcrypt
 
     providers:
         master_provider:
             entity:
-                class: DataBundle:Usuario
+                class: Krytek\DataBundle\Entity\Usuario
+
+    role_hierarchy:
+        ROLE_TRANSFUSIONISTA:           ROLE_TRANSFUSIONISTA
+        ROLE_MEDICO:     ROLE_MEDICO

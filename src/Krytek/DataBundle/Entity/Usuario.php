@@ -9,7 +9,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * Usuario
  *
  * @ORM\Table(name="usuario", uniqueConstraints={@ORM\UniqueConstraint(name="usuario_nombre_usuario_key", columns={"nombre_usuario"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Krytek\DataBundle\Entity\UsuarioRepository")
  */
 class Usuario implements UserInterface, \Serializable
 {
@@ -89,10 +89,6 @@ class Usuario implements UserInterface, \Serializable
         return $this->password;
     }
 
-    public function getRoles()
-    {
-        return array('ROLE_USER');
-    }
 
     public function eraseCredentials()
     {
@@ -168,6 +164,16 @@ class Usuario implements UserInterface, \Serializable
         $this->rol = $rol;
 
         return $this;
+    }
+
+    /**
+     * Get rol
+     *
+     * @return string
+     */
+    public function getRoles()
+    {
+        return array($this->rol);
     }
 
     /**

@@ -27,7 +27,7 @@ class UsuarioController extends Controller
         $usuarios = $em->getRepository('KrytekDataBundle:Usuario')->findAll();
 
         return $this->render('usuario/index.html.twig', array(
-            'usuarios' => $usuarios,
+            'usuarios' => $usuarios
         ));
     }
 
@@ -44,15 +44,28 @@ class UsuarioController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $password = $this->get('security.password_encoder')
-                ->encodePassword($usuario, $usuario->getPlainPassword());
-            $usuario->setPassword($password);
 
             $em = $this->getDoctrine()->getManager();
+
+
+            $usuario_old =  $em->getRepository('KrytekDataBundle:Usuario')->findBy(array('nombreUsuario'=>$usuario->getNombreUsuario()));
+            if($usuario_old==null){
+            $password = $this->get('security.password_encoder')
+                ->encodePassword($usuario, $usuario->getPassword());
+            $usuario->setPassword($password);
+           // $rol = $this->getParameter('master');
+            //$usuario->setRoles($this->getParameter('roles'));
+
+
+
             $em->persist($usuario);
             $em->flush($usuario);
 
-            return $this->redirectToRoute('usuario_index');
+            return $this->redirectToRoute('usuario_index');}
+            else{
+                $data_error = 'El nombre de usuario ya existe';
+                $form = $this->createForm('Krytek\DataBundle\Form\UsuarioType', array($usuario, 'existe'=>$data_error));
+            $form->handleRequest($request);}
         }
 
         return $this->render('usuario/new.html.twig', array(
@@ -90,6 +103,9 @@ class UsuarioController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $password = $this->get('security.password_encoder')
+                ->encodePassword($usuario, $usuario->getPassword());
+            $usuario->setPassword($password);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('usuario_edit', array('id' => $usuario->getId()));

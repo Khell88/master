@@ -1,1 +1,15 @@
-Hello World Login!
+
+
+Bienvenido
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+{% if app.user.roles[0]=='ROLE_TRANSFUSIONISTA' %}
+    Transfusionista
+{% else %}
+    Medico
+{% endif %}
+    <div><a href={{ path('logout') }}>Logout</a></div>
+{% else %}
+    <div>{% include '@KrytekLogin/Default/login.html.twig' %}</div>
+{% endif %}
+
+
