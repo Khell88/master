@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 class LoginController extends Controller
 {
     /**
-     * @Route("/login", name="login_index")
+     * @Route("/login", name="login")
      */
     public function loginAction(Request $request)
     {

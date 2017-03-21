@@ -5,11 +5,13 @@ namespace Krytek\DataBundle\Controller;
 use Krytek\DataBundle\Entity\Usuario;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Usuario controller.
- *
+ *  @Security("has_role('ROLE_ADMIN')")
  * @Route("usuario")
  */
 class UsuarioController extends Controller

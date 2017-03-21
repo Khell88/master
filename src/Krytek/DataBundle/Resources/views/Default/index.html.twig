@@ -1,2 +1,7 @@
 Hello World!
+Bienvenido
+{{ app.user.nombreUsuario }}
+
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 <div><a href={{ path('logout') }}>Logout</a></div>
+{% endif %}
