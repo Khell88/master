@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Bolsa</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bolsa.id }}</td>
+            </tr>
+            <tr>
+                <th>Codigo</th>
+                <td>{{ bolsa.codigo }}</td>
+            </tr>
+            <tr>
+                <th>Componente</th>
+                <td>{{ bolsa.componente }}</td>
+            </tr>
+            <tr>
+                <th>Lote</th>
+                <td>{{ bolsa.lote }}</td>
+            </tr>
+            <tr>
+                <th>Fechadonacion</th>
+                <td>{% if bolsa.fechaDonacion %}{{ bolsa.fechaDonacion|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fechavencimiento</th>
+                <td>{% if bolsa.fechaVencimiento %}{{ bolsa.fechaVencimiento|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Procedencia</th>
+                <td>{{ bolsa.procedencia }}</td>
+            </tr>
+            <tr>
+                <th>Problemas</th>
+                <td>{{ bolsa.problemas }}</td>
+            </tr>
+            <tr>
+                <th>Gruposanguineo</th>
+                <td>{{ bolsa.grupoSanguineo }}</td>
+            </tr>
+            <tr>
+                <th>Rh</th>
+                <td>{{ bolsa.rh }}</td>
+            </tr>
+            <tr>
+                <th>Muestra</th>
+                <td>{{ bolsa.muestra }}</td>
+            </tr>
+            <tr>
+                <th>Volumen</th>
+                <td>{{ bolsa.volumen }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bolsa_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('bolsa_edit', { 'id': bolsa.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

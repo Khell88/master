@@ -3,10 +3,11 @@
 {% block body %}
     <h1>Usuario creation</h1>
     {{ form_start(form) }}
-    {% if  form.vars.value['existe'] %}
+
+    {% if  usuario.nombreUsuario != null %}
     {{ form.vars.value['existe'] }}
     {% endif %}
-    {{ form_row(form.nombreUsuario) }}
+    {{ form_row(form.nombre_usuario) }}
     {{ form_row(form.nombre) }}
     {{ form_row(form.apellidos) }}
     {{ form_row(form.password.first) }}

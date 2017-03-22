@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PacienteMotivoSolicitud
  *
- * @ORM\Table(name="paciente_motivo_solicitud", indexes={@ORM\Index(name="IDX_D4F78A3D41CBBEA5", columns={"motivo_trasnfusionid"}), @ORM\Index(name="IDX_D4F78A3D884F88C5", columns={"solicitud_transfusionid"}), @ORM\Index(name="IDX_D4F78A3D340BCA0D", columns={"pacienteid"})})
+ * @ORM\Table(name="paciente_motivo_solicitud", indexes={@ORM\Index(name="IDX_D4F78A3D41CBBEA5", columns={"motivo_transfusionid"}), @ORM\Index(name="IDX_D4F78A3D884F88C5", columns={"solicitud_transfusionid"}), @ORM\Index(name="IDX_D4F78A3D340BCA0D", columns={"pacienteid"})})
  * @ORM\Entity
  */
 class PacienteMotivoSolicitud
@@ -17,12 +17,12 @@ class PacienteMotivoSolicitud
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="MotivoTrasnfusion")
+     * @ORM\OneToOne(targetEntity="MotivoTransfusion")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="motivo_trasnfusionid", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="motivo_transfusionid", referencedColumnName="id")
      * })
      */
-    private $motivoTrasnfusionid;
+    private $motivoTransfusionid;
 
     /**
      * @var \SolicitudTransfusion

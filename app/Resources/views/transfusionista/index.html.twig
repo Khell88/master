@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Transfusionistas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Citransfusionista</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transfusionistum in transfusionistas %}
+            <tr>
+                <td><a href="{{ path('transfusionista_show', { 'id': transfusionistum.id }) }}">{{ transfusionistum.id }}</a></td>
+                <td>{{ transfusionistum.ciTransfusionista }}</td>
+                <td>{{ transfusionistum.nombre }}</td>
+                <td>{{ transfusionistum.apellidos }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('transfusionista_show', { 'id': transfusionistum.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('transfusionista_edit', { 'id': transfusionistum.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('transfusionista_new') }}">Create a new transfusionistum</a>
+        </li>
+    </ul>
+{% endblock %}

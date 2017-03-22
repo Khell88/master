@@ -25,7 +25,7 @@ class UsuarioType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombreUsuario', TextType::class)
+            ->add('nombre_usuario', TextType::class)
             ->add('nombre', TextType::class)
             ->add('apellidos', TextType::class)
             ->add('no_identificacion', IntegerType::class, array(
@@ -41,7 +41,8 @@ class UsuarioType extends AbstractType
             ->add('rol', ChoiceType::class, array(
                 'choices'=>array(
                     'Transfusionista' => 'ROLE_TRANSFUSIONISTA',
-                    'Médico' => 'Medico',
+                    'Médico' => 'ROLE_MEDICO',
+                    'Admin' => 'ROLE_ADMIN',
                 ),
             ));
 

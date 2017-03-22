@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pacientes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cipaciente</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Sexo</th>
+                <th>Tiposangre</th>
+                <th>Idhc</th>
+                <th>Peso</th>
+                <th>Lactante</th>
+                <th>Embarazos</th>
+                <th>Rh</th>
+                <th>Abortos</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for paciente in pacientes %}
+            <tr>
+                <td><a href="{{ path('paciente_show', { 'id': paciente.id }) }}">{{ paciente.id }}</a></td>
+                <td>{{ paciente.ciPaciente }}</td>
+                <td>{{ paciente.nombre }}</td>
+                <td>{{ paciente.apellidos }}</td>
+                <td>{{ paciente.sexo }}</td>
+                <td>{{ paciente.tipoSangre }}</td>
+                <td>{{ paciente.idHc }}</td>
+                <td>{{ paciente.peso }}</td>
+                <td>{{ paciente.lactante }}</td>
+                <td>{{ paciente.embarazos }}</td>
+                <td>{{ paciente.rh }}</td>
+                <td>{{ paciente.abortos }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('paciente_show', { 'id': paciente.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('paciente_edit', { 'id': paciente.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('paciente_new') }}">Create a new paciente</a>
+        </li>
+    </ul>
+{% endblock %}

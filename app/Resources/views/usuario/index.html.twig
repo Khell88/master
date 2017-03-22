@@ -19,8 +19,10 @@
                 <td>{{ usuario.nombreUsuario }}</td>
                 {% if usuario.rol == 'ROLE_TRANSFUSIONISTA' %}
                     <td>Transfusionista</td>
-                {% else %}
+                {% elseif usuario.rol == 'ROLE_MEDICO' %}
                     <td>Medico</td>
+                {% else %}
+                    <td>Admin</td>
                 {% endif %}
                 <td>{{ usuario.password }}</td>
                 <td>

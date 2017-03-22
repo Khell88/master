@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Paciente</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ paciente.id }}</td>
+            </tr>
+            <tr>
+                <th>Cipaciente</th>
+                <td>{{ paciente.ciPaciente }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ paciente.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Apellidos</th>
+                <td>{{ paciente.apellidos }}</td>
+            </tr>
+            <tr>
+                <th>Sexo</th>
+                <td>{{ paciente.sexo }}</td>
+            </tr>
+            <tr>
+                <th>Tiposangre</th>
+                <td>{{ paciente.tipoSangre }}</td>
+            </tr>
+            <tr>
+                <th>Idhc</th>
+                <td>{{ paciente.idHc }}</td>
+            </tr>
+            <tr>
+                <th>Peso</th>
+                <td>{{ paciente.peso }}</td>
+            </tr>
+            <tr>
+                <th>Lactante</th>
+                <td>{{ paciente.lactante }}</td>
+            </tr>
+            <tr>
+                <th>Embarazos</th>
+                <td>{{ paciente.embarazos }}</td>
+            </tr>
+            <tr>
+                <th>Rh</th>
+                <td>{{ paciente.rh }}</td>
+            </tr>
+            <tr>
+                <th>Abortos</th>
+                <td>{{ paciente.abortos }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('paciente_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('paciente_edit', { 'id': paciente.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

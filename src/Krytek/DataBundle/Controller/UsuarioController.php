@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Usuario controller.
- *  @Security("has_role('ROLE_ADMIN')")
+ *
  * @Route("usuario")
  */
 class UsuarioController extends Controller

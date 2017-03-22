@@ -7,10 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * MotivoTrasnfusion
  *
- * @ORM\Table(name="motivo_trasnfusion")
+ * @ORM\Table(name="motivo_transfusion")
  * @ORM\Entity
  */
-class MotivoTrasnfusion
+class MotivoTransfusion
 {
     /**
      * @var integer
@@ -18,7 +18,7 @@ class MotivoTrasnfusion
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
-     * @ORM\SequenceGenerator(sequenceName="motivo_trasnfusion_id_seq", allocationSize=1, initialValue=1)
+     * @ORM\SequenceGenerator(sequenceName="motivo_transfusion_id_seq", allocationSize=1, initialValue=1)
      */
     private $id;
 

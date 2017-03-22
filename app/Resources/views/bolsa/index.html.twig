@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Bolsas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Codigo</th>
+                <th>Componente</th>
+                <th>Lote</th>
+                <th>Fechadonacion</th>
+                <th>Fechavencimiento</th>
+                <th>Procedencia</th>
+                <th>Problemas</th>
+                <th>Gruposanguineo</th>
+                <th>Rh</th>
+                <th>Muestra</th>
+                <th>Volumen</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bolsa in bolsas %}
+            <tr>
+                <td><a href="{{ path('bolsa_show', { 'id': bolsa.id }) }}">{{ bolsa.id }}</a></td>
+                <td>{{ bolsa.codigo }}</td>
+                <td>{{ bolsa.componente }}</td>
+                <td>{{ bolsa.lote }}</td>
+                <td>{% if bolsa.fechaDonacion %}{{ bolsa.fechaDonacion|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if bolsa.fechaVencimiento %}{{ bolsa.fechaVencimiento|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ bolsa.procedencia }}</td>
+                <td>{{ bolsa.problemas }}</td>
+                <td>{{ bolsa.grupoSanguineo }}</td>
+                <td>{{ bolsa.rh }}</td>
+                <td>{{ bolsa.muestra }}</td>
+                <td>{{ bolsa.volumen }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('bolsa_show', { 'id': bolsa.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bolsa_edit', { 'id': bolsa.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bolsa_new') }}">Create a new bolsa</a>
+        </li>
+    </ul>
+{% endblock %}
