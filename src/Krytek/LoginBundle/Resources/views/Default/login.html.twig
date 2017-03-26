@@ -1,16 +1,16 @@
-{% extends 'base.html.twig' %}
-
 {% block body %}
 
     <form action="{{ path('login_check') }}" method="post" id="login">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}"/>
-
+        {% if last_username!=null %}
+            <input type="text" id="username" name="_username" value="{{ last_username }}"/>
+        {% else %}
+            <input type="text" id="username" name="_username"/>
+        {% endif %}
         <label for="password">Password:</label>
         <input type="password" id="password" name="_password"/>
+        <input type="hidden" name="_target_path" value="/sistema/inicio"/>
         <input type="submit" name="login"/>
-        <input type="hidden" name="_target_path" value="index" />
-
     </form>
 
 {% endblock %}

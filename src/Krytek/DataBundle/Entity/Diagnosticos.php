@@ -52,5 +52,72 @@ class Diagnosticos
         $this->pacienteid = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set descripcion
+     *
+     * @param string $descripcion
+     *
+     * @return Diagnosticos
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    /**
+     * Get descripcion
+     *
+     * @return string
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    /**
+     * Add pacienteid
+     *
+     * @param \Krytek\DataBundle\Entity\Paciente $pacienteid
+     *
+     * @return Diagnosticos
+     */
+    public function addPacienteid(\Krytek\DataBundle\Entity\Paciente $pacienteid)
+    {
+        $this->pacienteid[] = $pacienteid;
+
+        return $this;
+    }
+
+    /**
+     * Remove pacienteid
+     *
+     * @param \Krytek\DataBundle\Entity\Paciente $pacienteid
+     */
+    public function removePacienteid(\Krytek\DataBundle\Entity\Paciente $pacienteid)
+    {
+        $this->pacienteid->removeElement($pacienteid);
+    }
+
+    /**
+     * Get pacienteid
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPacienteid()
+    {
+        return $this->pacienteid;
+    }
+}

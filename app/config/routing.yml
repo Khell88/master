@@ -1,7 +1,7 @@
 krytek_data:
     resource: "@KrytekDataBundle/Controller/"
     type:     annotation
-    prefix:   /data
+    prefix:   /sistema
 
 krytek_login:
     resource: "@KrytekLoginBundle/Controller/"

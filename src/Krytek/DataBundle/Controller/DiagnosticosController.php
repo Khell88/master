@@ -39,7 +39,7 @@ class DiagnosticosController extends Controller
      */
     public function newAction(Request $request)
     {
-        $diagnostico = new Diagnostico();
+        $diagnostico = new Diagnosticos();
         $form = $this->createForm('Krytek\DataBundle\Form\DiagnosticosType', $diagnostico);
         $form->handleRequest($request);
 

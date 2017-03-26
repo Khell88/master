@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Solicitudtransfusion</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ solicitudTransfusion.id }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{% if solicitudTransfusion.fecha %}{{ solicitudTransfusion.fecha|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Hora</th>
+                <td>{% if solicitudTransfusion.hora %}{{ solicitudTransfusion.hora|date('H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Sala</th>
+                <td>{{ solicitudTransfusion.sala }}</td>
+            </tr>
+            <tr>
+                <th>Cama</th>
+                <td>{{ solicitudTransfusion.cama }}</td>
+            </tr>
+            <tr>
+                <th>Urgencia</th>
+                <td>{{ solicitudTransfusion.urgencia }}</td>
+            </tr>
+            <tr>
+                <th>Hb</th>
+                <td>{{ solicitudTransfusion.hb }}</td>
+            </tr>
+            <tr>
+                <th>Tp</th>
+                <td>{{ solicitudTransfusion.tp }}</td>
+            </tr>
+            <tr>
+                <th>Tptk</th>
+                <td>{{ solicitudTransfusion.tptk }}</td>
+            </tr>
+            <tr>
+                <th>Plaquetas</th>
+                <td>{{ solicitudTransfusion.plaquetas }}</td>
+            </tr>
+            <tr>
+                <th>Consentimiento</th>
+                <td>{{ solicitudTransfusion.consentimiento }}</td>
+            </tr>
+            <tr>
+                <th>Incompatibilidadmf</th>
+                <td>{{ solicitudTransfusion.incompatibilidadMF }}</td>
+            </tr>
+            <tr>
+                <th>Fechaarealizar</th>
+                <td>{% if solicitudTransfusion.fechaARealizar %}{{ solicitudTransfusion.fechaARealizar|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Horaarealizar</th>
+                <td>{{ solicitudTransfusion.horaARealizar }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('solicitudtransfusion_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('solicitudtransfusion_edit', { 'id': solicitudTransfusion.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

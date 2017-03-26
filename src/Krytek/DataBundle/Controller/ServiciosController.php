@@ -39,7 +39,7 @@ class ServiciosController extends Controller
      */
     public function newAction(Request $request)
     {
-        $servicio = new Servicio();
+        $servicio = new Servicios();
         $form = $this->createForm('Krytek\DataBundle\Form\ServiciosType', $servicio);
         $form->handleRequest($request);
 

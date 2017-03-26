@@ -511,28 +511,4 @@ class SolicitudTransfusion
     {
         return $this->usuarioid;
     }
-
-    /**
-     * Set tipoCirugia
-     *
-     * @param string $tipoCirugia
-     *
-     * @return SolicitudTransfusion
-     */
-    public function setTipoCirugia($tipoCirugia)
-    {
-        $this->tipoCirugia = $tipoCirugia;
-
-        return $this;
-    }
-
-    /**
-     * Get tipoCirugia
-     *
-     * @return string
-     */
-    public function getTipoCirugia()
-    {
-        return $this->tipoCirugia;
-    }
 }

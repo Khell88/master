@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Solicitudtransfusion creation</h1>
+
+    {{ form_start(form) }}
+
+        {{ form_widget(form) }}
+       <div><label>Solicita: </label>{{ app.user.nombre }}</div>
+       <div><label>No. Identificacion: </label>{{ app.user.noidentificacion }}</div>
+
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('solicitudtransfusion_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -55,10 +55,6 @@ class UsuarioController extends Controller
             $password = $this->get('security.password_encoder')
                 ->encodePassword($usuario, $usuario->getPassword());
             $usuario->setPassword($password);
-           // $rol = $this->getParameter('master');
-            //$usuario->setRoles($this->getParameter('roles'));
-
-
 
             $em->persist($usuario);
             $em->flush($usuario);

@@ -46,10 +46,10 @@ security:
             ROLE_MEDICO:          ROLE_MEDICO
             ROLE_ADMIN:           ROLE_ADMIN
 
-    access_control:
+    #access_control:
           #  - { path: ^/data*, roles: ROLE_ADMIN }
-            - { path: ^/data/usuario*, roles: ROLE_ADMIN }
-            - { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-            - { path: ^/data*, roles: IS_AUTHENTICATED_FULLY }
-            - { path: ^/data/bolsa, roles: ROLE_TRANSFUSIONISTA}
-            - { path: ^/data/solicitudtransfusion, roles: ROLE_MEDICO}
+         #   - { path: ^/sistema/usuario*, roles: ROLE_ADMIN }
+          #  - { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+          #  - { path: ^/sistema*, roles: IS_AUTHENTICATED_FULLY }
+          #  - { path: ^/sistema/bolsa, roles: ROLE_TRANSFUSIONISTA}
+         #   - { path: ^/sistema/solicitudtransfusion, roles: ROLE_MEDICO}

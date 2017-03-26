@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Motivotransfusions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Descripcion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for motivoTransfusion in motivoTransfusions %}
+            <tr>
+                <td><a href="{{ path('motivotransfusion_show', { 'id': motivoTransfusion.id }) }}">{{ motivoTransfusion.id }}</a></td>
+                <td>{{ motivoTransfusion.descripcion }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('motivotransfusion_show', { 'id': motivoTransfusion.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('motivotransfusion_edit', { 'id': motivoTransfusion.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('motivotransfusion_new') }}">Create a new motivoTransfusion</a>
+        </li>
+    </ul>
+{% endblock %}

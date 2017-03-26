@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Solicitudtransfusions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Sala</th>
+                <th>Cama</th>
+                <th>Urgencia</th>
+                <th>Hb</th>
+                <th>Tp</th>
+                <th>Tptk</th>
+                <th>Plaquetas</th>
+                <th>Consentimiento</th>
+                <th>Incompatibilidadmf</th>
+                <th>Fechaarealizar</th>
+                <th>Horaarealizar</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for solicitudTransfusion in solicitudTransfusions %}
+            <tr>
+                <td><a href="{{ path('solicitudtransfusion_show', { 'id': solicitudTransfusion.id }) }}">{{ solicitudTransfusion.id }}</a></td>
+                <td>{% if solicitudTransfusion.fecha %}{{ solicitudTransfusion.fecha|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if solicitudTransfusion.hora %}{{ solicitudTransfusion.hora|date('H:i:s') }}{% endif %}</td>
+                <td>{{ solicitudTransfusion.sala }}</td>
+                <td>{{ solicitudTransfusion.cama }}</td>
+                <td>{{ solicitudTransfusion.urgencia }}</td>
+                <td>{{ solicitudTransfusion.hb }}</td>
+                <td>{{ solicitudTransfusion.tp }}</td>
+                <td>{{ solicitudTransfusion.tptk }}</td>
+                <td>{{ solicitudTransfusion.plaquetas }}</td>
+                <td>{{ solicitudTransfusion.consentimiento }}</td>
+                <td>{{ solicitudTransfusion.incompatibilidadMF }}</td>
+                <td>{% if solicitudTransfusion.fechaARealizar %}{{ solicitudTransfusion.fechaARealizar|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ solicitudTransfusion.horaARealizar }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('solicitudtransfusion_show', { 'id': solicitudTransfusion.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('solicitudtransfusion_edit', { 'id': solicitudTransfusion.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('solicitudtransfusion_new') }}">Create a new solicitudTransfusion</a>
+        </li>
+    </ul>
+{% endblock %}
