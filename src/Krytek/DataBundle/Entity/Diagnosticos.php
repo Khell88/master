@@ -2,13 +2,14 @@
 
 namespace Krytek\DataBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Diagnosticos
  *
  * @ORM\Table(name="diagnosticos")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Krytek\DataBundle\Entity\DiagnosticosRepository")
  */
 class Diagnosticos
 {
@@ -25,33 +26,33 @@ class Diagnosticos
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="string", length=255, nullable=false)
+     * @ORM\Column(name="descripcion", type="string", length=255, nullable=false, unique=true)
      */
     private $descripcion;
+
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Paciente", inversedBy="diagnosticosid")
-     * @ORM\JoinTable(name="paciente_diagnosticos",
+     * @ORM\ManyToMany(targetEntity="MotivoTransfusion", inversedBy="diagnosticosid")
+     * @ORM\JoinTable(name="diagnosticos_motivo",
      *   joinColumns={
      *     @ORM\JoinColumn(name="diagnosticosid", referencedColumnName="id")
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="pacienteid", referencedColumnName="id")
+     *     @ORM\JoinColumn(name="motivo_transfusionid", referencedColumnName="id")
      *   }
      * )
      */
-    private $pacienteid;
+    private $motivoTransfusionid;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->pacienteid = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->motivoTransfusionid = new ArrayCollection();
     }
-
 
     /**
      * Get id
@@ -88,36 +89,41 @@ class Diagnosticos
     }
 
     /**
-     * Add pacienteid
+     * Add motivoTransfusionid
      *
-     * @param \Krytek\DataBundle\Entity\Paciente $pacienteid
+     * @param \Krytek\DataBundle\Entity\MotivoTransfusion $motivoTransfusionid
      *
      * @return Diagnosticos
      */
-    public function addPacienteid(\Krytek\DataBundle\Entity\Paciente $pacienteid)
+    public function addMotivoTransfusionid(\Krytek\DataBundle\Entity\MotivoTransfusion $motivoTransfusionid)
     {
-        $this->pacienteid[] = $pacienteid;
-
-        return $this;
+        if (!$this->motivoTransfusionid->contains($motivoTransfusionid)) {
+            $this->motivoTransfusionid->add($motivoTransfusionid);
+            $motivoTransfusionid->addDiagnosticosid($this);
+        }
     }
 
     /**
-     * Remove pacienteid
+     * Remove motivoTransfusionid
      *
-     * @param \Krytek\DataBundle\Entity\Paciente $pacienteid
+     * @param \Krytek\DataBundle\Entity\MotivoTransfusion $motivoTransfusionid
      */
-    public function removePacienteid(\Krytek\DataBundle\Entity\Paciente $pacienteid)
+    public function removeMotivoTransfusionid(\Krytek\DataBundle\Entity\MotivoTransfusion $motivoTransfusionid)
     {
-        $this->pacienteid->removeElement($pacienteid);
+        if(!$this->motivoTransfusionid->contains($motivoTransfusionid)){
+            return;
+        }
+        $this->motivoTransfusionid->removeElement($motivoTransfusionid);
+        $motivoTransfusionid->removeDiagnosticosid($this);
     }
 
     /**
-     * Get pacienteid
+     * Get motivoTransfusionid
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getPacienteid()
+    public function getMotivoTransfusionid()
     {
-        return $this->pacienteid;
+        return $this->motivoTransfusionid->toArray();
     }
 }

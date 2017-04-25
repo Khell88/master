@@ -3,18 +3,23 @@
 {% block body %}
     <h1>Solicitudtransfusion creation</h1>
 
-    {{ form_start(form) }}
+    <div>
+        <div class="form-inline">{{ form_start(form) }}
+            {{ form_row(form.Datos) }}
+            {{ form_widget(form) }}
+        </div>
+        <div><label>Solicita: </label>{{ app.user.nombre }}</div>
+        <div><label>No. Identificacion: </label>{{ app.user.noidentificacion }}</div>
 
-        {{ form_widget(form) }}
-       <div><label>Solicita: </label>{{ app.user.nombre }}</div>
-       <div><label>No. Identificacion: </label>{{ app.user.noidentificacion }}</div>
-
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
+        <input type="submit" value="Create"/>
+        {{ form_end(form) }}
+    </div>
     <ul>
         <li>
             <a href="{{ path('solicitudtransfusion_index') }}">Back to the list</a>
         </li>
     </ul>
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/motivos.js') }}"></script>
 {% endblock %}

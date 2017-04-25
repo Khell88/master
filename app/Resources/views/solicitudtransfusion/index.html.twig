@@ -39,7 +39,7 @@
                 <td>{{ solicitudTransfusion.consentimiento }}</td>
                 <td>{{ solicitudTransfusion.incompatibilidadMF }}</td>
                 <td>{% if solicitudTransfusion.fechaARealizar %}{{ solicitudTransfusion.fechaARealizar|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ solicitudTransfusion.horaARealizar }}</td>
+                <td>{% if solicitudTransfusion.horaARealizar %}{{ solicitudTransfusion.horaARealizar|date('H:i:s') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>

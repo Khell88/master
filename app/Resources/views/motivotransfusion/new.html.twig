@@ -5,7 +5,9 @@
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+    {{ form_row(form.Motivos) }}
+
+
     {{ form_end(form) }}
 
     <ul>
@@ -13,4 +15,7 @@
             <a href="{{ path('motivotransfusion_index') }}">Back to the list</a>
         </li>
     </ul>
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/motivos.js') }}"></script>
 {% endblock %}

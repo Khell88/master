@@ -1,0 +1,92 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: NOS
+ * Date: 3/29/2017
+ * Time: 12:44
+ */
+
+namespace Krytek\DataBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PacienteDiagnosticos
+ *
+ * @ORM\Table(name="paciente_diagnosticos", indexes={@ORM\Index(name="idx_d8d3954e340bca0d", columns={"pacienteid"}), @ORM\Index(name="idx_d8d3954e4bc3059e", columns={"diagnosticosid"})})
+ * @ORM\Entity
+ */
+
+class PacienteDiagnosticos
+{
+    /**
+     * @var \Paciente
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Paciente")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="pacienteid", referencedColumnName="id")
+     * })
+     */
+    private $pacienteid;
+    /**
+     * @var \Diagnosticos
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Diagnosticos")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="diagnosticosid", referencedColumnName="id")
+     * })
+     */
+    private $diagnosticosid;
+
+    /**
+     * Set pacienteid
+     *
+     * @param \Krytek\DataBundle\Entity\Paciente $pacienteid
+     *
+     * @return PacienteDiagnosticos
+     */
+    public function setPacienteid(\Krytek\DataBundle\Entity\Paciente $pacienteid)
+    {
+        $this->pacienteid = $pacienteid;
+
+        return $this;
+    }
+
+    /**
+     * Get pacienteid
+     *
+     * @return \Krytek\DataBundle\Entity\Paciente
+     */
+    public function getPacienteid()
+    {
+        return $this->pacienteid;
+    }
+
+    /**
+     * Set diagnosticosid
+     *
+     * @param \Krytek\DataBundle\Entity\Diagnosticos $diagnosticosid
+     *
+     * @return PacienteDiagnosticos
+     */
+    public function setDiagnosticosid(\Krytek\DataBundle\Entity\Diagnosticos $diagnosticosid)
+    {
+        $this->diagnosticosid = $diagnosticosid;
+
+        return $this;
+    }
+
+    /**
+     * Get diagnosticosid
+     *
+     * @return \Krytek\DataBundle\Entity\Diagnosticos
+     */
+    public function getDiagnosticosid()
+    {
+        return $this->diagnosticosid;
+    }
+}

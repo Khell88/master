@@ -19,7 +19,7 @@ class MainController extends Controller
 {
 
     /**
-     * @Route("/", name="main")
+     * @Route("/", name="inicio")
      */
     public function mainAction()
     {

@@ -2,24 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c4e6535-d3f0-4255-924c-d45038f156d3" name="Default" comment="yte">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MainController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/diagmotiv/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/diagmotiv/new.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosMotivoController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/DiagnosticosRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusionRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/DiagnosticosMotivoType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/motivos.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Medico.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/PacienteMotivoSolicitud.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Transfusionista.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/BolsaController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/BolsaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/ServiciosController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/ServiciosController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/UsuarioController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/UsuarioController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/bolsa/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/bolsa/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/bolsa/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/bolsa/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/bolsa/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/bolsa/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/bolsa/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/bolsa/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/diagnosticos/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/diagnosticos/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/diagnosticos/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/diagnosticos/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/motivotransfusion/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/motivotransfusion/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/motivotransfusion/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/motivotransfusion/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/motivotransfusion/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/motivotransfusion/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MainController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MainController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MotivoTransfusionController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MotivoTransfusionController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/SolicitudTransfusionController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/SolicitudTransfusionController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Bolsa.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Bolsa.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Diagnosticos.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Diagnosticos.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusion.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusion.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Servicios.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Servicios.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Paciente.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Paciente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/PruebasLaboratorio.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/PruebasLaboratorio.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/RecepcionSolicitud.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/RecepcionSolicitud.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/ReporteReaccion.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/ReporteReaccion.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Usuario.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Usuario.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/BolsaType.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/BolsaType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/DiagnosticosType.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/DiagnosticosType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/MotivoTransfusionType.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/MotivoTransfusionType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/PacienteType.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/PacienteType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/login.html.twig" afterPath="$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/login.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudTransfusionType.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudTransfusionType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/jquery.js" afterPath="$PROJECT_DIR$/web/js/jquery.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,45 +63,85 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SolicitudTransfusionType.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudTransfusionType.php">
+      <file leaf-file-name="MotivoTransfusionRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusionRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="75" column="1" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="1" />
-              <folding>
-                <element signature="e#42#98#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BolsaType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/BolsaType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PacienteType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/PacienteType.php">
+      <file leaf-file-name="DiagnosticosMotivoController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosMotivoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+            <state relative-caret-position="843">
+              <caret line="66" column="66" lean-forward="false" selection-start-line="66" selection-start-column="66" selection-end-line="66" selection-end-column="66" />
               <folding>
-                <element signature="e#42#91#0#PHP" expanded="true" />
+                <element signature="e#128#170#0#PHP" expanded="true" />
+                <element signature="e#1519#1555#1#PHP" expanded="true" />
+                <element signature="e#1642#1673#1#PHP" expanded="true" />
+                <element signature="e#1940#1964#1#PHP" expanded="true" />
+                <element signature="e#2007#2032#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/diagnosticos/index.html.twig">
+      <file leaf-file-name="SolicitudTransfusionController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/SolicitudTransfusionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="1258">
+              <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+              <folding>
+                <element signature="e#48#98#0#PHP" expanded="true" />
+                <element signature="e#1129#1262#0#PHP" expanded="false" />
+                <element signature="e#1183#1261#0#PHP" expanded="false" />
+                <element signature="e#1275#1430#0#PHP" expanded="false" />
+                <element signature="e#1435#2211#0#PHP" expanded="false" />
+                <element signature="e#1687#2014#0#PHP" expanded="false" />
+                <element signature="e#2031#2204#0#PHP" expanded="false" />
+                <element signature="e#2083#2203#0#PHP" expanded="false" />
+                <element signature="e#3122#3153#1#PHP" expanded="true" />
+                <element signature="e#3530#3684#0#PHP" expanded="false" />
+                <element signature="e#3689#4046#0#PHP" expanded="false" />
+                <element signature="e#3852#4039#0#PHP" expanded="false" />
+                <element signature="e#3905#4038#0#PHP" expanded="false" />
+                <element signature="e#4052#4236#0#PHP" expanded="false" />
+                <element signature="e#4241#5077#0#PHP" expanded="false" />
+                <element signature="e#4572#4814#0#PHP" expanded="false" />
+                <element signature="e#4831#5070#0#PHP" expanded="false" />
+                <element signature="e#4884#5069#0#PHP" expanded="false" />
+                <element signature="e#5083#5231#0#PHP" expanded="false" />
+                <element signature="e#5236#5728#0#PHP" expanded="false" />
+                <element signature="e#5446#5652#0#PHP" expanded="false" />
+                <element signature="e#5734#5964#0#PHP" expanded="false" />
+                <element signature="e#5969#6281#0#PHP" expanded="false" />
+                <element signature="e#6068#6216#0#PHP" expanded="false" />
+                <element signature="e#6068#6250#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="motivos.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/motivos.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#39#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SolicitudTransfusion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="707">
+              <caret line="153" column="25" lean-forward="false" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -85,58 +150,20 @@
       <file leaf-file-name="Diagnosticos.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Diagnosticos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1479">
+              <caret line="126" column="52" lean-forward="false" selection-start-line="126" selection-start-column="52" selection-end-line="126" selection-end-column="52" />
+              <folding>
+                <element signature="e#44#92#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DiagnosticosController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosController.php">
+      <file leaf-file-name="Paciente.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Paciente.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="42" column="91" lean-forward="false" selection-start-line="42" selection-start-column="91" selection-end-line="42" selection-end-column="91" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Servicios.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Servicios.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SolicitudTransfusion.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8500">
-              <caret line="500" column="0" lean-forward="false" selection-start-line="500" selection-start-column="0" selection-end-line="500" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DiagnosticosType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/DiagnosticosType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="163">
+              <caret line="83" column="35" lean-forward="false" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -144,11 +171,33 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Twig" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>transfusionis</find>
       <find>IDX_D4F78A3D41CBBEA5</find>
+      <find>parse</find>
+      <find>dateFormat</find>
+      <find>region</find>
+      <find>motiv</find>
+      <find>$form-&gt;get(</find>
+      <find>rh</find>
+      <find>datefor</find>
+      <find>urgenc</find>
+      <find>sal</find>
+      <find>button</find>
+      <find>MotivosDiagnostico(3)</find>
     </findStrings>
+    <replaceStrings>
+      <replace>$data[</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -156,44 +205,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/RecepcionSolicitud.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/ReporteReaccion.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Rol.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/usuario/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/LoginBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/LoginBundle/Controller/LoginController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTrasnfusion.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusion.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/PacienteMotivoSolicitud.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/UsuarioType.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Usuario.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/usuario/new.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/usuario/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/UsuarioRepository.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Resources/views/Default/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/bolsa/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/BolsaController.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MainController.php" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/login.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/UsuarioController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/SolicitudTransfusionController.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/ServiciosController.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Servicios.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/PacienteType.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosController.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php" />
         <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/DiagnosticosType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/paciente/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/PacienteController.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/PacienteType.php" />
+        <option value="$PROJECT_DIR$/web/js/jquery-ui.js" />
+        <option value="$PROJECT_DIR$/app/Resources/views/bolsa/new.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/bolsa/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/bolsa/show.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/show.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Transfusionista.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Medico.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/ReporteReaccion.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/BolsaType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/diagnosticos/new.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/diagnosticos/show.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/motivotransfusion/show.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/recepcionsolicitud/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/RecepcionSolicitudType.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/motivotransfusion/new.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/motivotransfusion/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/MotivoTransfusionType.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MotivoTransfusionController.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/MotivosDiagnosticosType.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivosDiagnosticos.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticoMotivosController.php" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/DiagnoticosMotivo.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/PacienteDiagnosticos.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/diagmotiv/new.html.twig" />
         <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudTransfusionType.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/DiagnosticosMotivoType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/diagmotiv/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/DiagnosticosRepository.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/DiagnosticosMotivosRepository.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/DiagnosticosMotivo.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/DiagnosticosMotivoRepository.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusion.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Diagnosticos.php" />
+        <option value="$PROJECT_DIR$/web/js/motivos.js" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/SolicitudTransfusionController.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosMotivoController.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusionRepository.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Paciente.php" />
       </list>
     </option>
   </component>
@@ -263,6 +325,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -338,10 +401,6 @@
               <option name="myItemId" value="Krytek" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LoginBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -362,32 +421,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="DataBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Master" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Krytek" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Form" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -453,46 +486,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Master" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Master" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -516,32 +509,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Master" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="usuario" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -571,17 +538,50 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diagmotiv" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="SearchEverywhereHistoryKey" value="Many&#9;null&#9;null&#10;Manyto&#9;FILE&#9;file://C:/wamp64/www/Master/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ManyToMany.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Master\src\Krytek\DataBundle\Entity" />
+      <recent name="C:\wamp64\www\Master\src\Krytek\DataBundle\Repository" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Master\src\Krytek\DataBundle\Entity" />
+      <recent name="C:\wamp64\www\Master\app\Resources\views\diagmotiv" />
       <recent name="C:\wamp64\www\Master\web\js" />
       <recent name="C:\wamp64\www\Master\src\Krytek\LoginBundle\Resources\views\Default" />
     </key>
@@ -647,6 +647,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="1c4e6535-d3f0-4255-924c-d45038f156d3" name="Default" comment="" />
@@ -664,22 +667,38 @@
       <workItem from="1490225525673" duration="16085000" />
       <workItem from="1490308859008" duration="120000" />
       <workItem from="1490318704067" duration="4104000" />
-      <workItem from="1490493443788" duration="1936000" />
+      <workItem from="1490493443788" duration="2047000" />
+      <workItem from="1490624984348" duration="31911000" />
+      <workItem from="1491142389776" duration="9241000" />
+      <workItem from="1491964557414" duration="2902000" />
+      <workItem from="1492263171865" duration="2636000" />
+      <workItem from="1492611239358" duration="31764000" />
+      <workItem from="1492886811022" duration="38656000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84013000" />
+    <option name="totallyTimeSpent" value="201234000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="886" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.27249357" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21401028" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59559834" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="22" y="315" width="1556" height="239" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.5103164" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="22" y="249" width="1556" height="371" />
@@ -691,10 +710,30 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="22" y="315" width="1556" height="239" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.5103164" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="22" y="249" width="1556" height="371" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21401028" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59559834" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -710,292 +749,102 @@
           <line>4</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudTransfusionType.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/usuario/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="24" lean-forward="false" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/ReporteReaccion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="105" lean-forward="false" selection-start-line="9" selection-start-column="105" selection-end-line="9" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Medico.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/bolsa/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="43" selection-end-column="33" />
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Form/Extension/Core/Type/NumberType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/UsuariosController.php" />
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/RecepcionSolicitud.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Rol.php" />
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/KrytekDataBundle.php">
+    <entry file="file://$PROJECT_DIR$/web/js/application.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/jquery-3.1.1.min.js" />
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/usuario/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/LoginBundle/KrytekLoginBundle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/LoginBundle/Controller/DefaultController.php" />
-    <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Tests/Controller/UsuarioControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/usuario/edit.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/paciente/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/UsuarioRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DefaultController.php" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/AppBundle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/LoginBundle/Controller/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/usuario/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/PacienteMotivoSolicitud.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="41" column="14" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+        <state relative-caret-position="-41">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/paciente/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-126">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+    <entry file="file://$PROJECT_DIR$/web/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/usuario/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="55" lean-forward="false" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/SolicitudTransfusionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="43" column="141" lean-forward="false" selection-start-line="43" selection-start-column="141" selection-end-line="43" selection-end-column="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/UsuarioType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="27" column="52" lean-forward="false" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/UsuarioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/BolsaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="59" />
+        <state relative-caret-position="-107">
+          <caret line="6540" column="1" lean-forward="false" selection-start-line="6540" selection-start-column="1" selection-end-line="6540" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="50" />
+          <caret line="9" column="72" lean-forward="false" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/motivotransfusion/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/BolsaType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="408">
+          <caret line="28" column="81" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="28" selection-end-column="81" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivosDiagnosticos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/ServiciosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#48#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Transfusionista.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="65" lean-forward="false" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Usuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+        <state relative-caret-position="-721">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1003,30 +852,36 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/diagnosticos/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/motivotransfusion/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="42" column="91" lean-forward="false" selection-start-line="42" selection-start-column="91" selection-end-line="42" selection-end-column="91" />
+        <state relative-caret-position="238">
+          <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/PacienteType.php">
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticoMotivosController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-          <folding>
-            <element signature="e#42#91#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="442">
+          <caret line="31" column="114" lean-forward="false" selection-start-line="31" selection-start-column="114" selection-end-line="31" selection-end-column="114" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Diagnosticos.php">
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/MotivosDiagnosticosType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Servicios.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1034,37 +889,363 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Servicios.php">
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        <state relative-caret-position="-204">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/diagnosticos/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="57" column="5" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="57" selection-end-column="5" />
+          <folding>
+            <element signature="e#564#870#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/ServiciosType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/diagmotiv/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudTransfusionType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Collection/ManyToManyPersister.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2901">
+          <caret line="37" column="6" lean-forward="false" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+          <folding>
+            <marker date="1488747029692" expanded="true" signature="7179:7224" ph="SELECT 1 FRO... ${$quotedJoinTable}" />
+            <marker date="1488747029692" expanded="true" signature="7694:7739" ph="SELECT 1 FRO... ${$quotedJoinTable}" />
+            <marker date="1488747029692" expanded="true" signature="8215:8258" ph="DELETE FROM " />
+            <marker date="1488747029692" expanded="true" signature="13973:14064" ph="DELETE FROM " />
+            <marker date="1488747029692" expanded="true" signature="16469:16623" ph="DELETE FROM " />
+            <marker date="1488747029692" expanded="true" signature="18606:18847" ph="INSERT INTO ${$this-&gt;quoteStrategy-&gt;getJoinTableName($mapping, $class, $this-&gt;platform)}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/Builder/ManyToManyAssociationBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-669">
+          <caret line="29" column="6" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ManyToMany.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Repository/MotivosDiagnosticosRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/DiagnosticosMotivoType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+          <folding>
+            <element signature="e#122#162#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/diagmotiv/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#637#659#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/servicios/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/UsuarioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/MotivoTransfusionType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="58" lean-forward="false" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/EntityPersister.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="198" column="20" lean-forward="false" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="195" column="29" lean-forward="false" selection-start-line="195" selection-start-column="29" selection-end-line="195" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="68" lean-forward="false" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MotivoTransfusionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="85" column="82" lean-forward="false" selection-start-line="85" selection-start-column="82" selection-end-line="85" selection-end-column="82" />
+          <folding>
+            <element signature="e#48#95#0#PHP" expanded="false" />
+            <element signature="e#594#668#0#PHP" expanded="false" />
+            <element signature="e#728#864#0#PHP" expanded="false" />
+            <element signature="e#869#1204#0#PHP" expanded="false" />
+            <element signature="e#1005#1041#1#PHP" expanded="false" />
+            <element signature="e#1072#1197#0#PHP" expanded="false" />
+            <element signature="e#1123#1196#0#PHP" expanded="false" />
+            <element signature="e#1210#1359#0#PHP" expanded="false" />
+            <element signature="e#1364#2404#0#PHP" expanded="false" />
+            <element signature="e#2233#2397#0#PHP" expanded="false" />
+            <element signature="e#2282#2396#0#PHP" expanded="false" />
+            <element signature="e#3028#3064#1#PHP" expanded="false" />
+            <element signature="e#3159#3195#1#PHP" expanded="false" />
+            <element signature="e#3578#3917#0#PHP" expanded="false" />
+            <element signature="e#3732#3910#0#PHP" expanded="false" />
+            <element signature="e#3782#3909#0#PHP" expanded="false" />
+            <element signature="e#3923#4101#0#PHP" expanded="false" />
+            <element signature="e#4106#4912#0#PHP" expanded="false" />
+            <element signature="e#4675#4905#0#PHP" expanded="false" />
+            <element signature="e#4725#4904#0#PHP" expanded="false" />
+            <element signature="e#4918#5060#0#PHP" expanded="false" />
+            <element signature="e#5065#5539#0#PHP" expanded="false" />
+            <element signature="e#5266#5466#0#PHP" expanded="false" />
+            <element signature="e#5545#5763#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/DiagnosticosMotivo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="75" lean-forward="false" selection-start-line="17" selection-start-column="75" selection-end-line="17" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/DiagnosticosMotivoRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Serializer/Serializer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="107" column="26" lean-forward="false" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/RecepcionSolicitudController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1285">
+          <caret line="148" column="47" lean-forward="false" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
+          <folding>
+            <element signature="e#44#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/DiagnosticosRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusionRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosMotivoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="843">
+          <caret line="66" column="66" lean-forward="false" selection-start-line="66" selection-start-column="66" selection-end-line="66" selection-end-column="66" />
+          <folding>
+            <element signature="e#128#170#0#PHP" expanded="true" />
+            <element signature="e#1519#1555#1#PHP" expanded="true" />
+            <element signature="e#1642#1673#1#PHP" expanded="true" />
+            <element signature="e#1940#1964#1#PHP" expanded="true" />
+            <element signature="e#2007#2032#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/SolicitudTransfusionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#98#0#PHP" expanded="true" />
+            <element signature="e#1129#1262#0#PHP" expanded="false" />
+            <element signature="e#1183#1261#0#PHP" expanded="false" />
+            <element signature="e#1275#1430#0#PHP" expanded="false" />
+            <element signature="e#1435#2211#0#PHP" expanded="false" />
+            <element signature="e#1687#2014#0#PHP" expanded="false" />
+            <element signature="e#2031#2204#0#PHP" expanded="false" />
+            <element signature="e#2083#2203#0#PHP" expanded="false" />
+            <element signature="e#3122#3153#1#PHP" expanded="true" />
+            <element signature="e#3530#3684#0#PHP" expanded="false" />
+            <element signature="e#3689#4046#0#PHP" expanded="false" />
+            <element signature="e#3852#4039#0#PHP" expanded="false" />
+            <element signature="e#3905#4038#0#PHP" expanded="false" />
+            <element signature="e#4052#4236#0#PHP" expanded="false" />
+            <element signature="e#4241#5077#0#PHP" expanded="false" />
+            <element signature="e#4572#4814#0#PHP" expanded="false" />
+            <element signature="e#4831#5070#0#PHP" expanded="false" />
+            <element signature="e#4884#5069#0#PHP" expanded="false" />
+            <element signature="e#5083#5231#0#PHP" expanded="false" />
+            <element signature="e#5236#5728#0#PHP" expanded="false" />
+            <element signature="e#5446#5652#0#PHP" expanded="false" />
+            <element signature="e#5734#5964#0#PHP" expanded="false" />
+            <element signature="e#5969#6281#0#PHP" expanded="false" />
+            <element signature="e#6068#6216#0#PHP" expanded="false" />
+            <element signature="e#6068#6250#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/motivos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="6004" column="8" lean-forward="false" selection-start-line="6004" selection-start-column="8" selection-end-line="6004" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8500">
-          <caret line="500" column="0" lean-forward="false" selection-start-line="500" selection-start-column="0" selection-end-line="500" selection-end-column="0" />
+        <state relative-caret-position="707">
+          <caret line="153" column="25" lean-forward="false" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/DiagnosticosType.php">
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/PacienteDiagnosticos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        <state relative-caret-position="401">
+          <caret line="46" column="6" lean-forward="true" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudTransfusionType.php">
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Diagnosticos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="75" column="1" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="1" />
+        <state relative-caret-position="1479">
+          <caret line="126" column="52" lean-forward="false" selection-start-line="126" selection-start-column="52" selection-end-line="126" selection-end-column="52" />
           <folding>
-            <element signature="e#42#98#0#PHP" expanded="true" />
+            <element signature="e#44#92#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Paciente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="83" column="35" lean-forward="false" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

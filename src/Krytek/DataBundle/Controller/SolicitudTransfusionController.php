@@ -3,9 +3,16 @@
 namespace Krytek\DataBundle\Controller;
 
 use Krytek\DataBundle\Entity\SolicitudTransfusion;
+use Krytek\DataBundle\Form\PacienteType;
+use Krytek\DataBundle\Form\SolicitudTransfusionType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Solicitudtransfusion controller.
@@ -41,7 +48,7 @@ class SolicitudTransfusionController extends Controller
     {
         $solicitudTransfusion = new Solicitudtransfusion();
 
-        $form = $this->createForm('Krytek\DataBundle\Form\SolicitudTransfusionType', array($solicitudTransfusion, 'usuario'=>$this->getUser()));
+        $form = $this->createForm(SolicitudTransfusionType::class, $solicitudTransfusion);
 
         $form->handleRequest($request);
 
@@ -57,6 +64,44 @@ class SolicitudTransfusionController extends Controller
             'solicitudTransfusion' => $solicitudTransfusion,
             'form' => $form->createView(),
         ));
+    }
+
+    /** Fill select with the motivos according to the componente
+     * @Route("/{componente}", name="select_motivos", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
+     *
+     */
+    public function fillAction(Request $request)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        if (!$request->get('diag')) {
+            $componente = $request->get('comp');
+            $motivos = $em->getRepository('KrytekDataBundle:MotivoTransfusion')->findMotivosComponentes($componente);
+
+            $motivosc = new \ArrayObject();
+            foreach ($motivos as $motivo)
+                $motivosc->append($motivo->getDescripcion());
+            $response = new JsonResponse();
+            $response->setData(array(
+                'motivo' => $motivosc
+            ));
+
+        } else {
+            $componente = $request->get('comp');
+            $diag = $em->getRepository('KrytekDataBundle:Diagnosticos')->find($componente);
+
+            $motivos = new \ArrayObject();
+            foreach ($diag->getMotivoTransfusionid() as $motivo)
+                $motivos->append($motivo->getDescripcion());
+
+            $response = new JsonResponse();
+            $response->setData(array(
+                'motivo' => $motivos
+            ));
+        }
+
+        return $response;
+
     }
 
     /**
@@ -132,7 +177,6 @@ class SolicitudTransfusionController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('solicitudtransfusion_delete', array('id' => $solicitudTransfusion->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

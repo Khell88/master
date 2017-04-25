@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>DiagnosticosMotivos list</h1>
+
+    <table class="table table-bordered table-responsive">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Descripcion</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for motivoTransfusion in diagnosticosMotivo %}
+            <tr>
+
+                <td>{{ motivoTransfusion.diagnosticosid.descripcion }}</td>
+
+                <td>{{ motivoTransfusion.motivoTransfusionid.descripcion }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('diagnosticosmotivo_new') }}">Create a new diagnostico</a>
+        </li>
+    </ul>
+{% endblock %}

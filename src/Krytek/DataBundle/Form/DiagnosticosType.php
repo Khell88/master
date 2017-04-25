@@ -13,14 +13,19 @@ class DiagnosticosType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('descripcion')       ;
+        $builder->add('descripcion');
     }
     
     /**
      * {@inheritdoc}
      */
 
-
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'Krytek\DataBundle\Entity\Diagnosticos'
+        ));
+    }
     /**
      * {@inheritdoc}
      */

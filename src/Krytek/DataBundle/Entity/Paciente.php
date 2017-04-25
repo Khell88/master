@@ -25,7 +25,7 @@ class Paciente
     /**
      * @var integer
      *
-     * @ORM\Column(name="ci_paciente", type="bigint", nullable=false)
+     * @ORM\Column(name="ci_paciente", type="bigint", nullable=false, unique=true)
      */
     private $ciPaciente;
 
@@ -99,36 +99,279 @@ class Paciente
      */
     private $abortos;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="ReporteReaccion", inversedBy="pacienteid")
-     * @ORM\JoinTable(name="paciente_reacciones_tranfusion",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="pacienteid", referencedColumnName="id")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="reporte_reaccionid", referencedColumnName="id")
-     *   }
-     * )
-     */
-    private $reporteReaccionid;
+
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * Get id
      *
-     * @ORM\ManyToMany(targetEntity="Diagnosticos", mappedBy="pacienteid")
+     * @return integer
      */
-    private $diagnosticosid;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
+    public function getId()
     {
-        $this->reporteReaccionid = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->diagnosticosid = new \Doctrine\Common\Collections\ArrayCollection();
+        return $this->id;
     }
 
-}
+    /**
+     * Set ciPaciente
+     *
+     * @param integer $ciPaciente
+     *
+     * @return Paciente
+     */
+    public function setCiPaciente($ciPaciente)
+    {
+        $this->ciPaciente = $ciPaciente;
 
+        return $this;
+    }
+
+    /**
+     * Get ciPaciente
+     *
+     * @return integer
+     */
+    public function getCiPaciente()
+    {
+        return $this->ciPaciente;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     *
+     * @return Paciente
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set apellidos
+     *
+     * @param string $apellidos
+     *
+     * @return Paciente
+     */
+    public function setApellidos($apellidos)
+    {
+        $this->apellidos = $apellidos;
+
+        return $this;
+    }
+
+    /**
+     * Get apellidos
+     *
+     * @return string
+     */
+    public function getApellidos()
+    {
+        return $this->apellidos;
+    }
+
+    /**
+     * Set sexo
+     *
+     * @param string $sexo
+     *
+     * @return Paciente
+     */
+    public function setSexo($sexo)
+    {
+        $this->sexo = $sexo;
+
+        return $this;
+    }
+
+    /**
+     * Get sexo
+     *
+     * @return string
+     */
+    public function getSexo()
+    {
+        return $this->sexo;
+    }
+
+    /**
+     * Set tipoSangre
+     *
+     * @param string $tipoSangre
+     *
+     * @return Paciente
+     */
+    public function setTipoSangre($tipoSangre)
+    {
+        $this->tipoSangre = $tipoSangre;
+
+        return $this;
+    }
+
+    /**
+     * Get tipoSangre
+     *
+     * @return string
+     */
+    public function getTipoSangre()
+    {
+        return $this->tipoSangre;
+    }
+
+    /**
+     * Set idHc
+     *
+     * @param integer $idHc
+     *
+     * @return Paciente
+     */
+    public function setIdHc($idHc)
+    {
+        $this->idHc = $idHc;
+
+        return $this;
+    }
+
+    /**
+     * Get idHc
+     *
+     * @return integer
+     */
+    public function getIdHc()
+    {
+        return $this->idHc;
+    }
+
+    /**
+     * Set peso
+     *
+     * @param float $peso
+     *
+     * @return Paciente
+     */
+    public function setPeso($peso)
+    {
+        $this->peso = $peso;
+
+        return $this;
+    }
+
+    /**
+     * Get peso
+     *
+     * @return float
+     */
+    public function getPeso()
+    {
+        return $this->peso;
+    }
+
+    /**
+     * Set lactante
+     *
+     * @param string $lactante
+     *
+     * @return Paciente
+     */
+    public function setLactante($lactante)
+    {
+        $this->lactante = $lactante;
+
+        return $this;
+    }
+
+    /**
+     * Get lactante
+     *
+     * @return string
+     */
+    public function getLactante()
+    {
+        return $this->lactante;
+    }
+
+    /**
+     * Set embarazos
+     *
+     * @param string $embarazos
+     *
+     * @return Paciente
+     */
+    public function setEmbarazos($embarazos)
+    {
+        $this->embarazos = $embarazos;
+
+        return $this;
+    }
+
+    /**
+     * Get embarazos
+     *
+     * @return string
+     */
+    public function getEmbarazos()
+    {
+        return $this->embarazos;
+    }
+
+    /**
+     * Set rh
+     *
+     * @param string $rh
+     *
+     * @return Paciente
+     */
+    public function setRh($rh)
+    {
+        $this->rh = $rh;
+
+        return $this;
+    }
+
+    /**
+     * Get rh
+     *
+     * @return string
+     */
+    public function getRh()
+    {
+        return $this->rh;
+    }
+
+    /**
+     * Set abortos
+     *
+     * @param string $abortos
+     *
+     * @return Paciente
+     */
+    public function setAbortos($abortos)
+    {
+        $this->abortos = $abortos;
+
+        return $this;
+    }
+
+    /**
+     * Get abortos
+     *
+     * @return string
+     */
+    public function getAbortos()
+    {
+        return $this->abortos;
+    }
+}

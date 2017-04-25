@@ -9,7 +9,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * Usuario
  *
  * @ORM\Table(name="usuario", uniqueConstraints={@ORM\UniqueConstraint(name="usuario_nombre_usuario_key", columns={"nombre_usuario"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Krytek\DataBundle\Entity\UsuarioRepository")
  */
 class Usuario implements UserInterface, \Serializable
 {
@@ -89,10 +89,6 @@ class Usuario implements UserInterface, \Serializable
         return $this->password;
     }
 
-    public function getRoles()
-    {
-        return array('ROLE_USER');
-    }
 
     public function eraseCredentials()
     {
@@ -175,6 +171,16 @@ class Usuario implements UserInterface, \Serializable
      *
      * @return string
      */
+    public function getRoles()
+    {
+        return array($this->rol);
+    }
+
+    /**
+     * Get rol
+     *
+     * @return string
+     */
     public function getRol()
     {
         return $this->rol;
@@ -192,5 +198,77 @@ class Usuario implements UserInterface, \Serializable
         $this->password = $password;
 
         return $this;
+    }
+
+    /**
+     * Set noIdentificacion
+     *
+     * @param integer $noIdentificacion
+     *
+     * @return Usuario
+     */
+    public function setNoIdentificacion($noIdentificacion)
+    {
+        $this->no_identificacion = $noIdentificacion;
+
+        return $this;
+    }
+
+    /**
+     * Get noIdentificacion
+     *
+     * @return integer
+     */
+    public function getNoIdentificacion()
+    {
+        return $this->no_identificacion;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     *
+     * @return Usuario
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set apellidos
+     *
+     * @param string $apellidos
+     *
+     * @return Usuario
+     */
+    public function setApellidos($apellidos)
+    {
+        $this->apellidos = $apellidos;
+
+        return $this;
+    }
+
+    /**
+     * Get apellidos
+     *
+     * @return string
+     */
+    public function getApellidos()
+    {
+        return $this->apellidos;
     }
 }

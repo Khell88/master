@@ -28,8 +28,8 @@
                 <td>{{ bolsa.codigo }}</td>
                 <td>{{ bolsa.componente }}</td>
                 <td>{{ bolsa.lote }}</td>
-                <td>{% if bolsa.fechaDonacion %}{{ bolsa.fechaDonacion|date('Y-m-d') }}{% endif %}</td>
-                <td>{% if bolsa.fechaVencimiento %}{{ bolsa.fechaVencimiento|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if bolsa.fechaDonacion %}{{ bolsa.fechaDonacion|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if bolsa.fechaVencimiento %}{{ bolsa.fechaVencimiento|date('d-m-Y') }}{% endif %}</td>
                 <td>{{ bolsa.procedencia }}</td>
                 <td>{{ bolsa.problemas }}</td>
                 <td>{{ bolsa.grupoSanguineo }}</td>

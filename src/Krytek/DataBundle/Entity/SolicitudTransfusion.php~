@@ -39,7 +39,7 @@ class SolicitudTransfusion
     /**
      * @var string
      *
-     * @ORM\Column(name="sala", type="string", length=3, nullable=false)
+     * @ORM\Column(name="sala", type="string", length=255, nullable=false)
      */
     private $sala;
 
@@ -51,9 +51,9 @@ class SolicitudTransfusion
     private $cama;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="urgencia", type="integer", nullable=false)
+     * @ORM\Column(name="urgencia", type="string", nullable=false)
      */
     private $urgencia;
 
@@ -88,7 +88,14 @@ class SolicitudTransfusion
     /**
      * @var string
      *
-     * @ORM\Column(name="consentimiento", type="string", length=1, nullable=false)
+     * @ORM\Column(name="objetivo", type="string", length=255, nullable=false)
+     */
+    private $objetivo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="consentimiento", type="string", length=255, nullable=false)
      */
     private $consentimiento;
 
@@ -114,9 +121,9 @@ class SolicitudTransfusion
     private $fechaARealizar;
 
     /**
-     * @var integer
+     * @var \DateTime
      *
-     * @ORM\Column(name="hora_a_realizar", type="integer", nullable=false)
+     * @ORM\Column(name="hora_a_realizar", type="time", nullable=false)
      */
     private $horaARealizar;
 
@@ -140,6 +147,31 @@ class SolicitudTransfusion
      */
     private $usuarioid;
 
+    /**
+     * @var \Paciente
+     *
+     * @ORM\ManyToOne(targetEntity="Paciente")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="pacienteid", referencedColumnName="id")
+     * })
+     */
+    private $pacienteid;
+    /**
+     * @var \MotivoTransfusion
+     *
+     * @ORM\ManyToOne(targetEntity="MotivoTransfusion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="motivo_transfusionid", referencedColumnName="id")
+     * })
+     */
+    private $motivoTransfusionid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="procesada", type="string", length=255, nullable=true)
+     */
+    private $procesada;
 
 
     /**
@@ -251,7 +283,7 @@ class SolicitudTransfusion
     /**
      * Set urgencia
      *
-     * @param integer $urgencia
+     * @param string $urgencia
      *
      * @return SolicitudTransfusion
      */
@@ -265,7 +297,7 @@ class SolicitudTransfusion
     /**
      * Get urgencia
      *
-     * @return integer
+     * @return string
      */
     public function getUrgencia()
     {
@@ -443,7 +475,7 @@ class SolicitudTransfusion
     /**
      * Set horaARealizar
      *
-     * @param integer $horaARealizar
+     * @param \DateTime $horaARealizar
      *
      * @return SolicitudTransfusion
      */
@@ -457,7 +489,7 @@ class SolicitudTransfusion
     /**
      * Get horaARealizar
      *
-     * @return integer
+     * @return \DateTime
      */
     public function getHoraARealizar()
     {
@@ -510,5 +542,125 @@ class SolicitudTransfusion
     public function getUsuarioid()
     {
         return $this->usuarioid;
+    }
+
+    /**
+     * Set tipoCirugia
+     *
+     * @param string $tipoCirugia
+     *
+     * @return SolicitudTransfusion
+     */
+    public function setTipoCirugia($tipoCirugia)
+    {
+        $this->tipoCirugia = $tipoCirugia;
+
+        return $this;
+    }
+
+    /**
+     * Get tipoCirugia
+     *
+     * @return string
+     */
+    public function getTipoCirugia()
+    {
+        return $this->tipoCirugia;
+    }
+
+    /**
+     * Set objetivo
+     *
+     * @param string $objetivo
+     *
+     * @return SolicitudTransfusion
+     */
+    public function setObjetivo($objetivo)
+    {
+        $this->objetivo = $objetivo;
+
+        return $this;
+    }
+
+    /**
+     * Get objetivo
+     *
+     * @return string
+     */
+    public function getObjetivo()
+    {
+        return $this->objetivo;
+    }
+
+    /**
+     * Set pacienteid
+     *
+     * @param \Krytek\DataBundle\Entity\Paciente $pacienteid
+     *
+     * @return SolicitudTransfusion
+     */
+    public function setPacienteid(\Krytek\DataBundle\Entity\Paciente $pacienteid = null)
+    {
+        $this->pacienteid = $pacienteid;
+
+        return $this;
+    }
+
+    /**
+     * Get pacienteid
+     *
+     * @return \Krytek\DataBundle\Entity\Paciente
+     */
+    public function getPacienteid()
+    {
+        return $this->pacienteid;
+    }
+
+    /**
+     * Set motivoTransfusionid
+     *
+     * @param \Krytek\DataBundle\Entity\MotivoTransfusion $motivoTransfusionid
+     *
+     * @return SolicitudTransfusion
+     */
+    public function setMotivoTransfusionid(\Krytek\DataBundle\Entity\MotivoTransfusion $motivoTransfusionid = null)
+    {
+        $this->motivoTransfusionid = $motivoTransfusionid;
+
+        return $this;
+    }
+
+    /**
+     * Get motivoTransfusionid
+     *
+     * @return \Krytek\DataBundle\Entity\MotivoTransfusion
+     */
+    public function getMotivoTransfusionid()
+    {
+        return $this->motivoTransfusionid;
+    }
+
+    /**
+     * Set procesada
+     *
+     * @param string $procesada
+     *
+     * @return SolicitudTransfusion
+     */
+    public function setProcesada($procesada)
+    {
+        $this->procesada = $procesada;
+
+        return $this;
+    }
+
+    /**
+     * Get procesada
+     *
+     * @return string
+     */
+    public function getProcesada()
+    {
+        return $this->procesada;
     }
 }

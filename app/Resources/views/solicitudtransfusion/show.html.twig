@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <th>Horaarealizar</th>
-                <td>{{ solicitudTransfusion.horaARealizar }}</td>
+                <td>{% if solicitudTransfusion.horaARealizar %}{{ solicitudTransfusion.horaARealizar|date('H:i:s') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>

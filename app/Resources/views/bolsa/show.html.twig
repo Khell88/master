@@ -23,11 +23,11 @@
             </tr>
             <tr>
                 <th>Fechadonacion</th>
-                <td>{% if bolsa.fechaDonacion %}{{ bolsa.fechaDonacion|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if bolsa.fechaDonacion %}{{ bolsa.fechaDonacion|date('d-m-Y') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Fechavencimiento</th>
-                <td>{% if bolsa.fechaVencimiento %}{{ bolsa.fechaVencimiento|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if bolsa.fechaVencimiento %}{{ bolsa.fechaVencimiento|date('d-m-Y') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Procedencia</th>
