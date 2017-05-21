@@ -1,63 +1,63 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Solicitudtransfusions list</h1>
+    <div class="col-md-10 col-md-offset-1">
+        <h1>Solicitudtransfusions list</h1>
 
-    <table>
-        <thead>
+        <table class="table table-responsive">
+            <thead>
             <tr>
-                <th>Id</th>
-                <th>Fecha</th>
-                <th>Hora</th>
-                <th>Sala</th>
-                <th>Cama</th>
+
+                <th>Fecha de Solicitud</th>
+                <th>Hora de Solicitud</th>
+
                 <th>Urgencia</th>
-                <th>Hb</th>
-                <th>Tp</th>
-                <th>Tptk</th>
-                <th>Plaquetas</th>
+
                 <th>Consentimiento</th>
-                <th>Incompatibilidadmf</th>
-                <th>Fechaarealizar</th>
-                <th>Horaarealizar</th>
+
+                <th>Fecha a realizar</th>
+                <th>Hora a realizar</th>
+                <th>Estado</th>
                 <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for solicitudTransfusion in solicitudTransfusions %}
-            <tr>
-                <td><a href="{{ path('solicitudtransfusion_show', { 'id': solicitudTransfusion.id }) }}">{{ solicitudTransfusion.id }}</a></td>
-                <td>{% if solicitudTransfusion.fecha %}{{ solicitudTransfusion.fecha|date('Y-m-d') }}{% endif %}</td>
-                <td>{% if solicitudTransfusion.hora %}{{ solicitudTransfusion.hora|date('H:i:s') }}{% endif %}</td>
-                <td>{{ solicitudTransfusion.sala }}</td>
-                <td>{{ solicitudTransfusion.cama }}</td>
-                <td>{{ solicitudTransfusion.urgencia }}</td>
-                <td>{{ solicitudTransfusion.hb }}</td>
-                <td>{{ solicitudTransfusion.tp }}</td>
-                <td>{{ solicitudTransfusion.tptk }}</td>
-                <td>{{ solicitudTransfusion.plaquetas }}</td>
-                <td>{{ solicitudTransfusion.consentimiento }}</td>
-                <td>{{ solicitudTransfusion.incompatibilidadMF }}</td>
-                <td>{% if solicitudTransfusion.fechaARealizar %}{{ solicitudTransfusion.fechaARealizar|date('Y-m-d') }}{% endif %}</td>
-                <td>{% if solicitudTransfusion.horaARealizar %}{{ solicitudTransfusion.horaARealizar|date('H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('solicitudtransfusion_show', { 'id': solicitudTransfusion.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('solicitudtransfusion_edit', { 'id': solicitudTransfusion.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for solicitudTransfusion in solicitudTransfusions %}
+                <tr>
 
-    <ul>
-        <li>
-            <a href="{{ path('solicitudtransfusion_new') }}">Create a new solicitudTransfusion</a>
-        </li>
-    </ul>
+                    <td>{% if solicitudTransfusion.fecha %}{{ solicitudTransfusion.fecha|date('d-m-Y') }}{% endif %}</td>
+                    <td>{% if solicitudTransfusion.hora %}{{ solicitudTransfusion.hora|date('h:i:s') }}{% endif %}</td>
+
+                    <td>{{ solicitudTransfusion.urgencia }}</td>
+
+                    <td>{{ solicitudTransfusion.consentimiento }}</td>
+
+                    <td>{% if solicitudTransfusion.fechaARealizar %}{{ solicitudTransfusion.fechaARealizar|date('d-m-Y') }}{% endif %}</td>
+                    <td>{% if solicitudTransfusion.horaARealizar %}{{ solicitudTransfusion.horaARealizar|date('h:i') }}{% endif %}</td>
+                    <td>{{ solicitudTransfusion.procesada }}</td>
+                    <td>
+
+                        <a href="{{ path('solicitudtransfusion_show', { 'id': solicitudTransfusion.id }) }}"
+                           class="btn btn-info">Show</a>
+
+                        <a href="{{ path('solicitudtransfusion_edit', { 'id': solicitudTransfusion.id }) }}"
+                           class="btn btn-danger">Edit</a>
+
+                        {% if solicitudTransfusion.procesada == 'No procesada' %}
+                            <a href="{{ path('recepcionsolicitud_new', { 'id': solicitudTransfusion.id }) }}"
+                               class="btn btn-success">Procesar</a>
+                        {% endif %}
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                <a href="{{ path('solicitudtransfusion_new') }}">Create a new solicitudTransfusion</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}

@@ -28,14 +28,18 @@ class LoginController extends Controller
         // último nombre de usuario introducido por el usuario
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render(
-            '@KrytekLogin/Default/login.html.twig',
-            array(
-                // last username entered by the user
-                'last_username' => $lastUsername,
-                'error' => $error,
-            )
-        );
+        if (!$this->isGranted('IS_AUTHENTICATED_FULLY')) {
+            return $this->render(
+                '@KrytekLogin/Default/login.html.twig',
+                array(
+                    // last username entered by the user
+                    'last_username' => $lastUsername,
+                    'error' => $error,
+                )
+            );
+        } else {
+            return $this->redirectToRoute('inicio');
+        }
     }
 
     /**

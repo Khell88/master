@@ -4,6 +4,29 @@
     <h1>Bolsa creation</h1>
 
     {{ form_start(form) }}
+    {{ form_label(form.codigo, 'Codigo') }}
+    {{ form_row(form.codigo) }}
+    {{ form_label(form.componente, 'Componente Sanguíneo') }}
+    {{ form_row(form.componente) }}
+    {{ form_label(form.grupoSanguineo, 'Grupo Sanguíneo') }}
+    {{ form_row(form.grupoSanguineo) }}
+    {{ form_label(form.rh, 'Factor Rh') }}
+    {{ form_row(form.rh) }}
+    {{ form_label(form.lote, 'Lote') }}
+    {{ form_row(form.lote) }}
+    {{ form_label(form.volumen, 'Volumen de la unidad') }}
+    {{ form_row(form.volumen) }}
+    {{ form_label(form.fechaDonacion, 'Fecha de Confección') }}
+    {{ form_row(form.fechaDonacion) }}
+    {{ form_label(form.fechaVencimiento, 'Fecha de Vencimiento') }}
+    {{ form_row(form.fechaVencimiento) }}
+    {{ form_label(form.procedencia, 'Procedencia') }}
+    {{ form_row(form.procedencia) }}
+    {{ form_label(form.problemas, 'Problemas con la unidad') }}
+    {{ form_row(form.problemas) }}
+    {{ form_label(form.muestra, '¿Muestra tomada?') }}
+    {{ form_row(form.muestra) }}
+
     {{ form_widget(form) }}
     <input type="submit" value="Create"/>
     {{ form_end(form) }}
@@ -13,7 +36,8 @@
             <a href="{{ path('bolsa_index') }}">Back to the list</a>
         </li>
     </ul>
-
+    {% include 'validator.html.twig' %}
 {% endblock %}
+
 
 

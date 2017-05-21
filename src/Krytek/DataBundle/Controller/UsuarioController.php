@@ -49,7 +49,6 @@ class UsuarioController extends Controller
 
             $em = $this->getDoctrine()->getManager();
 
-
             $usuario_old =  $em->getRepository('KrytekDataBundle:Usuario')->findBy(array('nombreUsuario'=>$usuario->getNombreUsuario()));
             if($usuario_old==null){
             $password = $this->get('security.password_encoder')
@@ -62,8 +61,9 @@ class UsuarioController extends Controller
             return $this->redirectToRoute('usuario_index');}
             else{
                 $data_error = 'El nombre de usuario ya existe';
-                $form = $this->createForm('Krytek\DataBundle\Form\UsuarioType', array($usuario, 'existe'=>$data_error));
-            $form->handleRequest($request);}
+                $form = $this->createForm('Krytek\DataBundle\Form\UsuarioType', array($usuario, 'existe' => $data_error));
+                $form->handleRequest($request);
+            }
         }
 
         return $this->render('usuario/new.html.twig', array(

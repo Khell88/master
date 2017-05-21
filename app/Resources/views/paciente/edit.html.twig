@@ -4,7 +4,30 @@
     <h1>Paciente edit</h1>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
+    {{ form_label(edit_form.ciPaciente, 'CI Paciente') }}
+    {{ form_row(edit_form.ciPaciente) }}
+    {{ form_label(edit_form.nombre, 'Nombre') }}
+    {{ form_row(edit_form.nombre) }}
+    {{ form_label(edit_form.apellidos, 'Apellidos') }}
+    {{ form_row(edit_form.apellidos) }}
+    {{ form_label(edit_form.edad, 'Edad') }}
+    {{ form_row(edit_form.edad) }}
+    {{ form_label(edit_form.sexo, 'Sexo') }}
+    {{ form_row(edit_form.sexo) }}
+    {{ form_label(edit_form.idHc, 'No. Historia Clinica') }}
+    {{ form_row(edit_form.idHc) }}
+    {{ form_label(edit_form.peso, 'Peso en Kgs (pacientes pedíatricos)') }}
+    {{ form_row(edit_form.peso) }}
+    {{ form_label(edit_form.tipoSangre, 'Grupo Sanguíneo') }}
+    {{ form_row(edit_form.tipoSangre) }}
+    {{ form_label(edit_form.rh, 'Factor Rh') }}
+    {{ form_row(edit_form.rh) }}
+    {{ form_label(edit_form.lactante, 'Es Lactante') }}
+    {{ form_row(edit_form.lactante) }}
+    {{ form_label(edit_form.embarazos, 'Embarazos previos') }}
+    {{ form_row(edit_form.embarazos) }}
+    {{ form_label(edit_form.abortos, 'Abortos previos') }}
+    {{ form_row(edit_form.abortos) }}
         <input type="submit" value="Edit" />
     {{ form_end(edit_form) }}
 

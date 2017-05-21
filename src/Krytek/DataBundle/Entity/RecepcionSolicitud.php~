@@ -25,35 +25,28 @@ class RecepcionSolicitud
     /**
      * @var string
      *
-     * @ORM\Column(name="muestra", type="string", length=1, nullable=false)
+     * @ORM\Column(name="muestra", type="string", length=2, nullable=false)
      */
     private $muestra;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="hc_bolsa", type="integer", nullable=false)
-     */
-    private $hcBolsa;
-
-    /**
      * @var string
      *
-     * @ORM\Column(name="pc_tipo_sangre", type="string", length=255, nullable=true)
+     * @ORM\Column(name="pc_tipo_sangre", type="string", length=255, nullable=false)
      */
     private $pcTipoSangre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="pc_rh", type="string", length=255, nullable=true)
+     * @ORM\Column(name="pc_rh", type="string", length=255, nullable=false)
      */
     private $pcRh;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="pb_antes_temp", type="integer", nullable=true)
+     * @ORM\Column(name="pb_antes_temp", type="string", length=255, nullable=true)
      */
     private $pbAntesTemp;
 
@@ -72,9 +65,9 @@ class RecepcionSolicitud
     private $pbAntesFc;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="pb_dur_temp", type="integer", nullable=true)
+     * @ORM\Column(name="pb_dur_temp", type="string", length=255, nullable=true)
      */
     private $pbDurTemp;
 
@@ -93,9 +86,9 @@ class RecepcionSolicitud
     private $pbDurFc;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="pb_des_temp", type="integer", nullable=true)
+     * @ORM\Column(name="pb_des_temp", type="string", length=255, nullable=true)
      */
     private $pbDesTemp;
 
@@ -151,35 +144,35 @@ class RecepcionSolicitud
     /**
      * @var string
      *
-     * @ORM\Column(name="reaccion_transfusional", type="string", length=1, nullable=false)
+     * @ORM\Column(name="reaccion_transfusional", type="string", length=2, nullable=false)
      */
     private $reaccionTransfusional;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="muestra_reaccion", type="string", length=1, nullable=false)
+     * @ORM\Column(name="muestra_reaccion", type="string", length=2, nullable=false)
      */
     private $muestraReaccion;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prueba_postransfusional", type="string", length=1, nullable=false)
+     * @ORM\Column(name="prueba_postransfusional", type="string", length=2, nullable=false)
      */
     private $pruebaPostransfusional;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="notificacion", type="string", length=1, nullable=false)
+     * @ORM\Column(name="notificacion", type="string", length=2, nullable=false)
      */
     private $notificacion;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cultivo_postransfusional", type="string", length=1, nullable=false)
+     * @ORM\Column(name="cultivo_postransfusional", type="string", length=2, nullable=false)
      */
     private $cultivoPostransfusional;
 

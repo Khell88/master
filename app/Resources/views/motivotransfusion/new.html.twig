@@ -4,10 +4,7 @@
     <h1>Motivotransfusion creation</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-    {{ form_row(form.Motivos) }}
-
-
+    {{ form_widget(form) }}
     {{ form_end(form) }}
 
     <ul>
@@ -17,5 +14,5 @@
     </ul>
 {% endblock %}
 {% block javascripts %}
-    <script type="text/javascript" src="{{ asset('js/motivos.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/myValidations.js') }}"></script>
 {% endblock %}

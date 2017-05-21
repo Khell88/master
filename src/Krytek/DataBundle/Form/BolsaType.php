@@ -5,8 +5,11 @@ namespace Krytek\DataBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class BolsaType extends AbstractType
 {
@@ -16,7 +19,12 @@ class BolsaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('codigo')
+            ->add('codigo', TextType::class, array(
+                'attr' => array(
+                    'class' => 'only_number'
+                ),
+                'label' => false
+            ))
             ->add('componente', ChoiceType::class, array(
                 'choices' => array('Sangre Total' => 'Sangre Total',
                     'Eritrocitos' => array(
@@ -29,28 +37,76 @@ class BolsaType extends AbstractType
                         'Concentrado de plaquetas' => 'Concentrado de plaquetas',
                     )),
                 'placeholder' => '---Seleccione una opción---',
+                'label' => false
             ))
-            ->add('lote')
+            ->add('lote', TextType::class, array(
+                'attr' => array(
+                    'class' => 'only_number'
+                ),
+                'label' => false
+            ))
             ->add('fechaDonacion', DateType::class, array(
+                'attr' => array(
+                    'class' => 'date date_prim'
+                ),
+                'html5' => false,
                 'widget' => 'single_text',
+                'input' => 'datetime',
+                'label' => false,
 
             ))
             ->add('fechaVencimiento', DateType::class, array(
+                'attr' => array(
+                    'class' => 'date date_sec'
+                ),
+                'html5' => false,
                 'widget' => 'single_text',
+                'input' => 'datetime',
+                'label' => false
 
 
             ))
-            ->add('procedencia')
-            ->add('problemas')
-            ->add('grupoSanguineo')
+            ->add('procedencia', TextType::class, array(
+                'label' => false
+            ))
+            ->add('problemas', TextareaType::class, array(
+                'label' => false,
+                'attr' => array(
+                    'class' => 'texto'
+                )
+            ))
+            ->add('grupoSanguineo', ChoiceType::class, array(
+                'choices' => array('A' => 'A', 'B' => 'B', 'O' => 'O', 'AB' => 'AB'),
+                'expanded' => true,
+                'label' => false
+            ))
             ->add('rh', ChoiceType::class, array(
                 'choices' => array('Positivo' => 'positivo', 'Negativo' => 'negativo'),
-                'expanded' => true
+                'expanded' => true,
+                'label' => false
             ))
-            ->add('muestra')
-            ->add('volumen');
+            ->add('muestra', ChoiceType::class, array(
+                'label' => false,
+                'choices' => array('SI' => 'SI', 'NO' => 'NO'),
+                'expanded' => true,
+            ))
+            ->add('volumen', TextType::class, array(
+                'attr' => array(
+                    'class' => 'only_number'
+                ),
+                'label' => false
+            ));
     }
 
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'attr' => array(
+                'id' => 'bolsa'
+            )
+        ));
+    }
 
     /**
      * {@inheritdoc}

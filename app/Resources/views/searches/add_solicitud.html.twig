@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <input id="module" type="hidden" value="pac_search">
+    <div class="col-md-10 col-md-offset-1">
+        <div id="pacienteSearch" class="panel panel-primary">
+            <div class="panel-heading">
+                <h3>Añadir solicitud de transfusión al sistema</h3>
+            </div>
+            <div class="panel-body">
+               <div class="my-right">
+                   <h4 class="h4">Pasos a seguir:</h4>
+                   <p class="p">
+                       1- Introduzca el número del carnet de identidad del paciente para su búsqueda en el sistema.
+                       <br>
+                       2- Presione el botón verde que se muestra una vez completada la búsqueda.
+                       <br>
+                       <br></p>
+                   <h4>Notas:</h4>
+
+                   <p class="p">
+                   - Debe escribir correctamente el número del carnet a ser buscado.
+                   <br>
+                   - El sistema brindara las opciones correspondientes al resultado de su búsqueda.
+
+                   </p>
+
+               </div>
+                <label for="paciente_ciPaciente">Número de Carnet</label>
+                <div>
+                    <input type="text" placeholder="Ej. 99012356090" id="paciente_ciPaciente"
+                           class="only_number paciente_ci"
+                           maxlength="11" minlength="11">
+                </div>
+
+                <div id="block-patient" class="hidden">
+                    <div id="datos_paciente" class="datos-paciente">
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/myJS/patientSearch.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.validate.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/messages_es.js') }}"></script>
+{% endblock %}

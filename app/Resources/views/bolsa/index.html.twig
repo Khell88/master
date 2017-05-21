@@ -3,23 +3,23 @@
 {% block body %}
     <h1>Bolsas list</h1>
 
-    <table>
+    <table class="table table-responsive">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Codigo</th>
-                <th>Componente</th>
-                <th>Lote</th>
-                <th>Fechadonacion</th>
-                <th>Fechavencimiento</th>
-                <th>Procedencia</th>
-                <th>Problemas</th>
-                <th>Gruposanguineo</th>
-                <th>Rh</th>
-                <th>Muestra</th>
-                <th>Volumen</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Codigo</th>
+            <th>Componente</th>
+            <th>Lote</th>
+            <th>Fechadonacion</th>
+            <th>Fechavencimiento</th>
+            <th>Procedencia</th>
+            <th>Problemas</th>
+            <th>Gruposanguineo</th>
+            <th>Rh</th>
+            <th>Muestra</th>
+            <th>Volumen</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for bolsa in bolsas %}
@@ -37,23 +37,15 @@
                 <td>{{ bolsa.muestra }}</td>
                 <td>{{ bolsa.volumen }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('bolsa_show', { 'id': bolsa.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('bolsa_edit', { 'id': bolsa.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('bolsa_show', { 'id': bolsa.id }) }} " class="btn btn-info">show</a>
+                    <a href="{{ path('bolsa_edit', { 'id': bolsa.id }) }}" class="btn btn-danger">edit</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('bolsa_new') }}">Create a new bolsa</a>
-        </li>
-    </ul>
+
+    <a href="{{ path('bolsa_new') }}" class="btn btn-primary">Create a new bolsa</a>
+
 {% endblock %}

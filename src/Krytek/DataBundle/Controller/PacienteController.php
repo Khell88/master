@@ -5,7 +5,12 @@ namespace Krytek\DataBundle\Controller;
 use Krytek\DataBundle\Entity\Paciente;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * Paciente controller.
@@ -43,12 +48,21 @@ class PacienteController extends Controller
         $form = $this->createForm('Krytek\DataBundle\Form\PacienteType', $paciente);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($paciente);
-            $em->flush($paciente);
 
-            return $this->redirectToRoute('paciente_show', array('id' => $paciente->getId()));
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+            $paciente_old = $em->getRepository('KrytekDataBundle:Paciente')->findBy(array('ciPaciente' => $paciente->getCiPaciente()));
+            if ($paciente_old == null) {
+                $em->persist($paciente);
+                $em->flush($paciente);
+                return $this->redirectToRoute('paciente_show', array('id' => $paciente->getId()));
+            } else {
+                $data_error = 'Ya existe un paciente con ese numero de identidad';
+                $form = $this->createForm('Krytek\DataBundle\Form\PacienteType', array($paciente, 'existe' => $data_error));
+                $form->handleRequest($request);
+            }
+
         }
 
         return $this->render('paciente/new.html.twig', array(
@@ -60,7 +74,7 @@ class PacienteController extends Controller
     /**
      * Finds and displays a paciente entity.
      *
-     * @Route("/{id}", name="paciente_show")
+     * @Route("/show/{id}", name="paciente_show")
      * @Method("GET")
      */
     public function showAction(Paciente $paciente)
@@ -130,7 +144,79 @@ class PacienteController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('paciente_delete', array('id' => $paciente->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
+    }
+
+
+    /**
+     * Shows the data for existing patient
+     * @Route("/{ci}", name="show_patient", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
+     *
+     */
+    function showPatient(Request $request)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $ci = $request->get('ciP');
+
+        $patient = $em->getRepository('KrytekDataBundle:Paciente')->findOneBy(array('ciPaciente' => $ci));
+
+        $response = new JsonResponse();
+
+        if ($patient != null) {
+            $enconder = array(new JsonEncoder());
+            $normalizer = array(new ObjectNormalizer());
+
+            $serializer = new Serializer($normalizer, $enconder);
+
+            $response->setStatusCode(200);
+            $response->setData(array(
+                'response' => 'success',
+                'patient' => $serializer->serialize($patient, 'json'),
+
+            ));
+            return $response;
+        } else {
+
+            $response->setData(array(
+                'response' => 'failure'
+            ));
+        }
+        return $response;
+    }
+
+    /** Fill select with the motivos according to the componente
+     * @Route("/solicitud/", name="solictudtransfusion_pac")
+     *
+     */
+    public function solicitudPaciente(Request $request)
+    {
+
+        return $this->redirectToRoute('solicitudtransfusion_new');
+    }
+
+    /** Finds a patient from a HC number
+     * @Route("/{idhc}/", name="paciente_c", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
+     *
+     */
+    public function searchHC(Request $request){
+
+        $em = $this->getDoctrine()->getManager();
+        $hc_num = $request->get('hc');
+        $hc = $em->getRepository('KrytekDataBundle:Paciente')->findBy(array('idHc'=>$hc_num));
+        $response = new JsonResponse();
+
+        if($hc){
+            $response->setData(array(
+                'existe'=>'true'
+            ));
+        }
+        else{
+            $response->setData(array(
+                'existe'=>'false'
+            ));
+        }
+        return $response;
+
     }
 }

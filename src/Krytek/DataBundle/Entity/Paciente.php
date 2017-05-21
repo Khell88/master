@@ -3,6 +3,7 @@
 namespace Krytek\DataBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Paciente
@@ -25,6 +26,7 @@ class Paciente
     /**
      * @var integer
      *
+     *
      * @ORM\Column(name="ci_paciente", type="bigint", nullable=false, unique=true)
      */
     private $ciPaciente;
@@ -42,6 +44,14 @@ class Paciente
      * @ORM\Column(name="apellidos", type="string", length=255, nullable=false)
      */
     private $apellidos;
+
+    /**
+     * @var integer
+     *
+     *
+     * @ORM\Column(name="edad", type="integer", nullable=true)
+     */
+    private $edad;
 
     /**
      * @var string
@@ -373,5 +383,29 @@ class Paciente
     public function getAbortos()
     {
         return $this->abortos;
+    }
+
+    /**
+     * Set edad
+     *
+     * @param integer $edad
+     *
+     * @return Paciente
+     */
+    public function setEdad($edad)
+    {
+        $this->edad = $edad;
+
+        return $this;
+    }
+
+    /**
+     * Get edad
+     *
+     * @return integer
+     */
+    public function getEdad()
+    {
+        return $this->edad;
     }
 }

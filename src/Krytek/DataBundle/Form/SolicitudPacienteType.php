@@ -14,7 +14,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\DateTime;
 
-class SolicitudTransfusionType extends AbstractType
+class SolicitudPacienteType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -24,10 +24,6 @@ class SolicitudTransfusionType extends AbstractType
 
 
         $builder
-            ->add('pcnt', PacienteType::class, array(
-                'mapped' => false,
-                'label' => 'Datos Paciente:'
-            ))
             ->add('ComponenteATransfundir', ChoiceType::class, array(
                 'choices' => array(
                     'Sangre Total' => 'Sangre Total',
@@ -156,9 +152,12 @@ class SolicitudTransfusionType extends AbstractType
             ->add('incompatibilidadMF', ChoiceType::class, array(
                 'choices' => array('Si' => 'SI', 'No' => 'NO'),
                 'label' => 'Incompatibilidad materno fetal',
+                'label_attr'=>array(
+                    'class'=>'incompatiblepac'
+                ),
                 'expanded' => true,
                 'attr' => array(
-                    'class' => 'incompatible'
+                    'class' => 'incompatiblepac'
                 ),
                 'required' => false,
                 'placeholder' => null,
@@ -198,7 +197,8 @@ class SolicitudTransfusionType extends AbstractType
         $resolver->setDefaults(array(
             'attr' => array(
                 'id' => 'solicitud'
-            )
+            ),
+
         ));
     }
 

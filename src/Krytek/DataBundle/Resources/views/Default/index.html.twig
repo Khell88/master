@@ -1,7 +1,1 @@
-Hello World!
-
-
-{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-    Bienvenido {{ app.user.nombreUsuario }}
-    <div><a href={{ path('logout') }}>Logout</a></div>
-{% endif %}
+{% extends 'base.html.twig' %}

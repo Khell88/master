@@ -1,0 +1,114 @@
+/*---My Section--*/
+
+.two-row{
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    border: double;
+    border-color: #0000F0;
+
+}
+
+.three-in-row{
+    float: left;
+    width: 20%;
+    border: double;
+    border-color: red;
+    padding-left: 10px;
+}
+.three-in-row.solicitud{
+    width: 50%;
+}
+
+.three-in-row.notas{
+    width: 20%;
+}
+
+.text-box-size{
+    width: 30%;
+    align-self: center;
+}
+.texto{
+    resize: none;
+
+}
+
+.text-area{
+    width: 97%;
+    resize: none;
+    height: inherit;
+    word-wrap: normal;
+    margin-bottom: 10px;
+}
+
+.my-error{
+    font-size: 100%;
+    color: red;
+    font-style: italic;
+}
+
+.error.help-block{
+    font-size: 100%;
+    color: red;;
+}
+
+.extras{
+    float: left;
+    margin-right: 5px;
+}
+
+.my-btn{
+    margin-bottom: 10px;
+}
+
+.datos-paciente{
+    width: 95%;
+    font-size: 150%;
+}
+
+.datos-paciente-sol{
+    font-size: 150%;
+    background-color: #286090;
+    color: white;
+}
+
+.three-row{
+    float: left;
+    width: 33%;
+    margin: 0;
+}
+
+.logged-user{
+    float: right;
+    background-color: #286090;
+
+}
+.my-h4{
+    font-weight: bold ;
+}
+.p{
+    font-size: 108%;
+}
+.user-info,.user-logout{
+    color:white;
+}
+.user-logout{
+    margin-left: 10px;
+}
+.user-logout:hover{
+    color: wheat;
+}
+.my-right{
+    float: right;
+}
+.only_number{
+   max-width: 100%;
+}
+.my-h5{
+    align-content: center;
+}
+.text
+
+
+
+

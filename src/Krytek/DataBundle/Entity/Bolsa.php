@@ -100,6 +100,14 @@ class Bolsa
     private $volumen;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="en_uso", type="integer", nullable=true)
+     */
+    private $enUso;
+
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="PruebasLaboratorio", inversedBy="bolsaid")
@@ -479,5 +487,29 @@ class Bolsa
     public function getRecepcionSolicitudid()
     {
         return $this->recepcionSolicitudid;
+    }
+
+    /**
+     * Set enUso
+     *
+     * @param integer $enUso
+     *
+     * @return Bolsa
+     */
+    public function setEnUso($enUso)
+    {
+        $this->enUso = $enUso;
+
+        return $this;
+    }
+
+    /**
+     * Get enUso
+     *
+     * @return integer
+     */
+    public function getEnUso()
+    {
+        return $this->enUso;
     }
 }

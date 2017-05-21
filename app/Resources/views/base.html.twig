@@ -2,22 +2,38 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
     <title>{% block title %}Welcome!{% endblock %}</title>
+
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+
     <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery-ui.js') }} "></script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.css') }}">
+    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }} "></script>
+
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/myStyles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.css') }}">
+
 </head>
 <body>
-{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-    Bienvenido
-    {{ app.user.nombreUsuario }}
 
-    <div><a href={{ path('logout') }}>Logout</a></div>
-{% endif %}
+<div class="logged-user col-md-12">
+    <div>
+        {% include 'templates/menus.html.twig' %}
+    </div>
+   <div class="user-info"> {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        Bienvenido
+        {{ app.user.nombre }}
+        <a class="user-logout" href={{ path('logout') }}>Salir</a>
+    {% endif %}</div>
+</div>
+
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
+
 </body>
 </html>

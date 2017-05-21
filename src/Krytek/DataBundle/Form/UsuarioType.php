@@ -29,7 +29,7 @@ class UsuarioType extends AbstractType
             ->add('nombre', TextType::class)
             ->add('apellidos', TextType::class)
             ->add('no_identificacion', IntegerType::class, array(
-                'label'=> 'Carnet Ident. / RegistroProfesional',
+                'label'=> 'No. Registro Profesional',
 
             ))
             ->add('password', RepeatedType::class, array(

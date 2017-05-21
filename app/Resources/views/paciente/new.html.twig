@@ -1,16 +1,64 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Paciente creation</h1>
+    <input id="module" type="hidden" value="paciente">
+    <div class="container">
+        <div id="new_patient" class="col-md-12">
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+            <div id="patient_data" class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="h2">Adicionar Paciente</h2>
+                    <a href="{{ path('paciente_index') }}" class="btn btn-info">Back to the
+                        list</a>
+                </div>
+                <div class="panel-body">
+                    <div class="col-sm-6">
+                        {{ form_start(form) }}
+                        {{ form_label(form.ciPaciente, 'CI Paciente') }}
+                        {{ form_row(form.ciPaciente) }}
+                        {{ form_label(form.nombre, 'Nombre') }}
+                        {{ form_row(form.nombre) }}
+                        {{ form_label(form.apellidos, 'Apellidos') }}
+                        {{ form_row(form.apellidos) }}
+                        {{ form_label(form.edad, 'Edad') }}
+                        {{ form_row(form.edad) }}
+                        {{ form_label(form.sexo, 'Sexo') }}
+                        {{ form_row(form.sexo) }}
+                        {{ form_label(form.idHc, 'No. Historia Clinica') }}
+                        {{ form_row(form.idHc) }}
+                        {{ form_label(form.peso, 'Peso en Kgs (pacientes pedíatricos)') }}
+                        {{ form_row(form.peso) }}
+                        {{ form_label(form.tipoSangre, 'Grupo Sanguíneo') }}
+                        {{ form_row(form.tipoSangre) }}
+                        {{ form_label(form.rh, 'Factor Rh') }}
+                        {{ form_row(form.rh) }}
+                        {{ form_label(form.lactante, 'Es Lactante') }}
+                        {{ form_row(form.lactante) }}
+                        {{ form_label(form.embarazos, 'Embarazos previos') }}
+                        {{ form_row(form.embarazos) }}
+                        {{ form_label(form.abortos, 'Abortos previos') }}
+                        {{ form_row(form.abortos) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('paciente_index') }}">Back to the list</a>
-        </li>
-    </ul>
+                        <input type="submit" value="Create" class="btn btn-primary "/>
+                        {{ form_end(form) }}
+                    </div>
+                    <div id="block-patient" class="col-sm-6 hidden">
+                        <div id="datos_paciente" class="datos-paciente">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    {% include 'validator.html.twig' %}
+
 {% endblock %}
+{% block javascripts %}
+
+{% endblock %}
+
+
