@@ -153,7 +153,8 @@ class SolicitudPacienteType extends AbstractType
                 'choices' => array('Si' => 'SI', 'No' => 'NO'),
                 'label' => 'Incompatibilidad materno fetal',
                 'label_attr'=>array(
-                    'class'=>'incompatiblepac'
+                    'class'=>'incompatiblepac
+                    '
                 ),
                 'expanded' => true,
                 'attr' => array(

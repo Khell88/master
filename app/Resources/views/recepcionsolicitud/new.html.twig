@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Recepcionsolicitud creation</h1>
+
+    <div>
+
+        <div class="two-row">
+
+            <table class="table table-bordered table-responsive">
+                <tr>
+                    <td>{% if solicitudTransfusion.fecha %}{{ solicitudTransfusion.fecha|date('d-m-Y') }}{% endif %}</td>
+                </tr>
+                <tr>
+                    <td>{% if solicitudTransfusion.hora %}{{ solicitudTransfusion.hora|date('H:i:s') }}{% endif %}</tr>
+                <tr>
+                    <td>{{ solicitudTransfusion.sala }}</td>
+                </tr>
+                <tr>
+                    <td>{{ solicitudTransfusion.cama }}</td>
+                </tr>
+                <tr>
+                    <td>{{ solicitudTransfusion.urgencia }}</td>
+                </tr>
+                <tr>
+                    <td>{{ solicitudTransfusion.hb }}</td>
+                </tr>
+                <tr>
+                    <td>{{ solicitudTransfusion.tp }}</td>
+                </tr>
+                <tr>
+                    <td>{{ solicitudTransfusion.tptk }}</td>
+                </tr>
+                <tr>
+                    <td>{{ solicitudTransfusion.plaquetas }}</td>
+                </tr>
+                <tr>
+                    <td>{{ solicitudTransfusion.consentimiento }}</td>
+                </tr>
+                <tr>
+                    <td>{{ solicitudTransfusion.incompatibilidadMF }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="two-row">
+            {{ form_start(form) }}
+            {{ form_row(form.muestra) }}
+
+            <div>
+                <div class="two-row">{{ form_row(form.bolsaid) }}</div>
+                <div class="two-row">
+                    <h4>Pruebas Cruzadas</h4>
+                    <div class="two-row">{{ form_row(form.pcTipoSangre) }}</div>
+                    <div class="two-row">{{ form_row(form.pcRh) }}</div>
+                </div>
+            </div>
+            <div>
+                <h3>Pruebas Biológicas</h3>
+                <div class="three-row">
+                    <h4>Antes de Transfundir</h4>
+                    <div>{{ form_row(form.pbAntesTemp) }}</div>
+                    <div>{{ form_row(form.pbAntesTa) }}</div>
+                    <div>{{ form_row(form.pbAntesFc) }}</div>
+                </div>
+                <div class="three-row">
+                    <h4>Durante la transfusión</h4>
+                    <div>{{ form_row(form.pbDurTemp) }}</div>
+                    <div>{{ form_row(form.pbDurTa) }}</div>
+                    <div>{{ form_row(form.pbDurFc) }}</div>
+                </div>
+                <div class="three-row">
+                    <h4>Después de transfundir</h4>
+                    <div>{{ form_row(form.pbDesTemp) }}</div>
+                    <div>{{ form_row(form.pbDesTa) }}</div>
+                    <div>{{ form_row(form.pbDesFc) }}</div>
+                </div>
+
+            </div>
+
+            <div>
+                <h4>Pruebas</h4>
+                <div>{{ form_row(form.causaNoPruebas) }}</div>
+            </div>
+
+            {{ form_widget(form) }}
+
+
+            {{ form_end(form) }}
+
+            <ul>
+                <li>
+                    <a href="{{ path('recepcionsolicitud_index') }}">Back to the list</a>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/myJS/procesarSolicitud.js') }}"></script>
+{% endblock %}

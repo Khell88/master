@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
+    <input id="module" type="hidden" value="solicitud_edit">
     <h1>Solicitudtransfusion edit</h1>
+
 
     {{ form_start(edit_form) }}
     <section class="three-in-row">
@@ -101,4 +104,5 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+    {% include 'validator.html.twig' %}
 {% endblock %}

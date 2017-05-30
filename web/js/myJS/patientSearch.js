@@ -4,16 +4,20 @@
 $(document).ready(function () {
 
     var datos = false;
+    var datos1 = false;
     var meses = false;
     var dias = false;
     var diasF = false;
     var validM = false;
     var validF = false;
     var validD = false;
-    var existe_pac = false;
+    var existe_ci = false;
+    var existe_hc = false;
 
 
     //Validating the patitient's CI
+
+
     $('.paciente_ci').keyup(function () {
 
         var pacienteCI = $(this).val();
@@ -35,8 +39,6 @@ $(document).ready(function () {
                 });
                 meses = false;
                 validM = true;
-
-                console.log('estoy aqui');
 
             }
 
@@ -69,21 +71,33 @@ $(document).ready(function () {
             }
 
             if (validM && validF && validD) {
-                var pacienteCI = $(this).val();
-                if (!datos) {
-                    var data = {
-                        ciP: pacienteCI
+                if ($('#module').val() == 'solicitud' && !datos1) {
+                    if ($(this).val().length > 10) {
+
+                        var pacienteCI = $(this).val();
+
+                        if (!datos1) {
+                            var data = {
+                                searchNum: pacienteCI,
+                                field: 'ci'
+                            };
+                            search(data);
+                            datos1 = true;
+                        }
                     }
-                    searchPatient(data);
-                    datos = true;
+                } else {
+                    var pacienteCI = $(this).val();
+                    if (!datos) {
+                        var data = {
+                            ciP: pacienteCI
+                        };
+                        searchPatient(data);
+                        datos = true;
+                    }
                 }
-            }
-
-            if ($('#module').val() == 'solictud') {
 
 
             }
-
 
         } else {
             if (pacienteCI == '') {
@@ -107,14 +121,20 @@ $(document).ready(function () {
             validD = false;
             validF = false;
             validM = false;
+
+            $('#id_pac').slideUp('slow', function () {
+                $('#id_pac').remove();
+            });
+            existe_ci = false;
+            datos1 = false;
         }
 
 
     });
 
-   if ($('#module').val()=='pac_search'){
-    $('.paciente_ci').val('');
-   }
+    if ($('#module').val() == 'pac_search') {
+        $('.paciente_ci').val('');
+    }
 
     //Showing patient's data according to the CI
     function searchPatient(data) {
@@ -148,6 +168,8 @@ $(document).ready(function () {
                         $('#datos_paciente').append('<a id="idPaciente" class="btn btn-primary" href="solicitud/' + patient.id + '" value="' + patient.id + '">Agregar solicitud al paciente</a>');
                         $('#block-patient').removeClass('hidden');
                     }
+
+
                 } else {
                     $('#datos_paciente').append('<div><h3 class="my-h3">El paciente no se encuentra en el sistema.</h3></div>');
                     $('#datos_paciente').append('<a id="idPaciente" class="btn btn-primary" href="solicitud/">Agregar paciente y solicitud</a>');
@@ -165,29 +187,43 @@ $(document).ready(function () {
 
         if (hc_number != '' && hc_number.length > 2) {
             var data = {
-                hc: hc_number
+                searchNum: hc_number,
+                field: 'hc'
             }
-            searchHC(data);
+            search(data);
         } else {
             $('#id_hc').slideUp('slow', function () {
                 $('#id_hc').remove();
             });
-            existe_pac =false;
+            existe_hc = false;
         }
 
     });
 
-    function searchHC(data) {
+    function search(data) {
+
         $.ajax({
             type: 'get',
-            url: "{{path ('paciente_hc')}}/",
+            url: "{{path ('paciente_search')}}/",
             data: data,
             success: function (data) {
                 if (data.existe == 'true') {
-                    if ($('#id_hc') && !existe_pac) {
-                        var ver = $('<div id="id_hc" class="my-error">Ya existe un paciente con ese número de Historia Clínica.  <br> Por favor rectifique.</div>').insertAfter($('.num_hc').labels()).hide().slideDown('slow');
-                        existe_pac = true
+                    if (data.field == 'hc') {
+                        if ($('#id_hc') && !existe_hc) {
+
+                            var ver = $('<div id="id_hc" class="my-error">Ya existe un paciente con ese número de Historia Clínica.  <br> Por favor rectifique.</div>').insertAfter($('.num_hc').labels()).hide().slideDown('slow');
+                            existe_hc = true;
+                        }
+                    } else {
+                        console.log('cojone');
+                        if ($('#id_pac') && !existe_ci) {
+                            var ver = $('<div id="id_pac" class="my-error">Ya existe un paciente con ese número de identidad.  <br> Por favor rectifique.</div>').insertAfter($('.paciente_ci').labels()).hide().slideDown('slow');
+                            existe_ci = true;
+                        }
+
                     }
+
+
 
                 }
             }

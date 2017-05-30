@@ -73,7 +73,7 @@ class AddSolicitudController extends Controller
 
 
     /** Redirecting to the form
-     * @Route("/agregar/solicitud/{ci}", name="solictudtransfusion_pac")
+     * @Route("/agregar/solicitud/{ci}", name="solictudtransfusion_paciente")
      *
      */
     public function solicitudPacienteAction(Request $request)

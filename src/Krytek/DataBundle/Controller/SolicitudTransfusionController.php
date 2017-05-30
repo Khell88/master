@@ -6,12 +6,9 @@ use Krytek\DataBundle\Entity\SolicitudTransfusion;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * Solicitudtransfusion controller.
@@ -47,7 +44,7 @@ class SolicitudTransfusionController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $solicitudTransfusions = $em->getRepository('KrytekDataBundle:SolicitudTransfusion')->findBy(array('procesada'=>'Procesada'));
+        $solicitudTransfusions = $em->getRepository('KrytekDataBundle:SolicitudTransfusion')->findBy(array('procesada' => 'Procesada'));
 
         return $this->render('solicitudtransfusion/index.html.twig', array(
             'solicitudTransfusions' => $solicitudTransfusions
@@ -64,7 +61,7 @@ class SolicitudTransfusionController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $solicitudTransfusions = $em->getRepository('KrytekDataBundle:SolicitudTransfusion')->findBy(array('procesada'=>'No procesada'));
+        $solicitudTransfusions = $em->getRepository('KrytekDataBundle:SolicitudTransfusion')->findBy(array('procesada' => 'No procesada'));
 
         return $this->render('solicitudtransfusion/index.html.twig', array(
             'solicitudTransfusions' => $solicitudTransfusions
@@ -88,26 +85,24 @@ class SolicitudTransfusionController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-//            \DateTime::createFromFormat();
 
-            /*$solicitud = $request->get('solicitud');
-            $fecha = new \DateTime();
-            $fecha->modify($solicitud['fecha']);
-            $solicitudTransfusion->setFecha($fecha);
-            $fecha->modify($solicitud['fechaARealizar']);
-            $solicitudTransfusion->setFechaARealizar($fecha);
 
-            $hora = new \DateTime();
-            $hora->setTime(($solicitud['hora']['hour']), ($solicitud['hora']['minute']));
-            $solicitudTransfusion->setHora($hora);
-            $hora->setTime(($solicitud['horaARealizar']['hour']), ($solicitud['horaARealizar']['minute']));
-            $solicitudTransfusion->setHoraARealizar($hora);
+            $idMotivo = $request->get('motivotransfusion')['Motivo'];
+            $motivo = $em->getRepository('KrytekDataBundle:MotivoTransfusion')->find($idMotivo);
 
-            $solicitudTransfusion->setObjetivo('Mejorar Oxigenación');*/
+            $idDiagnotico = $request->get('solicitud')['Diagnosticos'];
 
+            if ($idDiagnotico != '') {
+                $diagnotico = $em->getRepository('KrytekDataBundle:Diagnosticos')->find($idDiagnotico);
+                $solicitudTransfusion->setDiagnosticosid($diagnotico);
+            }
 
             $solicitudTransfusion->setProcesada('No procesada');
+
+            $solicitudTransfusion->setProcesada('No procesada');
+            $solicitudTransfusion->setMotivoTransfusionid($motivo);
             $solicitudTransfusion->setUsuarioid($usuario);
+
             $em->persist($solicitudTransfusion);
             $em->flush($solicitudTransfusion);
 
@@ -118,6 +113,54 @@ class SolicitudTransfusionController extends Controller
             'solicitudTransfusion' => $solicitudTransfusion,
             'form' => $form->createView(),
             'usuario' => $usuario
+        ));
+    }
+
+    /**
+     * Creates a new solicitudTransfusion entity for a Patient.
+     *
+     * @Route("/new/{idP}/", name="solicitudpaciente_new")
+     * @Method({"GET", "POST"})
+     */
+    public function newTransAction(Request $request)
+    {
+        $solicitudTransfusion = new Solicitudtransfusion();
+        $em = $this->getDoctrine()->getManager();
+
+        $form = $this->createForm('Krytek\DataBundle\Form\SolicitudPacienteType', $solicitudTransfusion);
+        $usuario = $this->getUser();
+        $paciente = $em->getRepository('KrytekDataBundle:Paciente')->find($request->get('idP'));
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $idMotivo = $request->get('motivotransfusion')['Motivo'];
+            $motivo = $em->getRepository('KrytekDataBundle:MotivoTransfusion')->find($idMotivo);
+
+            $idDiagnotico = $request->get('solicitud')['Diagnosticos'];
+
+            if ($idDiagnotico != '') {
+                $diagnotico = $em->getRepository('KrytekDataBundle:Diagnosticos')->find($idDiagnotico);
+                $solicitudTransfusion->setDiagnosticosid($diagnotico);
+            }
+
+            $solicitudTransfusion->setProcesada('No procesada');
+            $solicitudTransfusion->setUsuarioid($usuario);
+            $solicitudTransfusion->setPacienteid($paciente);
+            $solicitudTransfusion->setMotivoTransfusionid($motivo);
+
+            $em->persist($solicitudTransfusion);
+            $em->flush($solicitudTransfusion);
+
+            return $this->redirectToRoute('solicitudtransfusion_show', array('id' => $solicitudTransfusion->getId()));
+        }
+
+        return $this->render('solicitudtransfusion/new_pac_sol.html.twig', array(
+            'solicitudTransfusion' => $solicitudTransfusion,
+            'form' => $form->createView(),
+            'usuario' => $usuario,
+            'paciente' => $paciente
         ));
     }
 
@@ -141,7 +184,7 @@ class SolicitudTransfusionController extends Controller
     /**
      * Displays a form to edit an existing solicitudTransfusion entity.
      *
-     * @Route("/{id}/edit", name="solicitudtransfusion_edit")
+     * @Route("/{id}/edit/", name="solicitudtransfusion_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, SolicitudTransfusion $solicitudTransfusion)
@@ -149,6 +192,8 @@ class SolicitudTransfusionController extends Controller
         $deleteForm = $this->createDeleteForm($solicitudTransfusion);
         $editForm = $this->createForm('Krytek\DataBundle\Form\SolicitudTransfusionType', $solicitudTransfusion);
         $editForm->handleRequest($request);
+
+        $paciente = $this->getDoctrine()->getManager()->getRepository('KrytekDataBundle:Paciente')->find($solicitudTransfusion->getPacienteid());
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
@@ -160,6 +205,7 @@ class SolicitudTransfusionController extends Controller
             'solicitudTransfusion' => $solicitudTransfusion,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'paciente'=>$paciente
         ));
     }
 
@@ -202,149 +248,105 @@ class SolicitudTransfusionController extends Controller
      * @Route("/{componente}", name="select_motivos", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
      *
      */
-    public function fillAction(Request $request)
+
+
+    public function fillNewAction(Request $request)
     {
+        return $this->findMotivo($request);
+    }
 
-        $em = $this->getDoctrine()->getManager();
-        if (!$request->get('diag')) {
-            $componente = $request->get('comp');
-            $motivos = $em->getRepository('KrytekDataBundle:MotivoTransfusion')->findMotivosComponentes($componente);
-
-            $motivosc = new \ArrayObject();
-            $idmotivos = new \ArrayObject();
-            foreach ($motivos as $motivo) {
-                $motivosc->append($motivo->getDescripcion());
-                $idmotivos->append($motivo->getId());
-            }
-
-            $response = new JsonResponse();
-            $response->setData(array(
-                'motivo' => $motivosc,
-                'idmotivo' => $idmotivos
-            ));
-
-        } else {
-            $componente = $request->get('comp');
-            $diag = $em->getRepository('KrytekDataBundle:Diagnosticos')->find($componente);
-
-            $motivos = new \ArrayObject();
-            $idmotivos = new \ArrayObject();
-
-            foreach ($diag->getMotivoTransfusionid() as $motivo) {
-                $motivos->append($motivo->getDescripcion());
-                $idmotivos->append($motivo->getId());
-            }
-            $response = new JsonResponse();
-            $response->setData(array(
-                'motivo' => $motivos,
-                'idmotivo' => $idmotivos
-            ));
-        }
-
-        return $response;
+    /** Fill select with the motivos according to the componente
+     * @Route("/{id}/edit/{componente}", name="select_motivos_edit", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
+     *
+     */
+    public function fillEditAction(Request $request)
+    {
+        return $this->findMotivo($request);
     }
 
 
+    /** Fill select with the motivos according to the componente
+     * @Route("/new/{idP}/{componente}", name="select_motivos_new", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
+     *
+     */
     public function solPacAction(Request $request)
     {
-
-        $em = $this->getDoctrine()->getManager();
-        if (!$request->get('diag')) {
-            $componente = $request->get('comp');
-            $motivos = $em->getRepository('KrytekDataBundle:MotivoTransfusion')->findMotivosComponentes($componente);
-
-            $motivosc = new \ArrayObject();
-            $idmotivos = new \ArrayObject();
-            foreach ($motivos as $motivo) {
-                $motivosc->append($motivo->getDescripcion());
-                $idmotivos->append($motivo->getId());
-            }
-
-            $response = new JsonResponse();
-            $response->setData(array(
-                'motivo' => $motivosc,
-                'idmotivo' => $idmotivos
-            ));
-
-        } else {
-            $componente = $request->get('comp');
-            $diag = $em->getRepository('KrytekDataBundle:Diagnosticos')->find($componente);
-
-            $motivos = new \ArrayObject();
-            $idmotivos = new \ArrayObject();
-
-            foreach ($diag->getMotivoTransfusionid() as $motivo) {
-                $motivos->append($motivo->getDescripcion());
-                $idmotivos->append($motivo->getId());
-            }
-            $response = new JsonResponse();
-            $response->setData(array(
-                'motivo' => $motivos,
-                'idmotivo' => $idmotivos
-            ));
-        }
-
-        return $response;
-    }
-
-    /**
-     * Creates a new solicitudTransfusion entity for a Patient.
-     *
-     * @Route("/new/{idP}", name="solicitudpaciente_new")
-     * @Method({"GET", "POST"})
-     */
-    public function newTransAction(Request $request)
-    {
-        $solicitudTransfusion = new Solicitudtransfusion();
-        $em = $this->getDoctrine()->getManager();
-
-        $form = $this->createForm('Krytek\DataBundle\Form\SolicitudPacienteType', $solicitudTransfusion);
-        $usuario = $this->getUser();
-        $paciente = $em->getRepository('KrytekDataBundle:Paciente')->find($request->get('idP'));
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $solicitudTransfusion->setProcesada('No procesada');
-            $solicitudTransfusion->setUsuarioid($usuario);
-            $solicitudTransfusion->setPacienteid($paciente);
-            $em->persist($solicitudTransfusion);
-            $em->flush($solicitudTransfusion);
-
-            return $this->redirectToRoute('solicitudtransfusion_show', array('id' => $solicitudTransfusion->getId()));
-        }
-
-        return $this->render('solicitudtransfusion/new_pac_sol.html.twig', array(
-            'solicitudTransfusion' => $solicitudTransfusion,
-            'form' => $form->createView(),
-            'usuario' => $usuario,
-            'paciente'=>$paciente
-        ));
+        return $this->findMotivo($request);
     }
 
 
     /** Finds a patient from a HC number
-     * @Route("/{idhc}/", name="paciente_hc", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
+     * @Route("/{idhc}/", name="paciente_search", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
      *
      */
-    public function searchHC(Request $request){
+    public function search(Request $request)
+    {
 
         $em = $this->getDoctrine()->getManager();
-        $hc_num = $request->get('hc');
-        $hc = $em->getRepository('KrytekDataBundle:Paciente')->findBy(array('idHc'=>$hc_num));
+        $searchNum = $request->get('searchNum');
+        if ($request->get('field') == 'hc') {
+            $num = $em->getRepository('KrytekDataBundle:Paciente')->findBy(array('idHc' => $searchNum));
+        } else {
+            $num = $em->getRepository('KrytekDataBundle:Paciente')->findBy(array('ciPaciente' => $searchNum));
+        }
         $response = new JsonResponse();
 
-        if($hc){
+        if ($num) {
             $response->setData(array(
-                'existe'=>'true'
+                'existe' => 'true',
+                'field' => $request->get('field')
+            ));
+        } else {
+            $response->setData(array(
+                'existe' => 'false'
             ));
         }
-        else{
+        return $response;
+
+    }
+
+
+    /**
+     * Finds a diagnostico and a motivo for that diagnostico
+     */
+    private function findMotivo(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if (!$request->get('diag')) {
+            $componente = $request->get('comp');
+            $motivos = $em->getRepository('KrytekDataBundle:MotivoTransfusion')->findMotivosComponentes($componente);
+
+            $motivosc = new \ArrayObject();
+            $idmotivos = new \ArrayObject();
+            foreach ($motivos as $motivo) {
+                $motivosc->append($motivo->getDescripcion());
+                $idmotivos->append($motivo->getId());
+            }
+
+            $response = new JsonResponse();
             $response->setData(array(
-                'existe'=>'false'
+                'motivo' => $motivosc,
+                'idmotivo' => $idmotivos
+            ));
+
+        } else {
+            $componente = $request->get('comp');
+            $diag = $em->getRepository('KrytekDataBundle:Diagnosticos')->find($componente);
+
+            $motivos = new \ArrayObject();
+            $idmotivos = new \ArrayObject();
+
+            foreach ($diag->getMotivoTransfusionid() as $motivo) {
+                $motivos->append($motivo->getDescripcion());
+                $idmotivos->append($motivo->getId());
+            }
+            $response = new JsonResponse();
+            $response->setData(array(
+                'motivo' => $motivos,
+                'idmotivo' => $idmotivos
             ));
         }
+
         return $response;
 
     }

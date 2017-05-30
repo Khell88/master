@@ -156,6 +156,7 @@ class SolicitudTransfusion
      * })
      */
     private $pacienteid;
+
     /**
      * @var \MotivoTransfusion
      *
@@ -165,6 +166,16 @@ class SolicitudTransfusion
      * })
      */
     private $motivoTransfusionid;
+
+    /**
+     * @var \Diagnosticos
+     *
+     * @ORM\ManyToOne(targetEntity="Diagnosticos")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="diagnosticosid", referencedColumnName="id")
+     * })
+     */
+    private $diagnosticosid;
 
     /**
      * @var string

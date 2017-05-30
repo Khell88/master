@@ -156,6 +156,7 @@ class SolicitudTransfusion
      * })
      */
     private $pacienteid;
+
     /**
      * @var \MotivoTransfusion
      *
@@ -165,6 +166,16 @@ class SolicitudTransfusion
      * })
      */
     private $motivoTransfusionid;
+
+    /**
+     * @var \Diagnosticos
+     *
+     * @ORM\ManyToOne(targetEntity="Diagnosticos")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="diagnosticosid", referencedColumnName="id")
+     * })
+     */
+    private $diagnosticosid;
 
     /**
      * @var string
@@ -662,5 +673,29 @@ class SolicitudTransfusion
     public function getProcesada()
     {
         return $this->procesada;
+    }
+
+    /**
+     * Set diagnosticosid
+     *
+     * @param \Krytek\DataBundle\Entity\Diagnosticos $diagnosticosid
+     *
+     * @return SolicitudTransfusion
+     */
+    public function setDiagnosticosid(\Krytek\DataBundle\Entity\Diagnosticos $diagnosticosid = null)
+    {
+        $this->diagnosticosid = $diagnosticosid;
+
+        return $this;
+    }
+
+    /**
+     * Get diagnosticosid
+     *
+     * @return \Krytek\DataBundle\Entity\Diagnosticos
+     */
+    public function getDiagnosticosid()
+    {
+        return $this->diagnosticosid;
     }
 }

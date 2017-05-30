@@ -188,16 +188,17 @@ $(document).ready(function () {
     })
 
     function fillSelect(data) {
+
         $.ajax({
             type: 'get',
-            url: "{{path('select_motivo')}}",
+            url: "{{path('select_motivos')}}",
             data: data,
             success: function (data) {
                 var motivos = data.motivo;
                 var idmotivos = data.idmotivo;
 
                 for (i in motivos) {
-                    $motivo_selector.append('<div class="radio"><input type="radio" name="krytek_databundle_motivotransfusion[Motivo]" value="' + idmotivos[i] + '">' + motivos[i] + '</input></div>');
+                    $motivo_selector.append('<div class="radio"><input type="radio" name="motivotransfusion[Motivo]" value="' + idmotivos[i] + '">' + motivos[i] + '</input></div>');
                 }
             }
 
@@ -249,52 +250,7 @@ $(document).ready(function () {
 
 
     //Validation of the patitient's CI
-   /* $('.paciente_ci').focusout(function () {
 
-        var ci = $(this).val().toString();
-        var mes = ci.charAt(2) + ci.charAt(3);
-        var dia = ci.charAt(4) + ci.charAt(5);
-
-
-
-        if ((mes > 12 || dia > 31)|| (mes < 01 || dia <01 )) {
-            if ($('#month') && !meses) {
-                var ver = $('<div id="month" class="my-error">El número del mes tiene que estar entre 01 y 12, y el de los días entre 01 y 31. Por Favor rectifique.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
-                meses = true;
-            }
-        } else {
-            $('#month').slideUp('slow', function () {
-                $('#month').remove();
-            });
-            meses = false;
-        }
-
-        if (mes == 02 && dia > 28) {
-            if ($('#diasF') && !diasF) {
-                var ver = $('<div id="diasF" class="my-error">El número de CI insertado no es válido para el mes de Febrero, por favor rectifique los días.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
-                diasF = true;
-            }
-        } else {
-            $('#diasF').slideUp('slow', function () {
-                $('#diasF').remove();
-            });
-            diasF = false;
-        }
-
-        if ((mes == 04 || mes == 06 || mes == 09 || mes == 11) && dia > 30) {
-            if ($('#dias') && !dias) {
-                var ver = $('<div id="dias" class="my-error">Los meses de Abril, Junio, Septiembre y Noviembre solo tienen 30 días, por favor rectifique.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
-                dias = true;
-            }
-        } else {
-            $('#dias').slideUp('slow', function () {
-                $('#dias').remove();
-            });
-            dias = false;
-        }
-
-
-    })*/
 
 
     //Validating dates
