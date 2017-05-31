@@ -18,18 +18,10 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+
+    {% include 'validator.html.twig' %}
 {% endblock %}
 
 {% block javascripts %}
-    <script type="text/javascript">
-        var doc;
-        doc = $(document);
-        doc.ready(inicio());
-        function inicio() {
-            var fecha = $("#krytek_databundle_bolsa_fechaDonacion");
-            fecha.datepicker();
-            var fecha = $("#krytek_databundle_bolsa_fechaVencimiento");
-            fecha.datepicker();
-        }
-    </script>
+
 {% endblock %}

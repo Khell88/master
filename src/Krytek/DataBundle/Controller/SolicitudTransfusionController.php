@@ -190,7 +190,7 @@ class SolicitudTransfusionController extends Controller
     public function editAction(Request $request, SolicitudTransfusion $solicitudTransfusion)
     {
         $deleteForm = $this->createDeleteForm($solicitudTransfusion);
-        $editForm = $this->createForm('Krytek\DataBundle\Form\SolicitudTransfusionType', $solicitudTransfusion);
+        $editForm = $this->createForm('Krytek\DataBundle\Form\SolicitudEditType', $solicitudTransfusion);
         $editForm->handleRequest($request);
 
         $paciente = $this->getDoctrine()->getManager()->getRepository('KrytekDataBundle:Paciente')->find($solicitudTransfusion->getPacienteid());

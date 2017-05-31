@@ -71,14 +71,15 @@ class SolicitudPacienteType extends AbstractType
                 'required' => false,
                 'label' => false
             ))
-            ->add('fecha', DateTimeType::class, array(
+            ->add('fecha', DateType::class, array(
                 'attr'=>array(
                     'class'=>'date date_prim'
                 ),
                 'widget'=>'single_text',
                 'html5'=>false,
                 'input'=>'datetime',
-                'label'=>false
+                'label'=>false,
+                'format'=>'MM/dd/yyyy',
             ))
             ->add('hora', TimeType::class, array(
                 'widget' => 'choice',
@@ -165,14 +166,15 @@ class SolicitudPacienteType extends AbstractType
                 'label' => false
 
             ))
-            ->add('fechaARealizar', DateTimeType::class, array(
+            ->add('fechaARealizar', DateType::class, array(
                 'attr'=>array(
                     'class'=>'date date_sec'
                 ),
                 'widget'=>'single_text',
                 'html5'=>false,
                 'input'=>'datetime',
-                'label'=>false
+                'label'=>false,
+                'format'=>'MM/dd/yyyy',
 
             ))
             ->add('horaARealizar', TimeType::class, array(

@@ -1,108 +1,131 @@
 {% extends 'base.html.twig' %}
 
+
 {% block body %}
+    <input id="module" type="hidden" value="edit_solicitud">
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h1>Solicitudtransfusion creation</h1>
+                <a href="{{ path('solicitudtransfusion_index') }}" class="btn btn-info">Back to the list</a>
+            </div>
 
-    <input id="module" type="hidden" value="solicitud_edit">
-    <h1>Solicitudtransfusion edit</h1>
+            <div class="panel-body">
+                {{ form_start(edit_form) }}
+                <section class="col-xs-12 col-sm-4 col-md-4">
+                    <h3>Datos del paciente:</h3>
+                    <div>
+
+                        <div>CI: {{ paciente.ciPaciente }}</div>
+
+                        <div>Nombre: {{ paciente.nombre }}</div>
+
+                        <div>Apellidos: {{ paciente.apellidos }}</div>
+
+                        <div>Edad: {{ paciente.edad }}</div>
+
+                        <div>Sexo: {{ paciente.sexo }}</div>
+
+                        <div>Historia Clínica: {{ paciente.idHc }}</div>
+
+                        <div>Peso (kgs): {{ paciente.peso }}</div>
+
+                        <div>Grupo Sanguíneo: {{ paciente.tipoSangre }}</div>
+
+                        <div>Factor Rh: {{ paciente.rh }}</div>
+
+                        <div>Es Lactante: {{ paciente.lactante }}</div>
+
+                        <div>
+                            <input id="embarazos" type="hidden" value="{{ paciente.embarazos }}">
+                            Embarazos Previos: {{ paciente.embarazos }}</div>
+
+                        <div>Abortos Previos: {{ paciente.abortos }}</div>
+
+                        <div>
+                            {{ form_label(edit_form.incompatibilidadMF, 'Incompatibilidad Materno-Fetal') }}
+                            {{ form_row(edit_form.incompatibilidadMF) }}
+                        </div>
+                    </div>
+                </section>
+                {#{{ form_row(edit_form.Datos) }}#}
+
+                <section class="col-xs-12 col-sm-4 col-md-8">
+                    <h3>Datos de la solicitud:</h3>
+
+                    <div class="col-md-4">
+                        <div>
+                            {{ form_label(edit_form.ComponenteATransfundir, 'Componente a transfundir') }}
+                            {{ form_row(edit_form.ComponenteATransfundir) }}
+                        </div>
+                        <div>
+                            {{ form_label(edit_form.Diagnosticos, 'Diagnóstico') }}
+                            {{ form_row(edit_form.Diagnosticos) }}
+                        </div>
+                        <div>
+                            {{ form_label(edit_form.Motivos, 'Motivo de transfusión') }}
+                            {{ form_row(edit_form.Motivos) }}
+                        </div>
+                        {{ form_label(edit_form.tipoCirugia, 'En caso de cirugía (tipo de intervención)') }}
+                        {{ form_row(edit_form.tipoCirugia) }}
+                        {{ form_label(edit_form.fechaARealizar, 'Fecha a Realizar transfusión') }}
+                        {{ form_row(edit_form.fechaARealizar) }}
+                        {{ form_label(edit_form.horaARealizar, 'Hora a realizar') }}
+                        {{ form_row(edit_form.horaARealizar) }}
+                        {{ form_label(edit_form.serviciosid, 'Servicio que solicita') }}
+                        {{ form_row(edit_form.serviciosid) }}
+                        {{ form_label(edit_form.sala, 'Sala') }}
+                        {{ form_row(edit_form.sala) }}
+                        {{ form_label(edit_form.cama, 'Cama') }}
+                        {{ form_row(edit_form.cama) }}
+                        {{ form_label(edit_form.urgencia, 'Urgencia') }}
+                        {{ form_row(edit_form.urgencia) }}
+                    </div>
 
 
-    {{ form_start(edit_form) }}
-    <section class="three-in-row">
-        <h3>Datos del paciente:</h3>
-        <div>{{ form_label(edit_form.pcnt.ciPaciente, 'CI Paciente') }}
-            {{ form_row(edit_form.pcnt.ciPaciente) }}
-            {{ form_label(edit_form.pcnt.nombre, 'Nombre') }}
-            {{ form_row(edit_form.pcnt.nombre) }}
-            {{ form_label(edit_form.pcnt.apellidos, 'Apellidos') }}
-            {{ form_row(edit_form.pcnt.apellidos) }}
-            {{ form_label(edit_form.pcnt.edad, 'Edad') }}
-            {{ form_row(edit_form.pcnt.edad) }}
-            {{ form_label(edit_form.pcnt.sexo, 'Sexo') }}
-            {{ form_row(edit_form.pcnt.sexo) }}
-            {{ form_label(edit_form.pcnt.idHc, 'No. Historia Clinica') }}
-            {{ form_row(edit_form.pcnt.idHc) }}
-            {{ form_label(edit_form.pcnt.peso, 'Peso en Kgs (pacientes pedíatricos)') }}
-            {{ form_row(edit_form.pcnt.peso) }}
-            {{ form_label(edit_form.pcnt.tipoSangre, 'Grupo Sanguíneo') }}
-            {{ form_row(edit_form.pcnt.tipoSangre) }}
-            {{ form_label(edit_form.pcnt.rh, 'Factor Rh') }}
-            {{ form_row(edit_form.pcnt.rh) }}
-            {{ form_label(edit_form.pcnt.lactante, 'Es Lactante') }}
-            {{ form_row(edit_form.pcnt.lactante) }}
-            {{ form_label(edit_form.pcnt.embarazos, 'Embarazos previos') }}
-            {{ form_row(edit_form.pcnt.embarazos) }}
-            {{ form_label(edit_form.pcnt.abortos, 'Abortos previos') }}
-            {{ form_row(edit_form.pcnt.abortos) }}</div>
-    </section>
-    {#{{ form_row(edit_form.Datos) }}#}
-    <section class="three-in-row solicitud">
-        <h3>Datos de la solicitud:</h3>
-        <div>
-            {{ form_label(edit_form.ComponenteATransfundir, 'Componente a transfundir') }}
-            {{ form_row(edit_form.ComponenteATransfundir) }}
+                    <div class="col-md-8 container">
+                        <div class="col-md-12">
+                            <h5 class="my-h5">Niveles de laboratorio:</h5>
+                            <div class="col-md-3">{{ form_label(edit_form.hb, 'Hb') }}
+                                {{ form_row(edit_form.hb) }}</div>
+                            <div class="col-md-3">{{ form_label(edit_form.tp, 'TP') }}
+                                {{ form_row(edit_form.tp) }}</div>
+                            <div class="col-md-3">{{ form_label(edit_form.tptk, 'TPTK') }}
+                                {{ form_row(edit_form.tptk) }}</div>
+                            <div class="col-md-3">{{ form_label(edit_form.plaquetas, 'Plaquetas') }}
+                                {{ form_row(edit_form.plaquetas) }}</div>
+                        </div>
+
+                        <div class="col-md-12">{{ form_label(edit_form.fecha, 'Fecha de solicitud') }}
+                            {{ form_row(edit_form.fecha) }}
+                            {{ form_label(edit_form.hora, 'Hora de solicitud') }}
+                            {{ form_row(edit_form.hora) }}
+                            {{ form_label(edit_form.objetivo, 'Objetivo de Transfusión') }}
+                            {{ form_row(edit_form.objetivo) }}
+                            {{ form_label(edit_form.consentimiento, 'Consentimiento') }}
+                            {{ form_row(edit_form.consentimiento) }}
+                        </div>
+
+
+                        <div class="col-md-12"><label> Médico que solicita: </label>{{ app.user.nombre }}</div>
+                        <div class="col-md-12"><label>No. Identificacion: </label>{{ app.user.noidentificacion }}</div>
+
+
+                    </div>
+                    <div class="my-right col-md-offset-1">
+                        <input type="submit" value="Editar" class="btn btn-success"/>
+                        {{ form_end(edit_form) }}
+                    </div>
+                </section>
+
+            </div>
+
         </div>
-        <div>
-            {{ form_label(edit_form.Diagnosticos, 'Diagnóstico') }}
-            {{ form_row(edit_form.Diagnosticos) }}
-        </div>
-        <div>
-            {{ form_label(edit_form.Motivos, 'Motivo de transfusión') }}
-            {{ form_row(edit_form.Motivos) }}
-        </div>
-        {{ form_label(edit_form.tipoCirugia, 'En caso de cirugía (tipo de intervención)') }}
-        {{ form_row(edit_form.tipoCirugia) }}
-        {{ form_label(edit_form.fechaARealizar, 'Fecha a Realizar transfusión') }}
-        {{ form_row(edit_form.fechaARealizar) }}
-        {{ form_label(edit_form.horaARealizar, 'Hora a realizar') }}
-        {{ form_row(edit_form.horaARealizar) }}
-        {{ form_label(edit_form.serviciosid, 'Servicio que solicita') }}
-        {{ form_row(edit_form.serviciosid) }}
-        {{ form_label(edit_form.sala, 'Sala') }}
-        {{ form_row(edit_form.sala) }}
-        {{ form_label(edit_form.cama, 'Cama') }}
-        {{ form_row(edit_form.cama) }}
-        {{ form_label(edit_form.urgencia, 'Urgencia') }}
-        {{ form_row(edit_form.urgencia) }}
-        <div>
-            <h4>Niveles de laboratorio:</h4>
-            {{ form_label(edit_form.hb, 'Hb') }}
-            {{ form_row(edit_form.hb) }}
-            {{ form_label(edit_form.tp, 'TP') }}
-            {{ form_row(edit_form.tp) }}
-            {{ form_label(edit_form.tptk, 'TPTK') }}
-            {{ form_row(edit_form.tptk) }}
-            {{ form_label(edit_form.plaquetas, 'Plaquetas') }}
-            {{ form_row(edit_form.plaquetas) }}
-        </div>
-        {{ form_label(edit_form.fecha, 'Fecha de solicitud') }}
-        {{ form_row(edit_form.fecha) }}
-        {{ form_label(edit_form.hora, 'Hora de solicitud') }}
-        {{ form_row(edit_form.hora) }}
-        {{ form_label(edit_form.objetivo, 'Objetivo de Transfusión') }}
-        {{ form_row(edit_form.objetivo) }}
-        {{ form_label(edit_form.consentimiento, 'Consentimiento') }}
-        {{ form_row(edit_form.consentimiento) }}
 
-        <div><label> Médico que solicita: </label>{{ app.user.nombre }}</div>
-        <div><label>No. Identificacion: </label>{{ app.user.noidentificacion }}</div>
+    </div>
 
-        <input type="submit" value="Create" class="btn btn-success"/>
-        {{ form_end(edit_form) }}
-
-    </section>
-    <section class="three-in-row">
-        <h3>Notas:</h3>
-    </section>
-
-    <ul>
-        <li>
-            <a href="{{ path('solicitudtransfusion_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
     {% include 'validator.html.twig' %}
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/myJS/autoFill.js') }}"></script>
 {% endblock %}

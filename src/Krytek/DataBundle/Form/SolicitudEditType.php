@@ -1,6 +1,13 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: NOS
+ * Date: 5/30/2017
+ * Time: 09:29
+ */
 
 namespace Krytek\DataBundle\Form;
+
 
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -14,20 +21,15 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\DateTime;
 
-class SolicitudTransfusionType extends AbstractType
+
+class SolicitudEditType extends AbstractType
 {
-    /**
-     * {@inheritdoc}
-     */
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
 
         $builder
-            ->add('pcnt', PacienteType::class, array(
-                'mapped' => false,
-                'label' => 'Datos Paciente:'
-            ))
             ->add('ComponenteATransfundir', ChoiceType::class, array(
                 'choices' => array(
                     'Sangre Total' => 'Sangre Total',
@@ -157,9 +159,13 @@ class SolicitudTransfusionType extends AbstractType
             ->add('incompatibilidadMF', ChoiceType::class, array(
                 'choices' => array('Si' => 'SI', 'No' => 'NO'),
                 'label' => 'Incompatibilidad materno fetal',
+                'label_attr'=>array(
+                    'class'=>'incompatiblepac
+                    '
+                ),
                 'expanded' => true,
                 'attr' => array(
-                    'class' => 'incompatible'
+                    'class' => 'incompatiblepac'
                 ),
                 'required' => false,
                 'placeholder' => null,
@@ -200,7 +206,8 @@ class SolicitudTransfusionType extends AbstractType
         $resolver->setDefaults(array(
             'attr' => array(
                 'id' => 'solicitud'
-            )
+            ),
+
         ));
     }
 
@@ -211,6 +218,4 @@ class SolicitudTransfusionType extends AbstractType
     {
         return 'solicitud';
     }
-
-
 }

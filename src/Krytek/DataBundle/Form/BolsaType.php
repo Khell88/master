@@ -53,6 +53,10 @@ class BolsaType extends AbstractType
                 'widget' => 'single_text',
                 'input' => 'datetime',
                 'label' => false,
+                'format'=>'MM/dd/yyyy',
+
+
+
 
             ))
             ->add('fechaVencimiento', DateType::class, array(
@@ -62,7 +66,8 @@ class BolsaType extends AbstractType
                 'html5' => false,
                 'widget' => 'single_text',
                 'input' => 'datetime',
-                'label' => false
+                'label' => false,
+                'format'=>'MM/dd/yyyy',
 
 
             ))
@@ -104,7 +109,7 @@ class BolsaType extends AbstractType
         $resolver->setDefaults(array(
             'attr' => array(
                 'id' => 'bolsa'
-            )
+            ),
         ));
     }
 
