@@ -1,0 +1,17 @@
+<header>
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+            <p class="title-mine"> Sistema Integral de Control de Transfusiones</p>
+        </div>
+        <div class="col-xs-12 col-md-4 ">
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <p class="user-info"> Bienvenido {{ app.user.nombre }} |
+                    <a class="user-logout" href={{ path('logout') }}>Salir</a>
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</header>
+
+
+

@@ -1412,7 +1412,9 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
-    background-color: #fff;
+    background-color: #f9f9f9;
+
+
 }
 
 input,
@@ -3188,7 +3190,7 @@ input[type="search"] {
 
 input[type="radio"],
 input[type="checkbox"] {
-    margin: 4px 0 0;
+    margin: -2px 2px 0;
     margin-top: 1px \9;
     line-height: normal;
 }

@@ -150,7 +150,7 @@ class PacienteController extends Controller
 
     /**
      * Shows the data for existing patient
-     * @Route("/{ci}", name="show_patient", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
+     * @Route("/show/{ci}", name="show_patient", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
      *
      */
     function showPatient(Request $request)

@@ -2,17 +2,14 @@
 
 namespace Krytek\DataBundle\Form;
 
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 class SolicitudTransfusionType extends AbstractType
 {
@@ -103,7 +100,8 @@ class SolicitudTransfusionType extends AbstractType
             ))
             ->add('cama', TextType::class, array(
                 'attr' => array(
-                    'class' => 'only_number'
+                    'class' => 'only_number',
+                    'maxlength' => 2,
                 ),
                 'label' => false
             ))
@@ -115,25 +113,29 @@ class SolicitudTransfusionType extends AbstractType
             ))
             ->add('hb', TextType::class, array(
                 'attr' => array(
-                    'class' => 'only_number'
+                    'class' => 'only_number',
+                    'maxlength' => 6,
                 ),
                 'label' => false
             ))
             ->add('tp', TextType::class, array(
                 'attr' => array(
-                    'class' => 'only_number'
+                    'class' => 'only_number',
+                    'maxlength' => 6,
                 ),
                 'label' => false
             ))
             ->add('tptk', TextType::class, array(
                 'attr' => array(
-                    'class' => 'only_number'
+                    'class' => 'only_number',
+                    'maxlength' => 6,
                 ),
                 'label' => false
             ))
             ->add('plaquetas', TextType::class, array(
                 'attr' => array(
-                    'class' => 'only_number'
+                    'class' => 'only_number',
+                    'maxlength' => 6,
                 ),
                 'label' => false
             ))

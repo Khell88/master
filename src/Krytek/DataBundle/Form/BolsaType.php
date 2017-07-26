@@ -21,7 +21,7 @@ class BolsaType extends AbstractType
         $builder
             ->add('codigo', TextType::class, array(
                 'attr' => array(
-                    'class' => 'only_number'
+                    'class' => 'only_number my-text'
                 ),
                 'label' => false
             ))

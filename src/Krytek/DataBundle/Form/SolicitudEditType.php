@@ -105,7 +105,9 @@ class SolicitudEditType extends AbstractType
             ))
             ->add('cama', TextType::class, array(
                 'attr' => array(
-                    'class' => 'only_number'
+                    'class' => 'only_number',
+                    'maxlength' => 2,
+
                 ),
                 'label' => false
             ))
@@ -117,25 +119,29 @@ class SolicitudEditType extends AbstractType
             ))
             ->add('hb', TextType::class, array(
                 'attr' => array(
-                    'class' => 'only_number'
+                    'class' => 'only_number',
+                    'maxlength' => 6,
                 ),
                 'label' => false
             ))
             ->add('tp', TextType::class, array(
                 'attr' => array(
-                    'class' => 'only_number'
+                    'class' => 'only_number',
+                    'maxlength' => 6,
                 ),
                 'label' => false
             ))
             ->add('tptk', TextType::class, array(
                 'attr' => array(
-                    'class' => 'only_number'
+                    'class' => 'only_number',
+                    'maxlength' => 6,
                 ),
                 'label' => false
             ))
             ->add('plaquetas', TextType::class, array(
                 'attr' => array(
-                    'class' => 'only_number'
+                    'class' => 'only_number',
+                    'maxlength' => 6,
                 ),
                 'label' => false
             ))

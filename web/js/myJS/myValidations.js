@@ -12,6 +12,7 @@ $(document).ready(function () {
     var diasF = false;
     var dm = false;
     var dd = false;
+    var edit_motiv = false;
     var form_name;
     var mensaje;
 
@@ -23,10 +24,10 @@ $(document).ready(function () {
     else {
         if ($('form').attr('id') === 'bolsa') {
             form_name = $('form').attr('id');
-            mensaje = ['produccion', 'vencimiento'];
+            mensaje = ['produccion', 'de vencimiento'];
         } else {
             form_name = 'solicitud_pcnt';
-            mensaje = ['solicitud', 'realizar'];
+            mensaje = ['solicitud de la transfusión', 'a realizar la transfusión'];
         }
     }
 
@@ -135,6 +136,8 @@ $(document).ready(function () {
                 if ($diagnostico_selector.val() === '') {
                     $motivo_selector.empty();
                     $diagnostico_selector.show();
+                    $diagnostico_selector.attr('aria-required','true');
+                    $diagnostico_selector.attr('required', 'required');
                 } else {
                     $motivo_selector.empty();
                     $diagnostico_selector.show();
@@ -144,15 +147,20 @@ $(document).ready(function () {
                     };
 
                     fillSelect(data);
+                    $diagnostico_selector.attr('aria-required','true');
+                    $diagnostico_selector.attr('required', 'required');
                     $motivo_selector.show();
                     $motivo_selector.attr('required', 'required');
                 }
-
-
             }
             else {
                 $motivo_selector.empty();
                 $diagnostico_selector.hide();
+                $diagnostico_selector.val('');
+                $diagnostico_selector.removeAttr('required', 'required');
+                $('#solicitud_Diagnosticos-error').remove();
+
+
                 var data = {
                     comp: $(this).val()
                 };
@@ -185,7 +193,8 @@ $(document).ready(function () {
             $motivo_selector.empty();
         }
 
-    })
+
+    });
 
     function fillSelect(data) {
 
@@ -198,7 +207,13 @@ $(document).ready(function () {
                 var idmotivos = data.idmotivo;
 
                 for (i in motivos) {
-                    $motivo_selector.append('<div class="radio"><input type="radio" name="motivotransfusion[Motivo]" value="' + idmotivos[i] + '">' + motivos[i] + '</input></div>');
+                    $motivo_selector.append('<div><input id="radio_' + idmotivos[i] + '" type="radio" name="motivotransfusion[Motivo]" value="' + idmotivos[i] + '" required="required" aria-required="true" class="radio-inline">' + motivos[i] + '</input></div>');
+                    if ($('#module').val() == 'edit_solicitud' && $('#motivo').val() == idmotivos[i]) {
+                        if (!edit_motiv) {
+                            $('#radio_' + idmotivos[i] + '').attr('checked', true);
+                            edit_motiv = true;
+                        }
+                    }
                 }
             }
 
@@ -212,21 +227,46 @@ $(document).ready(function () {
 
 
             'paciente[peso]': {
-                range: [1.00, 400],
-
+                range: [1.00, 400]
             },
 
             'paciente[edad]': {
-                range: [1, 150],
+                range: [1, 150]
+            },
+
+            'solicitud[hb]': {
+                range: [1.00, 400]
+            },
+            'solicitud[tp]': {
+                range: [1.00, 400]
+            },
+            'solicitud[tptk]': {
+                range: [1.00, 400]
+            },
+            'solicitud[plaquetas]': {
+                range: [1.00, 400]
             }
         },
         messages: {
-            peso: {
+            'paciente[peso]': {
                 range: "Solo se admiten números decimales entre 1 y 400."
             },
-            edad: {
+            'paciente[edad]': {
                 range: "Solo se admiten números enteros entre 1 y 150."
+            },
+            'solicitud[hb]': {
+                range: "Solo se admiten números decimales entre 1 y 400."
+            },
+            'solicitud[tp]': {
+                range: "Solo se admiten números decimales entre 1 y 400."
+            },
+            'solicitud[tptk]': {
+                range: "Solo se admiten números decimales entre 1 y 400."
+            },
+            'solicitd[plaquetas]': {
+                range: "Solo se admiten números decimales entre 1 y 400."
             }
+
         },
 
         errorElement: "em",
@@ -266,7 +306,7 @@ $(document).ready(function () {
 
             if (month > month1) {
                 if ($('#dmonth') && !dm) {
-                    var ver = $('<div id="dmonth" class="my-error">El mes a ' + mensaje[1] + ' la transfusión no puede ser anterior al de la ' + mensaje[0] + '. Por Favor rectifique.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
+                    var ver = $('<div id="dmonth" class="my-error">El mes a ' + mensaje[1] + ' no puede ser anterior al de la ' + mensaje[0] + '. Por Favor rectifique.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
                     dm = true;
                 }
             } else {
@@ -278,7 +318,7 @@ $(document).ready(function () {
 
             if (month == month1 && day > day1) {
                 if ($('#dday') && !dd) {
-                    var ver = $('<div id="dday" class="my-error">El día a ' + mensaje[1] + ' la transfusión no puede ser anterior al que se realiza la ' + mensaje[0] + '. Por Favor rectifique.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
+                    var ver = $('<div id="dday" class="my-error">El día ' + mensaje[1] + ' no puede ser anterior al que se realiza la ' + mensaje[0] + '. Por Favor rectifique.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
                     dd = true;
                 }
 
@@ -315,7 +355,7 @@ $(document).ready(function () {
 
             if (month == month1 && day < day1) {
                 if ($('#dday') && !dd) {
-                    var ver = $('<div id="dday" class="my-error">El día de la ' + mensaje[0] + ' no puede ser posterior al día a ' + mensaje[1] + ' la transfusión. Por Favor rectifique.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
+                    var ver = $('<div id="dday" class="my-error">El día de la ' + mensaje[0] + ' no puede ser posterior al día ' + mensaje[1] + ' . Por Favor rectifique.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
                     dd = true;
                 }
 

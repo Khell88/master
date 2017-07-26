@@ -5,7 +5,7 @@
     width: 50%;
     padding-left: 10px;
     border: double;
-    border-color: #0000F0;
+    border-color: #337ab7;
 
 }
 
@@ -30,6 +30,7 @@
 }
 .texto{
     resize: none;
+    min-height: 100px;
 
 }
 
@@ -55,6 +56,7 @@
 .extras{
     float: left;
     margin-right: 5px;
+    padding-top: 5px;
 }
 
 .my-btn{
@@ -68,7 +70,7 @@
 
 .datos-paciente-sol{
     font-size: 150%;
-    background-color: #286090;
+    background-color: #444444;
     color: white;
 }
 
@@ -78,36 +80,165 @@
     margin: 0;
 }
 
-.logged-user{
-    float: right;
-    background-color: #286090;
 
-}
 .my-h4{
     font-weight: bold ;
 }
-.p{
+
+.header-p {
     font-size: 108%;
+    font-weight: bold;
+    color: white;
 }
-.user-info,.user-logout{
-    color:white;
-}
-.user-logout{
-    margin-left: 10px;
-}
-.user-logout:hover{
-    color: wheat;
-}
-.my-right{
-    float: right;
-}
+
 .only_number{
    max-width: 100%;
 }
 .my-h5{
     align-content: center;
 }
-.text
+
+.th-mine {
+    font-style: normal;
+    font-weight: bolder;
+
+    width: 25%;
+
+}
+
+.td-mine {
+    width: auto;
+}
+
+.my-table {
+    width: 50%;
+    max-width: 80%;
+    min-width: 40%;
+    margin-bottom: 20px;
+
+}
+
+/*--- New Styles --*/
+
+#logo {
+    margin: 15px;
+    float: left;
+    width: 120px;
+    height: 60px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+header {
+    background-color: #337ab7;
+    width: 100%;
+    height: auto;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+footer {
+    background-color: #337ab7;
+    width: 100%;
+    height: auto;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-align: center;
+}
+
+.header-inn {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.user-info {
+    color: white;
+    font-weight: bold;
+    font-size: 130%;
+    padding: 15px 5px 0px 5px;
+
+}
+
+.user-logout {
+    color: white;
+    font-weight: bold;
+
+}
+
+.user-logout:hover {
+    color: wheat;
+}
+
+.title-mine {
+    font-size: 200%;
+    font-weight: bold;
+    color: white;
+    padding: 5px 5px 0px 10px;
+}
+
+.my-menu {
+    padding: 5px 0px 5px 10px;
+}
+
+.panel-heading.datos-paciente-sol {
+    font-weight: 200;
+}
+
+.copyright {
+    font-weight: bold;
+    font-size: 95%;
+}
+
+.notes {
+    font-size: 120%;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.my-panels {
+    min-height: 600px;
+    height: auto;
+}
+
+.login {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0px auto;
+}
+
+.login-body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+#login-sha {
+    max-width: 340px;
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    border-radius: 6%;
+}
+
+.submit-div {
+    padding-top: 10px;
+}
+
+.footer{
+    color: white;
+    font-weight: bold;
+    font-size: 130%;
+    padding: 5px 0px 5px 0px;
+}
+
+.form-title{
+    margin-left: 15px;
+}
+
+
+
+
+
+
 
 
 

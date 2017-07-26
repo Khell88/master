@@ -3,12 +3,10 @@
 
 {% block body %}
     <input id="module" type="hidden" value="solicitud">
-    <div class="container">
-
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h1>Solicitudtransfusion creation</h1>
-                <a href="{{ path('solicitudtransfusion_index') }}" class="btn btn-info">Back to the list</a>
+                <h1>Agregar Solicitud de Transfusión</h1>
+                <a href="{{ path('solicitudtransfusion_index') }}" class="btn btn-info">Volver al Listado</a>
             </div>
 
 
@@ -111,7 +109,7 @@
 
                     </div>
                     <div class="my-right col-md-offset-1">
-                        <input type="submit" value="Create" class="btn btn-success"/>
+                        <input type="submit" value="Agregar" class="btn btn-success"/>
                         {{ form_end(form) }}
                     </div>
                 </section>
@@ -121,6 +119,6 @@
 
         </div>
 
-    </div>
-    {% include 'validator.html.twig' %}
+
+    {% include 'all-js.html.twig' %}
 {% endblock %}

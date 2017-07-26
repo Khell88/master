@@ -3,6 +3,11 @@
 
 {% block body %}
     <input id="module" type="hidden" value="edit_solicitud">
+    <input id="componente" type="hidden" value="{{ solicitudTransfusion.motivoTransfusionid.componente }}">
+   {% if solicitudTransfusion.diagnosticosid != null %}
+    <input id="diag" type="hidden" value="{{ solicitudTransfusion.diagnosticosid.id }}">
+    {% endif %}
+    <input id="motivo" type="hidden" value="{{ solicitudTransfusion.motivoTransfusionid.id }}">
     <div class="container">
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -124,7 +129,7 @@
 
     </div>
 
-    {% include 'validator.html.twig' %}
+    {% include 'all-js.html.twig' %}
 {% endblock %}
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('js/myJS/autoFill.js') }}"></script>

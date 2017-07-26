@@ -196,16 +196,35 @@ class SolicitudTransfusionController extends Controller
         $paciente = $this->getDoctrine()->getManager()->getRepository('KrytekDataBundle:Paciente')->find($solicitudTransfusion->getPacienteid());
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('solicitudtransfusion_edit', array('id' => $solicitudTransfusion->getId()));
+            $em  = $this->getDoctrine()->getManager();
+            $idMotivo = $request->get('motivotransfusion')['Motivo'];
+            $motivo = $em->getRepository('KrytekDataBundle:MotivoTransfusion')->find($idMotivo);
+
+            $idDiagnotico = $request->get('solicitud')['Diagnosticos'];
+
+            if ($idDiagnotico != '') {
+                $diagnotico = $em->getRepository('KrytekDataBundle:Diagnosticos')->find($idDiagnotico);
+                $solicitudTransfusion->setDiagnosticosid($diagnotico);
+            }else{
+                $solicitudTransfusion->setDiagnosticosid(null);
+            }
+            $solicitudTransfusion->setMotivoTransfusionid($motivo);
+
+            $em->persist($solicitudTransfusion);
+            $em->flush($solicitudTransfusion);
+
+
+
+
+            return $this->redirectToRoute('solicitudtransfusion_index');
         }
 
         return $this->render('solicitudtransfusion/edit.html.twig', array(
             'solicitudTransfusion' => $solicitudTransfusion,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-            'paciente'=>$paciente
+            'paciente'=>$paciente,
         ));
     }
 

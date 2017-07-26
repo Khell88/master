@@ -1,80 +1,98 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Solicitudtransfusion</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ solicitudTransfusion.id }}</td>
-            </tr>
-            <tr>
-                <th>Fecha</th>
-                <td>{% if solicitudTransfusion.fecha %}{{ solicitudTransfusion.fecha|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Hora</th>
-                <td>{% if solicitudTransfusion.hora %}{{ solicitudTransfusion.hora|date('H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Sala</th>
-                <td>{{ solicitudTransfusion.sala }}</td>
-            </tr>
-            <tr>
-                <th>Cama</th>
-                <td>{{ solicitudTransfusion.cama }}</td>
-            </tr>
-            <tr>
-                <th>Urgencia</th>
-                <td>{{ solicitudTransfusion.urgencia }}</td>
-            </tr>
-            <tr>
-                <th>Hb</th>
-                <td>{{ solicitudTransfusion.hb }}</td>
-            </tr>
-            <tr>
-                <th>Tp</th>
-                <td>{{ solicitudTransfusion.tp }}</td>
-            </tr>
-            <tr>
-                <th>Tptk</th>
-                <td>{{ solicitudTransfusion.tptk }}</td>
-            </tr>
-            <tr>
-                <th>Plaquetas</th>
-                <td>{{ solicitudTransfusion.plaquetas }}</td>
-            </tr>
-            <tr>
-                <th>Consentimiento</th>
-                <td>{{ solicitudTransfusion.consentimiento }}</td>
-            </tr>
-            <tr>
-                <th>Incompatibilidadmf</th>
-                <td>{{ solicitudTransfusion.incompatibilidadMF }}</td>
-            </tr>
-            <tr>
-                <th>Fechaarealizar</th>
-                <td>{% if solicitudTransfusion.fechaARealizar %}{{ solicitudTransfusion.fechaARealizar|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Horaarealizar</th>
-                <td>{% if solicitudTransfusion.horaARealizar %}{{ solicitudTransfusion.horaARealizar|date('H:i:s') }}{% endif %}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>Datos de la solicitud de transfusión</h2>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-6">
+                    <h3 class="my-h4">Datos paciente</h3>
+                    <div class="datos-paciente">
+                        <div>Historia Clínica: {{ solicitudTransfusion.pacienteid.idHc }}</div>
+                        <div>Carnet de Identidad: {{ solicitudTransfusion.pacienteid.ciPaciente }}</div>
+                        <div>Apellidos: {{ solicitudTransfusion.pacienteid.apellidos }} </div>
+                        <div>Nombre: {{ solicitudTransfusion.pacienteid.nombre }}</div>
+                        <div>Edad: {{ solicitudTransfusion.pacienteid.edad }}
+                            Sexo: {{ solicitudTransfusion.pacienteid.sexo }}</div>
+                        <div>Grupo sanguíneo{{ solicitudTransfusion.pacienteid.tipoSangre }}</div>
+                        <div>Factor Rh: {{ solicitudTransfusion.pacienteid.rh }}</div>
+                        <div>Peso (Kgs): {{ solicitudTransfusion.pacienteid.peso }}</div>
+                        <div>Embarazos Previos: {{ solicitudTransfusion.pacienteid.embarazos }}</div>
+                        <div>Abortos Previos: {{ solicitudTransfusion.pacienteid.abortos }}</div>
+                        <div>Incompatibilidad Materno-Fetal: {{ solicitudTransfusion.incompatibilidadMF }}</div>
+                        <div>
 
-    <ul>
-        <li>
-            <a href="{{ path('solicitudtransfusion_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('solicitudtransfusion_edit', { 'id': solicitudTransfusion.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                            Niveles de pruebas de laboratorio:
+
+                            <div>
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <th class="th-mine">Hb</th>
+                                    <th class="th-mine">TP</th>
+                                    <th class="th-mine">TPTK</th>
+                                    <th class="th-mine">Plaquetas</th>
+                                    </thead>
+                                    <tbody class="td-mine">
+                                    <td>{{ solicitudTransfusion.hb }}</td>
+                                    <td>{{ solicitudTransfusion.tp }}</td>
+                                    <td>{{ solicitudTransfusion.tptk }}</td>
+                                    <td>{{ solicitudTransfusion.plaquetas }}</td>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <h3 class="my-h4">Datos solicitud</h3>
+                    <div class="datos-paciente">
+                        <div>Componente a Transfundir: {{ solicitudTransfusion.motivoTransfusionid.componente }}</div>
+                        {% if solicitudTransfusion.diagnosticosid != null %}
+                            <div>Diagnóstico: {{ solicitudTransfusion.diagnosticosid.descripcion }}</div>
+                        {% endif %}
+                        <div>Motivo de tranfusión: {{ solicitudTransfusion.motivoTransfusionid.descripcion }}</div>
+                        <div>Fecha a transfundir: {{ solicitudTransfusion.fechaARealizar|date('d-m-Y') }}</div>
+                        <div>Hora a transfundir: {{ solicitudTransfusion.hora|date('h:i') }}</div>
+                        <div>Servicio donde se transfundirá: {{ solicitudTransfusion.serviciosid.descripcion }}</div>
+                        <div>Sala: {{ solicitudTransfusion.sala|upper }}</div>
+                        <div>Cama: {{ solicitudTransfusion.cama }}</div>
+
+                        <div>Urgencia: {{ solicitudTransfusion.urgencia }}</div>
+                        <div>Fecha de confección: {{ solicitudTransfusion.fecha|date('d-m-Y') }}</div>
+                        <div>Hora de confección: {{ solicitudTransfusion.hora|date('h:i') }}</div>
+                        <div>Objetivo: {{ solicitudTransfusion.objetivo }}</div>
+                        <div>Consentimiento: {{ solicitudTransfusion.consentimiento }}</div>
+                        <div>
+                            <h3 class="my-h4">Datos del solicitante</h3>
+                            <div>Nombre: {{ solicitudTransfusion.usuarioid.nombre }} {{ solicitudTransfusion.usuarioid.apellidos }}</div>
+                            <div>No. Identificación: {{ solicitudTransfusion.usuarioid.noIdentificacion }}</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div>
+                <div class="my-right">
+                    <a href="{{ path('solicitudtransfusion_edit', { 'id': solicitudTransfusion.id }) }}" class="btn btn-danger">Edit</a>
+                </div>
+                <div>
+                    <a href="{{ path('solicitudtransfusion_index') }}" class="btn btn-primary">Back to the list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
 {% endblock %}

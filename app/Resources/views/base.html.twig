@@ -19,21 +19,28 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.css') }}">
 
 </head>
-<body>
+<body class="well">
 
-<div class="logged-user col-md-12">
-    <div>
-        {% include 'templates/menus.html.twig' %}
+
+<div class="container">
+    {% include 'templates/new-base.html.twig' %}
+</div>
+<div class="container">
+    <div class="row">
+        <div class="my-menu">
+            {% include 'templates/menus.html.twig' %}
+        </div>
     </div>
-   <div class="user-info"> {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-        Bienvenido
-        {{ app.user.nombre }}
-        <a class="user-logout" href={{ path('logout') }}>Salir</a>
-    {% endif %}</div>
 </div>
 
-{% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
 
+<div class="container my-panels">
+    {% block body %}{% endblock %}
+</div>
+
+{% block javascripts %}{% endblock %}
+<div class="container">
+    {% include 'templates/footer.html.twig' %}
+</div>
 </body>
 </html>

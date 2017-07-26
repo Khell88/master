@@ -2,8 +2,8 @@
 
 {% block body %}
 
-    <div class="col-md-10 col-md-offset-1">
-        <h1>Pacientes list</h1>
+    <div class="col-md-12">
+        <h1>Listado de Pacientes</h1>
 
         <table class="table table-responsive">
             <thead>
@@ -13,8 +13,8 @@
                 <th>Apellidos</th>
                 <th>Edad</th>
                 <th>Sexo</th>
-
-
+                <th>Grupo sanguíneo</th>
+                <th>Factor Rh</th>
                 <th>Acciones</th>
             </tr>
             </thead>
@@ -26,10 +26,12 @@
                     <td>{{ paciente.apellidos }}</td>
                     <td>{{ paciente.edad }}</td>
                     <td>{{ paciente.sexo }}</td>
+                    <td>{{ paciente.tipoSangre }}</td>
+                    <td>{{ paciente.rh }}</td>
                     <td>
                         <a href="{{ path('paciente_show', { 'id': paciente.id }) }}" class="btn btn-info">Datos</a>
                         <a href="{{ path('paciente_edit', { 'id': paciente.id }) }}" class="btn btn-warning">Editar</a>
-                        <a href="{{ path('paciente_delete', { 'id': paciente.id }) }}" class="btn btn-danger">Eliminar</a>
+
                     </td>
                 </tr>
             {% endfor %}

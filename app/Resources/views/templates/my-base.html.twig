@@ -1,0 +1,9 @@
+<header class="header-inn">
+    <a href="{{ path('inicio') }}"><img id="logo"  src="{{ asset('images/blood.jpg') }}" ></a>
+    <nav>
+
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            <p class="user-info">Bienvenido {{ app.user.nombre }}</p> <a class="user-logout" href={{ path('logout') }}>Salir</a>
+        {% endif %}
+    </nav>
+</header>
