@@ -1,1 +1,63 @@
 {% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <input type="hidden" id="module" value="home">
+    <div class="col-md-7 col-sm-7 col-xs-12 col-lg-7">
+
+        <div class="panel panel-primary my-panels">
+            <div class="panel-heading">
+                <h2 class="h2 form-title">Solicitudes pendientes</h2>
+            </div>
+            <div class="panel-body table-responsive">
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Nombre Paciente</th>
+                        <th class="my-hidden-620v my-hidden-1000v">Apellidos</th>
+                        <th class="my-hidden-620v my-hidden-1000v">Fecha de Solicitud</th>
+                        <th class="my-hidden-620v">Fecha a Transfundir</th>
+                        <th>Acción</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for solicitud in solicitudes %}
+                        <tr>
+                            <td>{{ solicitud.pacienteid.nombre }}</td>
+                            <td class="my-hidden-620v my-hidden-1000v">{{ solicitud.pacienteid.apellidos }}</td>
+                            <td class="my-hidden-620v my-hidden-1000v">{% if solicitud.fecha %}{{ solicitud.fecha |date('d-m-Y') }}{% endif %}</td>
+                            <td class="my-hidden-620v">{% if solicitud.fechaARealizar %}{{ solicitud.fechaARealizar |date('d-m-Y') }}{% endif %}</td>
+                            <td><a href="{{ path('solicitudtransfusion_show', { 'id': solicitud.id }) }}"
+                                   class="btn btn-primary">Datos</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 col-sm-5 col-xs-12 col-lg-5">
+        <div class="panel panel-primary my-panels">
+            <div class="panel-heading">
+                <h2 class="h2 form-title">Reacciones no procesadas</h2>
+            </div>
+            <div class="panel-body table-responsive">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('js/myJS/module-finder.js') }}"></script>
+    {% endblock %}
+
+{% endblock %}
+

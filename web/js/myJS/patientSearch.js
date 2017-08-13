@@ -32,10 +32,12 @@ $(document).ready(function () {
                 if ($('#month') && !meses) {
                     var ver = $('<div id="month" class="my-error">El número del mes tiene que estar entre 01 y 12, y el de los días entre 01 y 31. <br> Por Favor rectifique.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
                     meses = true;
+                    disableSumbit();
                 }
             } else {
                 $('#month').slideUp('slow', function () {
                     $('#month').remove();
+                    enableSubmit();
                 });
                 meses = false;
                 validM = true;
@@ -46,10 +48,12 @@ $(document).ready(function () {
                 if ($('#diasF') && !diasF) {
                     var ver = $('<div id="diasF" class="my-error">El número de CI insertado no es válido para el mes de Febrero. <br> Por favor rectifique los días.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
                     diasF = true;
+                    disableSumbit();
                 }
             } else {
                 $('#diasF').slideUp('slow', function () {
                     $('#diasF').remove();
+                    enableSubmit();
                 });
                 diasF = false;
                 validF = true;
@@ -60,10 +64,12 @@ $(document).ready(function () {
                 if ($('#dias') && !dias) {
                     var ver = $('<div id="dias" class="my-error">Los meses de Abril, Junio, Septiembre y Noviembre solo tienen 30 días.  <br> Por favor rectifique.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
                     dias = true;
+                    disableSumbit();
                 }
             } else {
                 $('#dias').slideUp('slow', function () {
                     $('#dias').remove();
+                    enableSubmit();
                 });
                 dias = false;
                 validD = true;
@@ -75,6 +81,8 @@ $(document).ready(function () {
                     if ($(this).val().length > 10) {
 
                         var pacienteCI = $(this).val();
+                        console.log(pacienteCI + 123)
+
 
                         if (!datos1) {
                             var data = {
@@ -96,21 +104,23 @@ $(document).ready(function () {
                     }
                 }
 
-
             }
 
         } else {
             if (pacienteCI == '') {
                 $('#dias').slideUp('slow', function () {
                     $('#dias').remove();
+                    enableSubmit();
                 });
                 dias = false;
                 $('#diasF').slideUp('slow', function () {
                     $('#diasF').remove();
+                    enableSubmit();
                 });
                 diasF = false;
                 $('#month').slideUp('slow', function () {
                     $('#month').remove();
+                    enableSubmit();
                 });
                 meses = false;
             }
@@ -124,6 +134,7 @@ $(document).ready(function () {
 
             $('#id_pac').slideUp('slow', function () {
                 $('#id_pac').remove();
+                enableSubmit()
             });
             existe_ci = false;
             datos1 = false;
@@ -138,16 +149,25 @@ $(document).ready(function () {
 
     //Showing patient's data according to the CI
     function searchPatient(data) {
+
+        if ($('#module').val() == 'paciente') {
+            var direccion = "search/{{path('show_patient')}}";
+        } else {
+            var direccion = "{{path('show_patient')}}";
+        }
+
+
         $.ajax({
             type: 'get',
-            url: "{{path('show_patient')}}",
+            url: direccion,
             data: data,
             success: function (data) {
                 if (data.hasOwnProperty("response") && data.response === "success") {
                     if (data.hasOwnProperty("patient")) {
+                        if ($('#module').val() != 'paciente') {
                         var patient = JSON.parse(data.patient);
 
-                        $('#datos_paciente').append('<div><h3 class="my-h4">Datos del paciente.</h3></div>');
+                            $('#datos_paciente').append('<div><h3 class="h3 form-title">Datos del paciente.</h3></div>');
 
                         $('#datos_paciente').append('<input id="idPaciente"  type="hidden" value="' + patient.id + '">');
 
@@ -167,16 +187,23 @@ $(document).ready(function () {
                         }
                         $('#datos_paciente').append('<a id="idPaciente" class="btn btn-primary" href="solicitud/' + patient.id + '" value="' + patient.id + '">Agregar solicitud al paciente</a>');
                         $('#block-patient').removeClass('hidden');
+                        }
+                        else {
+
+                            var ver_error = $('<div id="id_pac" class="my-error">Ya existe un paciente con ese número de identidad.  <br> Por favor rectifique.</div>').insertAfter($('#paciente_ciPaciente').labels()).hide().slideDown('slow');
+                            disableSumbit();
+                        }
                     }
-
-
                 } else {
-                    $('#datos_paciente').append('<div><h3 class="my-h3">El paciente no se encuentra en el sistema.</h3></div>');
-                    $('#datos_paciente').append('<a id="idPaciente" class="btn btn-primary" href="solicitud/">Agregar paciente y solicitud</a>');
-                    $('#block-patient').removeClass('hidden');
-
+                    if ($('#module').val() != 'paciente') {
+                        $('#datos_paciente').append('<div><h3 class="my-h3">El paciente no se encuentra en el sistema.</h3></div>');
+                        $('#datos_paciente').append('<a id="idPaciente" class="btn btn-primary" href="solicitud/">Agregar paciente y solicitud</a>');
+                        $('#block-patient').removeClass('hidden');
+                    }
                 }
             }
+
+
         });
     }
 
@@ -194,6 +221,7 @@ $(document).ready(function () {
         } else {
             $('#id_hc').slideUp('slow', function () {
                 $('#id_hc').remove();
+                enableSubmit();
             });
             existe_hc = false;
         }
@@ -212,13 +240,16 @@ $(document).ready(function () {
                         if ($('#id_hc') && !existe_hc) {
 
                             var ver = $('<div id="id_hc" class="my-error">Ya existe un paciente con ese número de Historia Clínica.  <br> Por favor rectifique.</div>').insertAfter($('.num_hc').labels()).hide().slideDown('slow');
+
                             existe_hc = true;
+                            disableSumbit()
                         }
                     } else {
                         console.log('cojone');
                         if ($('#id_pac') && !existe_ci) {
                             var ver = $('<div id="id_pac" class="my-error">Ya existe un paciente con ese número de identidad.  <br> Por favor rectifique.</div>').insertAfter($('.paciente_ci').labels()).hide().slideDown('slow');
                             existe_ci = true;
+                            disableSumbit();
                         }
 
                     }
@@ -232,7 +263,16 @@ $(document).ready(function () {
 
     }
 
+    function disableSumbit() {
+        $('#submit_form').addClass('hidden');
+    }
 
-})
+    function enableSubmit() {
+        $('#submit_form').removeClass('hidden');
+
+    }
+
+
+});
 
 

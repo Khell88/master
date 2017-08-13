@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <input id="module" type="hidden" value="pac_search">
+    <input id="module" type="hidden" value="bolsa_search">
 
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-            <div id="pacienteSearch" class="panel panel-default my-panels">
+            <div class="panel panel-default my-panels">
 
                 <div class="panel-heading">
-                    <h3 class="h2 form-title">Añadir solicitud de transfusión al sistema</h3>
+                    <h1 class="h2 form-title">Buscar unidad de sangre</h1>
                 </div>
 
 
@@ -16,42 +16,39 @@
                     <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
                         <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 separator">
                             <div>
-                                <label for="paciente_ciPaciente">Número de Carnet</label>
+                                <label for="paciente_ciPaciente">Código de la unidad</label>
                                 <div>
-                                    <input type="text" placeholder="Ej. 99012356090" id="paciente_ciPaciente"
+                                    <input type="text" placeholder="Ej. 120394" id="paciente_ciPaciente"
                                            class="only_number paciente_ci search-input"
                                            maxlength="11" minlength="11">
                                 </div>
                             </div>
 
 
+
                             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 separator">
                                 <h4 class="h4 notes">Pasos a seguir:</h4>
                                 <p class="notes">
-                                    - Introduzca el número del carnet de identidad del paciente para su búsqueda en el
+                                    - Introduzca el código de la unidad para su búsqueda en el
                                     sistema.
                                     <br>
                                     - Espere unos segundos mientras se realiza la búsqueda.
                                     <br>
-                                    - Presione el botón que se muestra para agregar la solicitud.
+                                    - Presione el botón con la opción deseada.
                                     <br>
                                     <br></p>
                                 <h4 class="h4 notes">Notas:</h4>
-
                                 <p class="notes">
-                                    - Debe escribir los once dígitos del número del carnet.
+                                    - Puede escribir parte o todo el código de la unidad a buscar.
                                     <br>
                                     - El sistema brindara las opciones correspondientes al resultado de su búsqueda.
 
                                 </p>
                             </div>
-
-
                         </div>
 
-
                     </div>
-                    <div class="col-xs-12 col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
 
 
                         <div id="block-patient" class="hidden">
@@ -62,13 +59,12 @@
                     </div>
                 </div>
 
-
             </div>
         </div>
-    </div>
 
+
+    </div>
     {% include 'all-js.html.twig' %}
 
 {% endblock %}
-
 

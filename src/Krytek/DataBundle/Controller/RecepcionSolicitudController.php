@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Recepcionsolicitud controller.
@@ -47,7 +48,7 @@ class RecepcionSolicitudController extends Controller
         $solicitud = $em->getRepository('KrytekDataBundle:SolicitudTransfusion')->findOneBy(array('id' => $request->get('id')));
 
         $form = $this->createForm('Krytek\DataBundle\Form\RecepcionSolicitudType', $recepcionSolicitud);
-        $form->add('CreateAndNew', SubmitType::class, array('label' => 'Create'));
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -67,38 +68,32 @@ class RecepcionSolicitudController extends Controller
 
 
     /** Fill select with the bolsas according to the componente
-     * @Route("/{componente}", name="select_motivos", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
+     * @Route("/{componente}", name="select_prueba", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
      *
      */
     public function fillAction(Request $request)
     {
 
         $em = $this->getDoctrine()->getManager();
-        if (!$request->get('diag')) {
-            $componente = $request->get('comp');
-            $motivos = $em->getRepository('KrytekDataBundle:MotivoTransfusion')->findMotivosComponentes($componente);
 
-            $motivosc = new \ArrayObject();
-            foreach ($motivos as $motivo)
-                $motivosc->append($motivo->getDescripcion());
-            $response = new JsonResponse();
-            $response->setData(array(
-                'motivo' => $motivosc
-            ));
+        $componente = $request->get('comp');
+        $pruebas = $em->getRepository('KrytekDataBundle:PruebasLaboratorio')->findBy(array('componente'=> $componente));
 
-        } else {
-            $componente = $request->get('comp');
-            $diag = $em->getRepository('KrytekDataBundle:Diagnosticos')->find($componente);
+        $pruebas_comp = new \ArrayObject();
+        $idpruebas_comp = new \ArrayObject();
+        foreach ($pruebas as $prueba) {
+            $pruebas_comp->append($prueba->getDescripcion());
+            $idpruebas_comp->append($prueba->getId());
 
-            $motivos = new \ArrayObject();
-            foreach ($diag->getMotivoTransfusionid() as $motivo)
-                $motivos->append($motivo->getDescripcion());
-
-            $response = new JsonResponse();
-            $response->setData(array(
-                'motivo' => $motivos
-            ));
         }
+
+
+            $response = new JsonResponse();
+            $response->setData(array(
+                'pruebas' => $pruebas_comp,
+                'idpruebas'=>$idpruebas_comp
+            ));
+
 
         return $response;
     }

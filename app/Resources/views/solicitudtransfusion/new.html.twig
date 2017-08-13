@@ -3,7 +3,7 @@
 
 {% block body %}
     <input id="module" type="hidden" value="solicitud">
-        <div class="panel panel-primary">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h1>Agregar Solicitud de Transfusión</h1>
                 <a href="{{ path('solicitudtransfusion_index') }}" class="btn btn-info">Volver al Listado</a>
@@ -33,14 +33,16 @@
                         {{ form_row(form.pcnt.tipoSangre) }}
                         {{ form_label(form.pcnt.rh, 'Factor Rh') }}
                         {{ form_row(form.pcnt.rh) }}
-                        {{ form_label(form.pcnt.lactante, 'Es Lactante') }}
-                        {{ form_row(form.pcnt.lactante) }}
-                        {{ form_label(form.pcnt.embarazos, 'Embarazos previos') }}
-                        {{ form_row(form.pcnt.embarazos) }}
-                        {{ form_label(form.pcnt.abortos, 'Abortos previos') }}
-                        {{ form_row(form.pcnt.abortos) }}
-                        {{ form_label(form.incompatibilidadMF, 'Incompatibilidad Materno-Fetal') }}
-                        {{ form_row(form.incompatibilidadMF) }}
+                        <div id="pac_sexo"  class="col-xs-12  col-sm-12 col-md-12  col-lg-12 hidden top-separator">
+                            {{ form_label(form.pcnt.lactante, 'Es Lactante') }}
+                            {{ form_row(form.pcnt.lactante) }}
+                            {{ form_label(form.pcnt.embarazos, 'Embarazos previos') }}
+                            {{ form_row(form.pcnt.embarazos) }}
+                            {{ form_label(form.pcnt.abortos, 'Abortos previos') }}
+                            {{ form_row(form.pcnt.abortos) }}
+                            {{ form_label(form.incompatibilidadMF, 'Incompatibilidad Materno-Fetal') }}
+                            {{ form_row(form.incompatibilidadMF) }}
+                        </div>
 
                     </div>
                 </section>

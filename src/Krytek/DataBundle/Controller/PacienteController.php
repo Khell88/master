@@ -150,7 +150,7 @@ class PacienteController extends Controller
 
     /**
      * Shows the data for existing patient
-     * @Route("/show/{ci}", name="show_patient", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
+     * @Route("/search/{ci}", name="show_patient", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
      *
      */
     function showPatient(Request $request)
@@ -202,13 +202,14 @@ class PacienteController extends Controller
     public function searchHC(Request $request){
 
         $em = $this->getDoctrine()->getManager();
-        $hc_num = $request->get('hc');
+        $hc_num = $request->get('searchNum');
         $hc = $em->getRepository('KrytekDataBundle:Paciente')->findBy(array('idHc'=>$hc_num));
         $response = new JsonResponse();
 
         if($hc){
             $response->setData(array(
-                'existe'=>'true'
+                'existe'=>'true',
+                'field'=>'hc'
             ));
         }
         else{

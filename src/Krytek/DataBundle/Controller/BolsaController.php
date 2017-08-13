@@ -4,9 +4,10 @@ namespace Krytek\DataBundle\Controller;
 
 use Krytek\DataBundle\Entity\Bolsa;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * Bolsa controller.
@@ -33,6 +34,25 @@ class BolsaController extends Controller
     }
 
     /**
+     * List using KnpPaginatior
+     *
+     * @Route("/list", name="bolsa_list")
+     * @Method("GET")
+     */
+
+    public function listAction(Request $request)
+    {
+        $em = $this->get('doctrine.orm.entity_manager');
+        $dql = "SELECT b FROM KrytekDataBundle:Bolsa b";
+        $query = $em->getRepository('KrytekDataBundle:Bolsa')->createQueryBuilder('bolsad');
+
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($query, $request->query->getInt('page', 1), 5);
+
+        return $this->render('bolsa/list.html.twig', array("pagination" => $pagination));
+    }
+
+    /**
      * Creates a new bolsa entity.
      *
      * @Route("/new", name="bolsa_new")
@@ -46,6 +66,7 @@ class BolsaController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $bolsa->setEstado('Disponible');
             $em->persist($bolsa);
             $em->flush($bolsa);
 
@@ -61,7 +82,7 @@ class BolsaController extends Controller
     /**
      * Finds and displays a bolsa entity.
      *
-     * @Route("/{id}", name="bolsa_show")
+     * @Route("/show/{id}", name="bolsa_show")
      * @Method("GET")
      */
     public function showAction(Bolsa $bolsa)
@@ -133,5 +154,19 @@ class BolsaController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+
+
+    /**
+     * Finder for the unidades de sangre
+     *
+     * @Route("/search", name="find_unit")
+     *
+     */
+    public function findUnidadAction(Request $request){
+
+        return $this->render('searches/find_unidad.html.twig');
+
     }
 }

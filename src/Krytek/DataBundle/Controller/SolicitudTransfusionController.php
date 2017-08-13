@@ -44,7 +44,7 @@ class SolicitudTransfusionController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $solicitudTransfusions = $em->getRepository('KrytekDataBundle:SolicitudTransfusion')->findBy(array('procesada' => 'Procesada'));
+        $solicitudTransfusions = $em->getRepository('KrytekDataBundle:SolicitudTransfusion')->findBy(array('estado' => 'Procesada'));
 
         return $this->render('solicitudtransfusion/index.html.twig', array(
             'solicitudTransfusions' => $solicitudTransfusions
@@ -61,7 +61,7 @@ class SolicitudTransfusionController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $solicitudTransfusions = $em->getRepository('KrytekDataBundle:SolicitudTransfusion')->findBy(array('procesada' => 'No procesada'));
+        $solicitudTransfusions = $em->getRepository('KrytekDataBundle:SolicitudTransfusion')->findBy(array('estado' => 'No procesada'));
 
         return $this->render('solicitudtransfusion/index.html.twig', array(
             'solicitudTransfusions' => $solicitudTransfusions
@@ -97,9 +97,9 @@ class SolicitudTransfusionController extends Controller
                 $solicitudTransfusion->setDiagnosticosid($diagnotico);
             }
 
-            $solicitudTransfusion->setProcesada('No procesada');
+            $solicitudTransfusion->setEstado('No procesada');
 
-            $solicitudTransfusion->setProcesada('No procesada');
+            $solicitudTransfusion->setEstado('No procesada');
             $solicitudTransfusion->setMotivoTransfusionid($motivo);
             $solicitudTransfusion->setUsuarioid($usuario);
 
@@ -145,7 +145,7 @@ class SolicitudTransfusionController extends Controller
                 $solicitudTransfusion->setDiagnosticosid($diagnotico);
             }
 
-            $solicitudTransfusion->setProcesada('No procesada');
+            $solicitudTransfusion->setEstado('No procesada');
             $solicitudTransfusion->setUsuarioid($usuario);
             $solicitudTransfusion->setPacienteid($paciente);
             $solicitudTransfusion->setMotivoTransfusionid($motivo);
@@ -225,6 +225,7 @@ class SolicitudTransfusionController extends Controller
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
             'paciente'=>$paciente,
+
         ));
     }
 
@@ -362,7 +363,8 @@ class SolicitudTransfusionController extends Controller
             $response = new JsonResponse();
             $response->setData(array(
                 'motivo' => $motivos,
-                'idmotivo' => $idmotivos
+                'idmotivo' => $idmotivos,
+
             ));
         }
 

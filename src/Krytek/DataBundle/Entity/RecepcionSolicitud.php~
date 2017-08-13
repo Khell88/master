@@ -29,19 +29,7 @@ class RecepcionSolicitud
      */
     private $muestra;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="pc_tipo_sangre", type="string", length=255, nullable=false)
-     */
-    private $pcTipoSangre;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="pc_rh", type="string", length=255, nullable=false)
-     */
-    private $pcRh;
 
     /**
      * @var string

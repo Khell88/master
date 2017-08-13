@@ -3,7 +3,7 @@
 
 {% block body %}
     <input id="module" type="hidden" value="edit_solicitud">
-    <input id="componente" type="hidden" value="{{ solicitudTransfusion.motivoTransfusionid.componente }}">
+
    {% if solicitudTransfusion.diagnosticosid != null %}
     <input id="diag" type="hidden" value="{{ solicitudTransfusion.diagnosticosid.id }}">
     {% endif %}
@@ -59,15 +59,20 @@
                     <h3>Datos de la solicitud:</h3>
 
                     <div class="col-md-4">
-                        <div>
+                        <div id="componenete_solicitud">
+                            <input id="componente" type="hidden" value="{{ solicitudTransfusion.motivoTransfusionid.componente }}">
                             {{ form_label(edit_form.ComponenteATransfundir, 'Componente a transfundir') }}
                             {{ form_row(edit_form.ComponenteATransfundir) }}
                         </div>
                         <div>
+                            {% if solicitudTransfusion.diagnosticosid != null %}
+                            <input type="hidden" id="diag_solicitud" value="{{ solicitudTransfusion.diagnosticosid.id}}">
+                            {% endif %}
                             {{ form_label(edit_form.Diagnosticos, 'Diagnóstico') }}
                             {{ form_row(edit_form.Diagnosticos) }}
                         </div>
                         <div>
+                            <input type="hidden" id="motivo_solicitud" value="{{ solicitudTransfusion.motivoTransfusionid.id}}">
                             {{ form_label(edit_form.Motivos, 'Motivo de transfusión') }}
                             {{ form_row(edit_form.Motivos) }}
                         </div>

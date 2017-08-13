@@ -1,72 +1,73 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Bolsa</h1>
+    <input type="hidden" id="module" value="bolsa">
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ bolsa.id }}</td>
-            </tr>
-            <tr>
-                <th>Codigo</th>
-                <td>{{ bolsa.codigo }}</td>
-            </tr>
-            <tr>
-                <th>Componente</th>
-                <td>{{ bolsa.componente }}</td>
-            </tr>
-            <tr>
-                <th>Lote</th>
-                <td>{{ bolsa.lote }}</td>
-            </tr>
-            <tr>
-                <th>Fechadonacion</th>
-                <td>{% if bolsa.fechaDonacion %}{{ bolsa.fechaDonacion|date('d-m-Y') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Fechavencimiento</th>
-                <td>{% if bolsa.fechaVencimiento %}{{ bolsa.fechaVencimiento|date('d-m-Y') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Procedencia</th>
-                <td>{{ bolsa.procedencia }}</td>
-            </tr>
-            <tr>
-                <th>Problemas</th>
-                <td>{{ bolsa.problemas }}</td>
-            </tr>
-            <tr>
-                <th>Gruposanguineo</th>
-                <td>{{ bolsa.grupoSanguineo }}</td>
-            </tr>
-            <tr>
-                <th>Rh</th>
-                <td>{{ bolsa.rh }}</td>
-            </tr>
-            <tr>
-                <th>Muestra</th>
-                <td>{{ bolsa.muestra }}</td>
-            </tr>
-            <tr>
-                <th>Volumen</th>
-                <td>{{ bolsa.volumen }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+            <h1 class="h2 form-title">Informacion de la unidad de sangre #{{ bolsa.codigo }}.</h1>
+        </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('bolsa_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('bolsa_edit', { 'id': bolsa.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-4 separator">
+                <h3>Código: {{ bolsa.codigo }}</h3>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-8 separator">
+                <h3>Componente: {{ bolsa.componente }}</h3>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-2 separator">
+                <h3>Grupo: {{ bolsa.grupoSanguineo }}</h3>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3 separator">
+                <h3>Factor: {{ bolsa.rh }}</h3>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-2 separator">
+                <h3>Lote: {{ bolsa.lote }}</h3>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-2 separator">
+                <h3>Volumen: {{ bolsa.volumen }}</h3>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-2 separator">
+                <h3>Muestra: {{ bolsa.muestra }}</h3>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-6 separator">
+                <h3>Fecha de
+                    Prodrucción: {% if bolsa.fechaDonacion %}{{ bolsa.fechaDonacion|date('d-m-Y') }}{% endif %}</h3>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-6 separator">
+                <h3>Fecha de
+                    Vencimiento: {% if bolsa.fechaVencimiento %}{{ bolsa.fechaVencimiento|date('d-m-Y') }}{% endif %}</h3>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-4 separator">
+                <h3>Procedencia: {{ bolsa.procedencia }}</h3>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-8 separator">
+                <h3>Observaciones: {{ bolsa.problemas }}</h3>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 separator">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 separator">
+                <a class="btn btn-primary" href="{{ path('bolsa_index') }}">Volver al listado</a>
+                <a class="btn btn-warning" href="{{ path('bolsa_edit', { 'id': bolsa.id }) }}">Editar</a>
+            </div>
+
+            {#<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 separator">#}
+            {#{{ form_start(delete_form) }}#}
+            {#<input class="btn btn-danger" type="submit" value="Delete">#}
+            {#{{ form_end(delete_form) }}#}
+            {#</div>#}
+
+        </div>
+
+    </div>
+
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('js/myJS/module-finder.js') }}"></script>
+    {% endblock %}
+
 {% endblock %}

@@ -4,7 +4,10 @@
     <h1>Pruebaslaboratorio creation</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
+    {{ form_label(form.descripcion, 'Descripciónn') }}
+    {{ form_row(form.descripcion) }}
+    {{ form_label(form.componente, 'Componente') }}
+    {{ form_row(form.componente) }}
         <input type="submit" value="Create" />
     {{ form_end(form) }}
 
@@ -13,4 +16,5 @@
             <a href="{{ path('pruebaslaboratorio_index') }}">Back to the list</a>
         </li>
     </ul>
+{% include 'all-js.html.twig' %}
 {% endblock %}

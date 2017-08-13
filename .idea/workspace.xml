@@ -2,38 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c4e6535-d3f0-4255-924c-d45038f156d3" name="Default" comment="yte">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/templates/footer.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/templates/my-base.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/templates/new-base.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/myJS/set-styles.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Resources/views/validator.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/all-js.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/bolsa/list.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/searches/find_unidad.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusionRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/myJS/module-finder.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/myJS/patientValidations.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/myJS/procesarSolicitud.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Master.iml" afterPath="$PROJECT_DIR$/.idea/Master.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/bolsa/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/bolsa/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/bolsa/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/bolsa/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/bolsa/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/bolsa/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/bolsa/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/bolsa/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/paciente/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/paciente/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/paciente/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/paciente/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/paciente/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/paciente/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/paciente/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/paciente/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pruebaslaboratorio/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pruebaslaboratorio/new.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/recepcionsolicitud/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/recepcionsolicitud/new.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/searches/add_solicitud.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/searches/add_solicitud.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new_pac_sol.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new_pac_sol.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/old_edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/old_edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/show.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/templates/menus.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/templates/menus.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/BolsaController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/BolsaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MainController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MainController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/PacienteController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/PacienteController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/RecepcionSolicitudController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/RecepcionSolicitudController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/SolicitudTransfusionController.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/SolicitudTransfusionController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Bolsa.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Bolsa.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Diagnosticos.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Diagnosticos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusion.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Paciente.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Paciente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/PruebasLaboratorio.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/PruebasLaboratorio.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/RecepcionSolicitud.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/RecepcionSolicitud.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/ReporteReaccion.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/ReporteReaccion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Servicios.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Servicios.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/BolsaType.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/BolsaType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudEditType.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudEditType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/PruebasLaboratorioType.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/PruebasLaboratorioType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/RecepcionSolicitudType.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/RecepcionSolicitudType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudPacienteType.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudPacienteType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudTransfusionType.php" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudTransfusionType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/DataBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/Krytek/DataBundle/Resources/views/Default/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/login.html.twig" afterPath="$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/login.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/bootstrap.css" afterPath="$PROJECT_DIR$/web/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app.php" afterPath="$PROJECT_DIR$/web/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/myStyles.css" afterPath="$PROJECT_DIR$/web/css/myStyles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/myJS/autoFill.js" afterPath="$PROJECT_DIR$/web/js/myJS/autoFill.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/myJS/myValidations.js" afterPath="$PROJECT_DIR$/web/js/myJS/myValidations.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/myJS/patientSearch.js" afterPath="$PROJECT_DIR$/web/js/myJS/patientSearch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/myJS/set-styles.js" afterPath="$PROJECT_DIR$/web/js/myJS/set-styles.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,103 +84,107 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/templates/footer.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/bolsa/new.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BolsaController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/BolsaController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-874">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="myValidations.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/myJS/myValidations.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="209" column="224" lean-forward="false" selection-start-line="209" selection-start-column="224" selection-end-line="209" selection-end-column="224" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BolsaType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/BolsaType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="23" column="51" lean-forward="false" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+            <state relative-caret-position="3672">
+              <caret line="531" column="151" lean-forward="false" selection-start-line="531" selection-start-column="151" selection-end-line="531" selection-end-column="151" />
               <folding>
-                <element signature="e#42#82#0#PHP" expanded="false" />
+                <element signature="e#1563#1602#0" expanded="false" />
+                <element signature="e#1652#1727#0" expanded="false" />
+                <element signature="e#1828#2492#0" expanded="false" />
+                <element signature="e#2131#2164#0" expanded="false" />
+                <element signature="e#2407#2443#0" expanded="false" />
+                <element signature="e#2449#2486#0" expanded="false" />
+                <element signature="e#2519#2841#0" expanded="false" />
+                <element signature="e#2880#2951#0" expanded="false" />
+                <element signature="e#2995#3071#0" expanded="false" />
+                <element signature="e#3177#3332#0" expanded="false" />
+                <element signature="e#3395#3443#0" expanded="false" />
+                <element signature="e#3510#4062#0" expanded="false" />
+                <element signature="e#4129#4239#0" expanded="false" />
+                <element signature="e#4156#4208#0" expanded="false" />
+                <element signature="e#4307#4659#0" expanded="false" />
+                <element signature="e#4727#5082#0" expanded="false" />
+                <element signature="e#5111#5685#0" expanded="false" />
+                <element signature="e#5843#6068#0" expanded="false" />
+                <element signature="e#6106#8224#0" expanded="false" />
+                <element signature="e#10357#10716#0" expanded="false" />
+                <element signature="e#12347#14471#0" expanded="false" />
+                <element signature="e#14537#16520#0" expanded="false" />
+                <element signature="e#16562#18570#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menus.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/templates/menus.html.twig">
+      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/recepcionsolicitud/new.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="28" lean-forward="false" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+            <state relative-caret-position="17">
+              <caret line="287" column="75" lean-forward="false" selection-start-line="287" selection-start-column="75" selection-end-line="287" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myStyles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/myStyles.css">
+      <file leaf-file-name="new_pac_sol.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new_pac_sol.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="233" column="18" lean-forward="false" selection-start-line="233" selection-start-column="18" selection-end-line="233" selection-end-column="18" />
+            <state relative-caret-position="2346">
+              <caret line="138" column="58" lean-forward="false" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="patientSearch.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/myJS/patientSearch.js">
+      <file leaf-file-name="RecepcionSolicitudController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/RecepcionSolicitudController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+            <state relative-caret-position="68">
+              <caret line="10" column="50" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+              <folding>
+                <element signature="e#48#96#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SolicitudTransfusionController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/SolicitudTransfusionController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/bootstrap.css">
+      <file leaf-file-name="RecepcionSolicitudType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/RecepcionSolicitudType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54264">
-              <caret line="3192" column="14" lean-forward="false" selection-start-line="3192" selection-start-column="14" selection-end-line="3192" selection-end-column="14" />
+            <state relative-caret-position="306">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SolicitudPacienteType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudPacienteType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="52" column="54" lean-forward="false" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SolicitudTransfusion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3162">
+              <caret line="186" column="7" lean-forward="false" selection-start-line="186" selection-start-column="7" selection-end-line="186" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -175,36 +203,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>__</find>
-      <find>y-</find>
-      <find>format</find>
-      <find>parseDate</find>
-      <find>date</find>
-      <find>console</find>
-      <find>form.pcnt</find>
-      <find>form_row(pa</find>
-      <find>text-box-size</find>
-      <find>._.</find>
-      <find>incompati</find>
-      <find>incompa</find>
-      <find>in</find>
-      <find>pac</find>
-      <find>incom</find>
-      <find>estoy</find>
-      <find>searchHC</find>
-      <find>console.lo</find>
-      <find>form.</find>
-      <find>tp</find>
-      <find>user</find>
-      <find>log</find>
-      <find>.p</find>
-      <find>panel</find>
+      <find>form_</find>
+      <find>pac_</find>
+      <find>pac_se</find>
       <find>body</find>
-      <find>horizontal</find>
-      <find>xs-6</find>
-      <find>input</find>
+      <find>collapse</find>
+      <find>media</find>
+      <find>xs</find>
+      <find>hidden-xs</find>
+      <find>a:ac</find>
+      <find>active</find>
       <find>input[type=&quot;radio&quot;]</find>
-      <find>h1</find>
+      <find>disabled</find>
+      <find>form</find>
+      <find>col-md-4 col-sm-4 col-xs-6 col-lg-4</find>
+      <find>module</find>
+      <find>edit_sol</find>
+      <find>componente</find>
+      <find>select</find>
+      <find>select(</find>
+      <find>diag_</find>
+      <find>mierdero</find>
+      <find>right</find>
+      <find>incompa</find>
+      <find>sexo</find>
+      <find>paciente.</find>
+      <find>texto</find>
+      <find>area</find>
+      <find>bolsas</find>
+      <find>motiv</find>
+      <find>solicitud_</find>
     </findStrings>
     <replaceStrings>
       <replace>$data[</replace>
@@ -216,6 +244,11 @@
       <replace>search</replace>
       <replace>edit_form.</replace>
       <replace>xs-12</replace>
+      <replace>edit</replace>
+      <replace>edit_form</replace>
+      <replace>edit_form_</replace>
+      <replace>col-md-3 col-sm-6 col-xs-12 col-lg-3</replace>
+      <replace>solicitudTransfusion.pacienteid.</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -227,57 +260,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/js/myJS/procesarSolicitud.js" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/RecepcionSolicitudController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/recepcionsolicitud/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Resources/views/Default/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Paciente.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/LoginBundle/Controller/LoginController.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/UsuarioController.php" />
-        <option value="$PROJECT_DIR$/web/js/jquery-ui.js" />
-        <option value="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Validator/Constraints/DateTime.php" />
-        <option value="$PROJECT_DIR$/web/js/myJS/restrictedValidations.js" />
-        <option value="$PROJECT_DIR$/web/js/additional-methods.js" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/RecepcionSolicitudType.php" />
-        <option value="$PROJECT_DIR$/web/js/myJS/patientValidations.js" />
-        <option value="$PROJECT_DIR$/app/Resources/views/paciente/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/PacienteType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/paciente/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/AddSolicitudController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new_pac_sol.html.twig" />
-        <option value="$PROJECT_DIR$/web/js/myJS/patientSearch.js" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/ServiciosController.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/validator.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/templates/footer.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/DiagnosticosController.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/BolsaType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/searches/add_solicitud.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/searches/find_unidad.html.twig" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MainController.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusionRepository.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/bolsa/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/bolsa/edit.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/bolsa/list.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/bolsa/show.html.twig" />
+        <option value="$PROJECT_DIR$/web/app.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/web/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/PacienteController.php" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/paciente/new.html.twig" />
+        <option value="$PROJECT_DIR$/web/js/myJS/patientSearch.js" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Bolsa.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/BolsaController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig" />
         <option value="$PROJECT_DIR$/web/js/myJS/autoFill.js" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudPacienteType.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudTransfusionType.php" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudEditType.php" />
         <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/SolicitudTransfusionController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/edit.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/show.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/recepcionsolicitud/new.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/templates/my-base.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/searches/add_solicitud.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/bolsa/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/PacienteController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/paciente/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/templates/new-base.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/validator.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/all-js.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/login.html.twig" />
-        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/BolsaType.php" />
         <option value="$PROJECT_DIR$/web/js/myJS/set-styles.js" />
-        <option value="$PROJECT_DIR$/app/Resources/views/templates/menus.html.twig" />
-        <option value="$PROJECT_DIR$/web/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/web/js/myJS/myValidations.js" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/templates/footer.html.twig" />
-        <option value="$PROJECT_DIR$/web/css/myStyles.css" />
+        <option value="$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/login.html.twig" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/bolsa/new.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/show.html.twig" />
+        <option value="$PROJECT_DIR$/web/js/myJS/module-finder.js" />
+        <option value="$PROJECT_DIR$/app/Resources/views/all-js.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/templates/menus.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/paciente/edit.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/paciente/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/paciente/show.html.twig" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/RecepcionSolicitud.php" />
+        <option value="$PROJECT_DIR$/web/css/myStyles.css" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudPacienteType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new_pac_sol.html.twig" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/PruebasLaboratorioType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pruebaslaboratorio/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Entity/PruebasLaboratorio.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Controller/RecepcionSolicitudController.php" />
+        <option value="$PROJECT_DIR$/src/Krytek/DataBundle/Form/RecepcionSolicitudType.php" />
+        <option value="$PROJECT_DIR$/web/js/myJS/myValidations.js" />
+        <option value="$PROJECT_DIR$/app/Resources/views/recepcionsolicitud/new.html.twig" />
       </list>
     </option>
   </component>
@@ -323,6 +356,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-apcu" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
@@ -366,6 +401,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -442,7 +478,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -500,7 +540,145 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="LoginBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Default" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Krytek" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LoginBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Krytek" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LoginBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Krytek" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="DataBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Krytek" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Krytek" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -558,28 +736,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Master" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -598,11 +754,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -627,14 +779,113 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solicitudtransfusion" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recepcionsolicitud" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pruebaslaboratorio" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Master" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bolsa" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -770,12 +1021,27 @@
       <workItem from="1500723225926" duration="2668000" />
       <workItem from="1500734359483" duration="3401000" />
       <workItem from="1500814675408" duration="15835000" />
-      <workItem from="1501072730584" duration="1816000" />
+      <workItem from="1501072730584" duration="2319000" />
+      <workItem from="1501076098295" duration="672000" />
+      <workItem from="1501092438331" duration="14259000" />
+      <workItem from="1501327859685" duration="5775000" />
+      <workItem from="1501423848401" duration="596000" />
+      <workItem from="1501518972664" duration="4097000" />
+      <workItem from="1501674757776" duration="25730000" />
+      <workItem from="1501760624327" duration="15895000" />
+      <workItem from="1501850390344" duration="34000" />
+      <workItem from="1501850796658" duration="11224000" />
+      <workItem from="1501933396439" duration="3919000" />
+      <workItem from="1502039183917" duration="5457000" />
+      <workItem from="1502104255800" duration="40099000" />
+      <workItem from="1502448301733" duration="18741000" />
+      <workItem from="1502537909780" duration="11370000" />
+      <workItem from="1502626646241" duration="13000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="560988000" />
+    <option name="totallyTimeSpent" value="719372000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -843,89 +1109,262 @@
           <line>4</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/web/js/myJS/myValidations.js</url>
+          <line>314</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="50" />
+      <option name="time" value="54" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/RecepcionSolicitudType.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/bolsa/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="50" column="45" lean-forward="false" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="45" />
+        <state relative-caret-position="187">
+          <caret line="11" column="69" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/PacienteRepository.php">
+    <entry file="file://$PROJECT_DIR$/web/css/images/glyphicons-halflings.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/images/ui-icons_ffffff_256x240.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/images/ui-icons_777777_256x240.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/images/ui-icons_777620_256x240.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/images/ui-icons_555555_256x240.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/images/ui-icons_444444_256x240.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/images/ui-icons_cc0000_256x240.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudTransfusionType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/ServiciosType.php">
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/MotivoTransfusionRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="24" column="20" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/DiagnosticosRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="5999" column="8" lean-forward="false" selection-start-line="5999" selection-start-column="8" selection-end-line="5999" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/myJS/autoFill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/myJS/patientSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="266" column="42" lean-forward="false" selection-start-line="266" selection-start-column="42" selection-end-line="266" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/old_edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/myJS/set-styles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="36" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Paciente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="58" lean-forward="false" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/paciente/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="5" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/jquery-ui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="11963" column="10" lean-forward="false" selection-start-line="11963" selection-start-column="10" selection-end-line="11963" selection-end-column="10" />
+          <caret line="3" column="54" lean-forward="false" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/paciente/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        <state relative-caret-position="51">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/paciente/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="54" lean-forward="false" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/paciente/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="44" column="20" lean-forward="false" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+        <state relative-caret-position="204">
+          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/AddSolicitudController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="75" column="75" lean-forward="false" selection-start-line="75" selection-start-column="75" selection-end-line="75" selection-end-column="75" />
+        <state relative-caret-position="51">
+          <caret line="3" column="57" lean-forward="false" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/PacienteType.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="59" column="24" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="24" />
+        <state relative-caret-position="51">
+          <caret line="3" column="57" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/myJS/patientValidations.js">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/all-js.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="85">
+          <caret line="5" column="87" lean-forward="false" selection-start-line="5" selection-start-column="87" selection-end-line="5" selection-end-column="87" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/myJS/procesarSolicitud.js">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/templates/menus.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="95" column="86" lean-forward="false" selection-start-line="95" selection-start-column="86" selection-end-line="95" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/myJS/module-finder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/BolsaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="3321" column="1" lean-forward="false" selection-start-line="3321" selection-start-column="1" selection-end-line="3321" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/myStyles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5219">
+          <caret line="307" column="20" lean-forward="false" selection-start-line="307" selection-start-column="20" selection-end-line="307" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/RecepcionSolicitud.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="234" column="5" lean-forward="false" selection-start-line="234" selection-start-column="5" selection-end-line="234" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Bolsa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/PruebasLaboratorioType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/PruebasLaboratorio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="59" lean-forward="false" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -936,298 +1375,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/ServiciosController.php">
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/BolsaType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="425">
+          <caret line="112" column="14" lean-forward="false" selection-start-line="110" selection-start-column="12" selection-end-line="112" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/MotivoTransfusionController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/bolsa/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="59" />
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new_pac_sol.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pruebaslaboratorio/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="59" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/old_edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1129">
-          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="8748" column="22" lean-forward="false" selection-start-line="8748" selection-start-column="22" selection-end-line="8748" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudPacienteType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="136" column="24" lean-forward="false" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudTransfusionType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="137" column="24" lean-forward="false" selection-start-line="137" selection-start-column="24" selection-end-line="137" selection-end-column="24" />
+        <state relative-caret-position="306">
+          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudEditType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="108" column="24" lean-forward="false" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/myJS/autoFill.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/bolsa/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <caret line="45" column="9" lean-forward="false" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php">
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1717">
-          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="36" lean-forward="false" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/recepcionsolicitud/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="35" column="66" lean-forward="false" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/templates/my-base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="55" lean-forward="false" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/Paciente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="51" column="61" lean-forward="false" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/paciente/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/paciente/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="68" column="36" lean-forward="false" selection-start-line="68" selection-start-column="15" selection-end-line="68" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/bolsa/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/searches/add_solicitud.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="72" lean-forward="false" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/PacienteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="152" column="20" lean-forward="false" selection-start-line="152" selection-start-column="20" selection-end-line="152" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="291">
+          <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/SolicitudTransfusionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="173" column="20" lean-forward="false" selection-start-line="173" selection-start-column="20" selection-end-line="173" selection-end-column="20" />
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/templates/new-base.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Entity/SolicitudTransfusion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/all-js.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="71" lean-forward="false" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/LoginBundle/Resources/views/Default/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        <state relative-caret-position="3162">
+          <caret line="186" column="7" lean-forward="false" selection-start-line="186" selection-start-column="7" selection-end-line="186" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/myJS/set-styles.js">
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/RecepcionSolicitudController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        <state relative-caret-position="68">
+          <caret line="10" column="50" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
           <folding>
-            <element signature="e#0#39#0" expanded="false" />
+            <element signature="e#48#96#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/BolsaType.php">
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/SolicitudPacienteType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="51" lean-forward="false" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
-          <folding>
-            <element signature="e#42#82#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/templates/menus.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="28" lean-forward="false" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+        <state relative-caret-position="765">
+          <caret line="52" column="54" lean-forward="false" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/myJS/patientSearch.js">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/solicitudtransfusion/new_pac_sol.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        <state relative-caret-position="2346">
+          <caret line="138" column="58" lean-forward="false" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Form/RecepcionSolicitudType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54264">
-          <caret line="3192" column="14" lean-forward="false" selection-start-line="3192" selection-start-column="14" selection-end-line="3192" selection-end-column="14" />
+        <state relative-caret-position="306">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/myJS/myValidations.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="209" column="224" lean-forward="false" selection-start-line="209" selection-start-column="224" selection-end-line="209" selection-end-column="224" />
-          <folding />
+        <state relative-caret-position="3672">
+          <caret line="531" column="151" lean-forward="false" selection-start-line="531" selection-start-column="151" selection-end-line="531" selection-end-column="151" />
+          <folding>
+            <element signature="e#1563#1602#0" expanded="false" />
+            <element signature="e#1652#1727#0" expanded="false" />
+            <element signature="e#1828#2492#0" expanded="false" />
+            <element signature="e#2131#2164#0" expanded="false" />
+            <element signature="e#2407#2443#0" expanded="false" />
+            <element signature="e#2449#2486#0" expanded="false" />
+            <element signature="e#2519#2841#0" expanded="false" />
+            <element signature="e#2880#2951#0" expanded="false" />
+            <element signature="e#2995#3071#0" expanded="false" />
+            <element signature="e#3177#3332#0" expanded="false" />
+            <element signature="e#3395#3443#0" expanded="false" />
+            <element signature="e#3510#4062#0" expanded="false" />
+            <element signature="e#4129#4239#0" expanded="false" />
+            <element signature="e#4156#4208#0" expanded="false" />
+            <element signature="e#4307#4659#0" expanded="false" />
+            <element signature="e#4727#5082#0" expanded="false" />
+            <element signature="e#5111#5685#0" expanded="false" />
+            <element signature="e#5843#6068#0" expanded="false" />
+            <element signature="e#6106#8224#0" expanded="false" />
+            <element signature="e#10357#10716#0" expanded="false" />
+            <element signature="e#12347#14471#0" expanded="false" />
+            <element signature="e#14537#16520#0" expanded="false" />
+            <element signature="e#16562#18570#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/recepcionsolicitud/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/templates/footer.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/myStyles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="233" column="18" lean-forward="false" selection-start-line="233" selection-start-column="18" selection-end-line="233" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/bolsa/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Krytek/DataBundle/Controller/BolsaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-874">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="287" column="75" lean-forward="false" selection-start-line="287" selection-start-column="75" selection-end-line="287" selection-end-column="75" />
           <folding />
         </state>
       </provider>

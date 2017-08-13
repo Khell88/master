@@ -1,27 +1,85 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Bolsa edit</h1>
+    <input type="hidden" id="module" value="bolsa">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+            <h1 class="h1 form-title">Editar información de la unidad de sangre.</h1>
+        </div>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+        {{ form_start(edit_form) }}
+        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
+                {{ form_label(edit_form.codigo, 'Codigo') }}
+                {{ form_row(edit_form.codigo) }}
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
+                {{ form_label(edit_form.lote, 'Lote') }}
+                {{ form_row(edit_form.lote) }}
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
+                {{ form_label(edit_form.volumen, 'Volumen') }}
+                {{ form_row(edit_form.volumen) }}
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4 separator">
+                {{ form_label(edit_form.procedencia, 'Procedencia') }}
+                {{ form_row(edit_form.procedencia) }}
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4 separator">
+                {{ form_label(edit_form.fechaDonacion, 'Fecha Producción') }}
+                {{ form_row(edit_form.fechaDonacion) }}
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4 separator">
+                {{ form_label(edit_form.fechaVencimiento, 'Fecha Vencimiento') }}
+                {{ form_row(edit_form.fechaVencimiento) }}
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 separator">
+                {{ form_label(edit_form.problemas, 'Observaciones') }}
+                {{ form_row(edit_form.problemas) }}
+            </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('bolsa_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+
+            <div class="col-md-7 col-sm-9 col-xs-12 col-lg-10">
+                {{ form_label(edit_form.componente, 'Componente Sanguíneo') }}
+                {{ form_row(edit_form.componente) }}
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6 separator">
+                {{ form_label(edit_form.grupoSanguineo, 'Grupo Sanguíneo') }}
+                {{ form_row(edit_form.grupoSanguineo) }}
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6 separator">
+                {{ form_label(edit_form.rh, 'Factor Rh') }}
+                {{ form_row(edit_form.rh) }}
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4 separator">
+
+                {{ form_label(edit_form.muestra, '¿Muestra tomada?') }}
+                {{ form_row(edit_form.muestra) }}
+            </div>
+        </div>
+
+
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 separator">
+                {{ form_widget(edit_form) }}
+                <input type="submit" class="btn btn-success" value="Edit"/>
+                {{ form_end(edit_form) }}
+                <a href="{{ path('bolsa_index') }}" class="btn btn-primary">Volver al listado</a>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 separator">
+
+            </div>
+        </div>
+    </div>
 
     {% include 'all-js.html.twig' %}
 {% endblock %}
 
-{% block javascripts %}
-
-{% endblock %}

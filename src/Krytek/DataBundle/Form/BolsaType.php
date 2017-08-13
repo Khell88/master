@@ -77,7 +77,8 @@ class BolsaType extends AbstractType
             ->add('problemas', TextareaType::class, array(
                 'label' => false,
                 'attr' => array(
-                    'class' => 'texto'
+                    'class' => 'texto',
+                    'aria-required'=>'false'
                 )
             ))
             ->add('grupoSanguineo', ChoiceType::class, array(

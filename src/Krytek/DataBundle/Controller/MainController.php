@@ -23,6 +23,13 @@ class MainController extends Controller
      */
     public function mainAction()
     {
-        return $this->render('@KrytekData/Default/index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $estado = 'No procesada';
+        $max_result = 8;
+
+        $solicitudes = $em->getRepository('KrytekDataBundle:SolicitudTransfusion')->findFiveUnprocessed($estado,$max_result);
+
+
+        return $this->render('@KrytekData/Default/index.html.twig',array('solicitudes'=>$solicitudes));
     }
 }

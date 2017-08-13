@@ -29,19 +29,7 @@ class RecepcionSolicitud
      */
     private $muestra;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="pc_tipo_sangre", type="string", length=255, nullable=false)
-     */
-    private $pcTipoSangre;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="pc_rh", type="string", length=255, nullable=false)
-     */
-    private $pcRh;
 
     /**
      * @var string
@@ -244,78 +232,6 @@ class RecepcionSolicitud
     public function getMuestra()
     {
         return $this->muestra;
-    }
-
-    /**
-     * Set hcBolsa
-     *
-     * @param integer $hcBolsa
-     *
-     * @return RecepcionSolicitud
-     */
-    public function setHcBolsa($hcBolsa)
-    {
-        $this->hcBolsa = $hcBolsa;
-
-        return $this;
-    }
-
-    /**
-     * Get hcBolsa
-     *
-     * @return integer
-     */
-    public function getHcBolsa()
-    {
-        return $this->hcBolsa;
-    }
-
-    /**
-     * Set pcTipoSangre
-     *
-     * @param string $pcTipoSangre
-     *
-     * @return RecepcionSolicitud
-     */
-    public function setPcTipoSangre($pcTipoSangre)
-    {
-        $this->pcTipoSangre = $pcTipoSangre;
-
-        return $this;
-    }
-
-    /**
-     * Get pcTipoSangre
-     *
-     * @return string
-     */
-    public function getPcTipoSangre()
-    {
-        return $this->pcTipoSangre;
-    }
-
-    /**
-     * Set pcRh
-     *
-     * @param string $pcRh
-     *
-     * @return RecepcionSolicitud
-     */
-    public function setPcRh($pcRh)
-    {
-        $this->pcRh = $pcRh;
-
-        return $this;
-    }
-
-    /**
-     * Get pcRh
-     *
-     * @return string
-     */
-    public function getPcRh()
-    {
-        return $this->pcRh;
     }
 
     /**

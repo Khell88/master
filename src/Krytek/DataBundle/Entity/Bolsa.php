@@ -102,9 +102,9 @@ class Bolsa
     /**
      * @var integer
      *
-     * @ORM\Column(name="en_uso", type="integer", nullable=true)
+     * @ORM\Column(name="estado", type="integer", nullable=true)
      */
-    private $enUso;
+    private $estado;
 
 
     /**
@@ -492,13 +492,13 @@ class Bolsa
     /**
      * Set enUso
      *
-     * @param integer $enUso
+     * @param integer $estado
      *
      * @return Bolsa
      */
-    public function setEnUso($enUso)
+    public function setEstado($estado)
     {
-        $this->enUso = $enUso;
+        $this->estado = $estado;
 
         return $this;
     }
@@ -508,8 +508,8 @@ class Bolsa
      *
      * @return integer
      */
-    public function getEnUso()
+    public function getEstado()
     {
-        return $this->enUso;
+        return $this->estado;
     }
 }

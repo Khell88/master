@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <input type="hidden" id="module" value="bolsa">
+    {# total items count #}
+    <div class="col-md-12">
+        <h1>Listado de Unidades</h1>
+        <a href="{{ path('bolsa_new') }}" class="btn btn-primary">Agregar unidad</a>
+
+        <div>
+            <div class="item-count">
+                Total de Unidades: {{ pagination.getTotalItemCount }}
+            </div>
+
+        </div>
+        <table class="table table-responsive">
+            <tr>
+                {# sorting of properties based on query components #}
+                <th>{{ knp_pagination_sortable(pagination, 'Codigo', 'bolsad.codigo') }}</th>
+                <th{% if pagination.isSorted('bolsad.lote') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Lote', 'bolsad.lote') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'Grupo Sanguineo', 'bolsad.grupoSanguineo') }}</th>
+                {#<th>{{ knp_pagination_sortable() }}</th>#}
+            </tr>
+
+            {# table body #}
+            {% for bolsa in pagination %}
+                <tr {% if loop.index is odd %}class="color"{% endif %}>
+                    <td>{{ bolsa.codigo }}</td>
+                    <td>{{ bolsa.lote }}</td>
+                    <td>{{ bolsa.grupoSanguineo }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        {# display navigation #}
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('js/myJS/module-finder.js') }}"></script>
+    {% endblock %}
+{% endblock %}

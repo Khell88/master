@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * SolicitudTransfusion
  *
  * @ORM\Table(name="solicitud_transfusion", indexes={@ORM\Index(name="IDX_50FA1E8409D1C63", columns={"serviciosid"}), @ORM\Index(name="IDX_50FA1E864FDF06E", columns={"usuarioid"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Krytek\DataBundle\Entity\SolicitudTransfusionRepository")
  */
 class SolicitudTransfusion
 {
@@ -180,9 +180,23 @@ class SolicitudTransfusion
     /**
      * @var string
      *
-     * @ORM\Column(name="procesada", type="string", length=255, nullable=true)
+     * @ORM\Column(name="estado", type="string", length=255, nullable=true)
      */
-    private $procesada;
+    private $estado;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_medico", type="string", length=255, nullable=true)
+     */
+    private $nombreMedico;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="registro_medico", type="string", length=255, nullable=true)
+     */
+    private $registroMedico;
 
 
     /**
@@ -654,13 +668,13 @@ class SolicitudTransfusion
     /**
      * Set procesada
      *
-     * @param string $procesada
+     * @param string $estado
      *
      * @return SolicitudTransfusion
      */
-    public function setProcesada($procesada)
+    public function setEstado($estado)
     {
-        $this->procesada = $procesada;
+        $this->estado = $estado;
 
         return $this;
     }
@@ -670,9 +684,9 @@ class SolicitudTransfusion
      *
      * @return string
      */
-    public function getProcesada()
+    public function getEstado()
     {
-        return $this->procesada;
+        return $this->estado;
     }
 
     /**
@@ -697,5 +711,53 @@ class SolicitudTransfusion
     public function getDiagnosticosid()
     {
         return $this->diagnosticosid;
+    }
+
+    /**
+     * Set nombreMedico
+     *
+     * @param string $nombreMedico
+     *
+     * @return SolicitudTransfusion
+     */
+    public function setNombreMedico($nombreMedico)
+    {
+        $this->nombreMedico = $nombreMedico;
+
+        return $this;
+    }
+
+    /**
+     * Get nombreMedico
+     *
+     * @return string
+     */
+    public function getNombreMedico()
+    {
+        return $this->nombreMedico;
+    }
+
+    /**
+     * Set registroMedico
+     *
+     * @param string $registroMedico
+     *
+     * @return SolicitudTransfusion
+     */
+    public function setRegistroMedico($registroMedico)
+    {
+        $this->registroMedico = $registroMedico;
+
+        return $this;
+    }
+
+    /**
+     * Get registroMedico
+     *
+     * @return string
+     */
+    public function getRegistroMedico()
+    {
+        return $this->registroMedico;
     }
 }

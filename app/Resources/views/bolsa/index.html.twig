@@ -1,10 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+    <input type="hidden" id="module" value="bolsa">
     <div class="col-md-12">
-        <h1>Listado de Unidades</h1>
-        <a href="{{ path('bolsa_new') }}" class="btn btn-primary">Agregar unidad</a>
+        <div class="bottom-separator">
+            <h1>Listado de Unidades</h1>
+            <a href="{{ path('bolsa_new') }}" class="btn btn-primary">Agregar unidad</a>
+        </div>
+
 
         <table class="table table-responsive">
             <thead>
@@ -12,9 +15,9 @@
 
                 <th>Codigo</th>
                 <th>Componente</th>
-                <th>Lote</th>
-                <th>Fecha de donacion</th>
-                <th>Fecha de vencimiento</th>
+                <th class="visible-lg"> Lote</th>
+                <th class="visible-lg">Fecha de donacion</th>
+                <th class="visible-lg">Fecha de vencimiento</th>
                 <th>Grupo sanguineo</th>
                 <th>Factor Rh</th>
                 <th>Acciones</th>
@@ -26,19 +29,21 @@
 
                     <td>{{ bolsa.codigo }}</td>
                     <td>{{ bolsa.componente }}</td>
-                    <td>{{ bolsa.lote }}</td>
-                    <td>{% if bolsa.fechaDonacion %}{{ bolsa.fechaDonacion|date('d-m-Y') }}{% endif %}</td>
-                    <td>{% if bolsa.fechaVencimiento %}{{ bolsa.fechaVencimiento|date('d-m-Y') }}{% endif %}</td>
+                    <td class="visible-lg">{{ bolsa.lote }}</td>
+                    <td class="visible-lg">{% if bolsa.fechaDonacion %}{{ bolsa.fechaDonacion|date('d-m-Y') }}{% endif %}</td>
+                    <td class="visible-lg">{% if bolsa.fechaVencimiento %}{{ bolsa.fechaVencimiento|date('d-m-Y') }}{% endif %}</td>
                     <td>{{ bolsa.grupoSanguineo }}</td>
                     <td>{{ bolsa.rh }}</td>
                     <td>
-                        <a href="{{ path('bolsa_show', { 'id': bolsa.id }) }} " class="btn btn-info">show</a>
-                        <a href="{{ path('bolsa_edit', { 'id': bolsa.id }) }}" class="btn btn-danger">edit</a>
+                        <a href="{{ path('bolsa_show', { 'id': bolsa.id }) }} " class="btn btn-info">Datos</a>
+                        <a href="{{ path('bolsa_edit', { 'id': bolsa.id }) }}" class="btn btn-warning">Editar</a>
                     </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
     </div>
-
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('js/myJS/module-finder.js') }}"></script>
+    {% endblock %}
 {% endblock %}

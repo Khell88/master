@@ -2,17 +2,14 @@
 
 namespace Krytek\DataBundle\Form;
 
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 class SolicitudPacienteType extends AbstractType
 {
@@ -54,7 +51,6 @@ class SolicitudPacienteType extends AbstractType
                 'label' => false
             ))
             ->add('Motivos', ChoiceType::class, array(
-                'label' => 'Motivo de Transfusión',
                 'expanded' => true,
                 'mapped' => false,
                 'attr' => array(
@@ -82,7 +78,7 @@ class SolicitudPacienteType extends AbstractType
                 'format'=>'MM/dd/yyyy',
             ))
             ->add('hora', TimeType::class, array(
-                'widget' => 'choice',
+                'widget' => 'single_text',
 
                 'attr' => array(
                     'class' => 'time time_prim'
@@ -108,33 +104,36 @@ class SolicitudPacienteType extends AbstractType
                 'choices' => array('Reserva' => 'Reserva', 'Urgente' => 'Urgente',
                     'En el día' => 'En el día', 'Emergente' => 'Emergente'),
                 'expanded' => true,
-                'label' => false
+                'label' => false,
+                'attr'=>array(
+                    'class'=>'radios'
+                )
             ))
             ->add('hb', TextType::class, array(
                 'attr' => array(
                     'class' => 'only_number',
-                    'maxlength' => 6,
+                    'maxlength' => 2,
                 ),
                 'label' => false
             ))
             ->add('tp', TextType::class, array(
                 'attr' => array(
                     'class' => 'only_number',
-                    'maxlength' => 6,
+                    'maxlength' => 2,
                 ),
                 'label' => false
             ))
             ->add('tptk', TextType::class, array(
                 'attr' => array(
                     'class' => 'only_number',
-                    'maxlength' => 6,
+                    'maxlength' => 2,
                 ),
                 'label' => false
             ))
             ->add('plaquetas', TextType::class, array(
                 'attr' => array(
                     'class' => 'only_number',
-                    'maxlength' => 6,
+                    'maxlength' => 4,
                 ),
                 'label' => false
             ))
@@ -142,25 +141,33 @@ class SolicitudPacienteType extends AbstractType
                 'choices' => array(
                     'Reemplazar volumen en sangre' => 'Reemplazar volumen en sangre',
                     'Mejorar Oxigenación' => 'Mejorar Oxigenación',
-                    'Fomentar coagulación' => 'Fomentar coagulación',
                     'Tratamiento trombocitopenia' => 'Tratamiento trombocitopenia',
+                    'Fomentar coagulación' => 'Fomentar coagulación',
+
                 ),
                 'label' => false,
                 'expanded' => true,
+                'attr'=>array(
+                    'class'=>'radios'
+                )
+
+
             ))
             ->add('consentimiento', ChoiceType::class, array(
                 'choices' => array('Si' => 'SI', 'No' => 'NO'),
                 'expanded' => true,
                 'placeholder' => null,
-                'label' => false
+                'label' => false,
+                'attr'=>array(
+                    'class'=>'radios'
+                )
 
             ))
             ->add('incompatibilidadMF', ChoiceType::class, array(
                 'choices' => array('Si' => 'SI', 'No' => 'NO'),
                 'label' => 'Incompatibilidad materno fetal',
                 'label_attr'=>array(
-                    'class'=>'incompatiblepac
-                    '
+                    'class' => 'incompatiblepac'
                 ),
                 'expanded' => true,
                 'attr' => array(
@@ -183,7 +190,7 @@ class SolicitudPacienteType extends AbstractType
 
             ))
             ->add('horaARealizar', TimeType::class, array(
-                'widget' => 'choice',
+                'widget' => 'single_text',
                 'attr' => array(
                     'class' => 'time time_sec'
                 ),

@@ -1,13 +1,6 @@
 /*---My Section--*/
 
-.two-row{
-    float: left;
-    width: 50%;
-    padding-left: 10px;
-    border: double;
-    border-color: #337ab7;
 
-}
 
 .three-in-row{
     float: left;
@@ -37,7 +30,7 @@
 .text-area{
     width: 97%;
     resize: none;
-    height: inherit;
+    height: auto;
     word-wrap: normal;
     margin-bottom: 10px;
 }
@@ -191,12 +184,13 @@ footer {
 
 .notes {
     font-size: 120%;
-    font-weight: bold;
+    font-weight: lighter;
     text-align: justify;
+    text-wrap: normal;
 }
 
 .my-panels {
-    min-height: 600px;
+    min-height: 550px;
     height: auto;
 }
 
@@ -219,8 +213,13 @@ footer {
     border-radius: 6%;
 }
 
-.submit-div {
+.top-separator {
     padding-top: 10px;
+
+}
+
+.bottom-separator{
+    padding-bottom: 10px;
 }
 
 .footer{
@@ -234,6 +233,84 @@ footer {
     margin-left: 15px;
 }
 
+.item-count{
+    font-weight: bold;
+    padding-top: 3px;
+    text-align: justify;
+    font-size: 110%;
+    float: right;
+}
+
+.search-input{
+    max-width: 200px;
+}
+
+/*Hide in vertical xs*/
+
+@media (max-width: 620px){
+    .my-hidden-620v{
+        display: none !important;
+    }
+}@media (max-width: 1000px){
+    .my-hidden-1000v{
+        display: none !important;
+    }
+}
+
+
+.shadow{
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    border-radius: 1%;
+}
+.my-active{
+    background-color: #dddddd;
+    font-weight: bold;
+}
+
+.button-separator{
+    margin: 10px 10px 10px 0px;
+}
+
+.my-pan-title{
+    font-weight: bold;
+}
+
+.right-separator{
+    padding-right: 10px;
+}
+
+div.radios label.required{
+    font-weight: normal;
+    padding-right: 5px;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+h5.panel-title.form-group{
+    margin-bottom: 15px;
+}
+
+ul.bolsas{
+    list-style: none;
+
+}
+ul.bolsas li{
+    display: inline;
+}
+
+a#plus-sign{
+    padding: 27px 15px 0px 0px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 22px;
+    margin-left: -10px;
+}
+div#plus{
+    padding-right: 0px;
+    padding-left: 0px;
+}
 
 
 

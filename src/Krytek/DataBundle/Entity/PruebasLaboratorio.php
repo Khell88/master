@@ -25,9 +25,16 @@ class PruebasLaboratorio
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="string", length=255, nullable=false)
+     * @ORM\Column(name="descripcion", type="string", length=255, nullable=false,)
      */
     private $descripcion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="componente", type="string", length=255, nullable=false)
+     */
+    private $componente;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -111,5 +118,29 @@ class PruebasLaboratorio
     public function getBolsaid()
     {
         return $this->bolsaid;
+    }
+
+    /**
+     * Set componente
+     *
+     * @param string $componente
+     *
+     * @return PruebasLaboratorio
+     */
+    public function setComponente($componente)
+    {
+        $this->componente = $componente;
+
+        return $this;
+    }
+
+    /**
+     * Get componente
+     *
+     * @return string
+     */
+    public function getComponente()
+    {
+        return $this->componente;
     }
 }

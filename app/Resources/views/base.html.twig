@@ -23,19 +23,22 @@
 
 
 <div class="container">
-    {% include 'templates/new-base.html.twig' %}
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        {% include 'templates/new-base.html.twig' %}
+    </div>
+
 </div>
 <div class="container">
-    <div class="row">
-        <div class="my-menu">
-            {% include 'templates/menus.html.twig' %}
-        </div>
+    <div>
+        {% include 'templates/menus.html.twig' %}
     </div>
 </div>
 
-
 <div class="container my-panels">
-    {% block body %}{% endblock %}
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        {% block body %}{% endblock %}
+    </div>
+
 </div>
 
 {% block javascripts %}{% endblock %}

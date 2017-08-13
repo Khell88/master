@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <input type="hidden" id="module" value="solicitudes">
     <div class="col-md-12">
         <h1>Solicitudtransfusions list</h1>
 
@@ -31,16 +32,16 @@
                     <td>{% if solicitudTransfusion.horaARealizar %}{{ solicitudTransfusion.horaARealizar|date('h:i') }}{% endif %}</td>
                     <td>{% if solicitudTransfusion.fecha %}{{ solicitudTransfusion.fecha|date('d-m-Y') }}{% endif %}</td>
                     <td>{% if solicitudTransfusion.hora %}{{ solicitudTransfusion.hora|date('h:i:s') }}{% endif %}</td>
-                    <td>{{ solicitudTransfusion.procesada }}</td>
+                    <td>{{ solicitudTransfusion.estado }}</td>
                     <td>
 
                         <a href="{{ path('solicitudtransfusion_show', { 'id': solicitudTransfusion.id }) }}"
-                           class="btn btn-primary">Ver</a>
+                           class="btn btn-primary">Datos</a>
 
                         <a href="{{ path('solicitudtransfusion_edit', { 'id': solicitudTransfusion.id }) }}"
                            class="btn btn-danger">Editar</a>
 
-                        {% if solicitudTransfusion.procesada == 'No procesada' %}
+                        {% if solicitudTransfusion.estado == 'No procesada' %}
                             <a href="{{ path('recepcionsolicitud_new', { 'id': solicitudTransfusion.id }) }}"
                                class="btn btn-success">Procesar</a>
                         {% endif %}

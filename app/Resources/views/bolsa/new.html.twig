@@ -1,83 +1,94 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-            <h1 class="h1 form-title">Agregar unidad de sangre</h1>
-        </div>
 
-        {{ form_start(form) }}
-        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
-            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
-                {{ form_label(form.codigo, 'Codigo') }}
-                {{ form_row(form.codigo) }}
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
-                {{ form_label(form.lote, 'Lote') }}
-                {{ form_row(form.lote) }}
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
-                {{ form_label(form.volumen, 'Volumen') }}
-                {{ form_row(form.volumen) }}
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
-                {{ form_label(form.procedencia, 'Procedencia') }}
-                {{ form_row(form.procedencia) }}
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
-                {{ form_label(form.fechaDonacion, 'Fecha Producción') }}
-                {{ form_row(form.fechaDonacion) }}
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
-                {{ form_label(form.fechaVencimiento, 'Fecha Vencimiento') }}
-                {{ form_row(form.fechaVencimiento) }}
-            </div>
+    <div class="shadow">
+        <input type="hidden" id="module" value="bolsa">
+
+        <div id="new_bolsa">
+            <div class="panel panel-default my-panels">
 
 
-        </div>
+                <div class="panel-heading">
+                    <h1 class="h2 form-title">Agregar unidad de sangre.</h1>
+                </div>
 
-        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+                <div class="panel-body">
+                    {{ form_start(form) }}
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4 top-separator">
+                            {{ form_label(form.codigo, 'Codigo') }}
+                            {{ form_row(form.codigo) }}
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4 top-separator">
+                            {{ form_label(form.lote, 'Lote') }}
+                            {{ form_row(form.lote) }}
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4 top-separator">
+                            {{ form_label(form.volumen, 'Volumen') }}
+                            {{ form_row(form.volumen) }}
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4 top-separator">
+                            {{ form_label(form.procedencia, 'Procedencia') }}
+                            {{ form_row(form.procedencia) }}
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4 top-separator">
+                            {{ form_label(form.fechaDonacion, 'Fecha de Prod.') }}
+                            {{ form_row(form.fechaDonacion) }}
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4 top-separator">
+                            {{ form_label(form.fechaVencimiento, 'Fecha de Venc.') }}
+                            {{ form_row(form.fechaVencimiento) }}
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            {{ form_label(form.problemas, 'Observaciones') }}
+                            {{ form_row(form.problemas) }}
+                        </div>
 
-            <div class="col-md-7 col-sm-9 col-xs-12 col-lg-10">
-                {{ form_label(form.componente, 'Componente Sanguíneo') }}
-                {{ form_row(form.componente) }}
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
+
+                        <div class="col-md-7 col-sm-9 col-xs-12 col-lg- top-separator">
+                            {{ form_label(form.componente, 'Componente Sanguíneo') }}
+                            {{ form_row(form.componente) }}
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6 top-separator">
+                            {{ form_label(form.grupoSanguineo, 'Grupo Sanguíneo') }}
+                            {{ form_row(form.grupoSanguineo) }}
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6 top-separator">
+                            {{ form_label(form.rh, 'Factor Rh') }}
+                            {{ form_row(form.rh) }}
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4 top-separator">
+
+                            {{ form_label(form.muestra, '¿Muestra tomada?') }}
+                            {{ form_row(form.muestra) }}
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 top-separator">
+                            {{ form_widget(form) }}
+                            <button type="submit" class="btn btn-success btn-lg button-separator"><span class="glyphicon glyphicon-floppy-save"></span> Agregar</button>
+                            {{ form_end(form) }}
+
+                                <a href="{{ path('bolsa_index') }}" class="btn btn-danger btn-lg button-separator"><span class="glyphicon glyphicon-remove"></span> Cancelar</a>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
 
-            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6">
-                {{ form_label(form.grupoSanguineo, 'Grupo Sanguíneo') }}
-                {{ form_row(form.grupoSanguineo) }}
-            </div>
-
-            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6">
-                {{ form_label(form.rh, 'Factor Rh') }}
-                {{ form_row(form.rh) }}
-            </div>
-
-
-            <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4">
-
-                {{ form_label(form.muestra, '¿Muestra tomada?') }}
-                {{ form_row(form.muestra) }}
-            </div>
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-                {{ form_label(form.problemas, 'Problemas con la unidad') }}
-                {{ form_row(form.problemas) }}
-            </div>
-        </div>
-
-        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-            <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 submit-div">
-                {{ form_widget(form) }}
-                <input type="submit" class="btn btn-success" value="Create"/>
-                {{ form_end(form) }}
-                <a href="{{ path('bolsa_index') }}" class="btn btn-primary">Back to the list</a>
-            </div>
-
-            <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 submit-div">
-
-            </div>
         </div>
 
         {% include 'all-js.html.twig' %}
