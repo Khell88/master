@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Paciente
  *
  * @ORM\Table(name="paciente", uniqueConstraints={@ORM\UniqueConstraint(name="paciente_ci_paciente_key", columns={"ci_paciente"}), @ORM\UniqueConstraint(name="paciente_id_hc_key", columns={"id_hc"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Krytek\DataBundle\Entity\PacienteRepository")
  */
 class Paciente
 {

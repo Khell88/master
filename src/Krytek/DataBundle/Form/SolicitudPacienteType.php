@@ -213,6 +213,7 @@ class SolicitudPacienteType extends AbstractType
             'attr' => array(
                 'id' => 'solicitud'
             ),
+            'allow_extra_fields'=>true,
 
         ));
     }

@@ -4,15 +4,11 @@
 
     <div class="shadow">
         <input type="hidden" id="module" value="bolsa">
-
         <div id="new_bolsa">
             <div class="panel panel-default my-panels">
-
-
                 <div class="panel-heading">
-                    <h1 class="h2 form-title">Agregar unidad de sangre.</h1>
+                    <h2 class="h2 form-title">Agregar unidad de sangre.</h2>
                 </div>
-
                 <div class="panel-body">
                     {{ form_start(form) }}
                     <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
@@ -44,13 +40,11 @@
                             {{ form_label(form.problemas, 'Observaciones') }}
                             {{ form_row(form.problemas) }}
                         </div>
-
-
                     </div>
 
                     <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
 
-                        <div class="col-md-7 col-sm-9 col-xs-12 col-lg- top-separator">
+                        <div class="col-md-7 col-sm-9 col-xs-12 top-separator">
                             {{ form_label(form.componente, 'Componente Sanguíneo') }}
                             {{ form_row(form.componente) }}
                         </div>
@@ -66,29 +60,21 @@
                         </div>
 
                         <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4 top-separator">
-
                             {{ form_label(form.muestra, '¿Muestra tomada?') }}
                             {{ form_row(form.muestra) }}
                         </div>
                     </div>
 
-
                     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 top-separator">
+                        <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 top-separator">
                             {{ form_widget(form) }}
                             <button type="submit" class="btn btn-success btn-lg button-separator"><span class="glyphicon glyphicon-floppy-save"></span> Agregar</button>
                             {{ form_end(form) }}
-
                                 <a href="{{ path('bolsa_index') }}" class="btn btn-danger btn-lg button-separator"><span class="glyphicon glyphicon-remove"></span> Cancelar</a>
-
-
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
         </div>
 
         {% include 'all-js.html.twig' %}

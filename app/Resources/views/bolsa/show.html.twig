@@ -1,68 +1,89 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <input type="hidden" id="module" value="bolsa">
+
+    <div class="shadow">
+        <input type="hidden" id="module" value="bolsa">
+        <div id="show_bolsa">
+            <div class="panel panel-default my-panels">
+                <div class="panel-heading">
+                    <h2 class="h2 form-title">Informacion de la unidad de sangre #{{ bolsa.codigo }}.</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6">
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            <h3>Código: {{ bolsa.codigo }}</h3>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            <h3>Componente: {{ bolsa.componente }}</h3>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 col-lg-5 top-separator">
+                            <h3>Grupo: {{ bolsa.grupoSanguineo }}</h3>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 col-lg-7 top-separator">
+                            <h3>Factor: {{ bolsa.rh }}</h3>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 col-lg-5 top-separator">
+                            <h3>Lote: {{ bolsa.lote }}</h3>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 col-lg-7 top-separator">
+                            <h3>Volumen: {{ bolsa.volumen }}</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6">
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            <h3>Fecha de
+                                Prodrucción: {% if bolsa.fechaDonacion %}{{ bolsa.fechaDonacion|date('d-m-Y') }}{% endif %}</h3>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            <h3>Fecha de
+                                Vencimiento: {% if bolsa.fechaVencimiento %}{{ bolsa.fechaVencimiento|date('d-m-Y') }}{% endif %}</h3>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-12 col-lg-4 top-separator">
+                            <h3>Muestra: {{ bolsa.muestra }}</h3>
+                        </div>
+                        <div class="col-md-6 col-sm-9 col-xs-12 col-lg-12 top-separator">
+                            <h3>Procedencia: {{ bolsa.procedencia }}</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                        <div class=" col-md-12 col-sm-12 col-xs-12 col-lg-12top-separator"><h3>Observaciones: {{ bolsa.problemas }}</h3></div>
+                    </div>
+
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                        <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 top-separator">
+                            <a class="btn btn-primary btn-lg button-separator" href="{{ path('bolsa_index') }}"><span class="glyphicon glyphicon-arrow-left"></span> Volver</a>
+                            <a class="btn btn-warning btn-lg button-separator" href="{{ path('bolsa_edit', { 'id': bolsa.id }) }}"><span class="glyphicon glyphicon-edit"></span> Editar</a>
+                        </div>
+
+                        {#<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 top-separator">#}
+                        {#{{ form_start(delete_form) }}#}
+                        {#<input class="btn btn-danger" type="submit" value="Delete">#}
+                        {#{{ form_end(delete_form) }}#}
+                        {#</div>#}
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
 
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-            <h1 class="h2 form-title">Informacion de la unidad de sangre #{{ bolsa.codigo }}.</h1>
-        </div>
-
-        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-4 separator">
-                <h3>Código: {{ bolsa.codigo }}</h3>
-            </div>
-
-            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-8 separator">
-                <h3>Componente: {{ bolsa.componente }}</h3>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-2 separator">
-                <h3>Grupo: {{ bolsa.grupoSanguineo }}</h3>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3 separator">
-                <h3>Factor: {{ bolsa.rh }}</h3>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-2 separator">
-                <h3>Lote: {{ bolsa.lote }}</h3>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-2 separator">
-                <h3>Volumen: {{ bolsa.volumen }}</h3>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-2 separator">
-                <h3>Muestra: {{ bolsa.muestra }}</h3>
-            </div>
-
-            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-6 separator">
-                <h3>Fecha de
-                    Prodrucción: {% if bolsa.fechaDonacion %}{{ bolsa.fechaDonacion|date('d-m-Y') }}{% endif %}</h3>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-6 separator">
-                <h3>Fecha de
-                    Vencimiento: {% if bolsa.fechaVencimiento %}{{ bolsa.fechaVencimiento|date('d-m-Y') }}{% endif %}</h3>
-            </div>
-
-            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-4 separator">
-                <h3>Procedencia: {{ bolsa.procedencia }}</h3>
-            </div>
-
-            <div class="col-md-4 col-sm-4 col-xs-6 col-lg-8 separator">
-                <h3>Observaciones: {{ bolsa.problemas }}</h3>
-            </div>
-        </div>
-
-        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 separator">
-            <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 separator">
-                <a class="btn btn-primary" href="{{ path('bolsa_index') }}">Volver al listado</a>
-                <a class="btn btn-warning" href="{{ path('bolsa_edit', { 'id': bolsa.id }) }}">Editar</a>
-            </div>
-
-            {#<div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 separator">#}
-            {#{{ form_start(delete_form) }}#}
-            {#<input class="btn btn-danger" type="submit" value="Delete">#}
-            {#{{ form_end(delete_form) }}#}
-            {#</div>#}
 
         </div>
+
 
     </div>
 

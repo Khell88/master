@@ -27,11 +27,11 @@ class RecepcionSolicitudType extends AbstractType
             ))
             ->add('pruebasLaboratorio', ChoiceType::class, array(
                 'mapped'=>false,
-                'label'=>false,
+                'label'=>'Pruebas realizada(s) a la(s) unidad(es)',
                 'expanded'=>true,
-
                 'attr'=>array(
-                    'class'=>'pruebas_lab'
+                    'class'=>'pruebas_lab',
+
                 )
             ))
 
@@ -82,8 +82,10 @@ class RecepcionSolicitudType extends AbstractType
             ->add('causaNoPruebas', TextareaType::class, array(
                 'label' => 'En caso de no hacer las pruebas reflejar causa',
                 'attr' => array(
-                    'class' => 'text-area'
-                )
+                    'class' => 'text-area',
+                ),
+                'required'=>false,
+
             ))
             ->add('fechaTransfusion', DateType::class, array(
                 'attr' => array(

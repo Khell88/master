@@ -16,7 +16,8 @@ $(document).ready(function () {
     var edit_motiv = false;
     var form_name;
     var mensaje;
-    var sexo = 'M';
+    var sexo = $('#sexo_pac').val();
+    console.log(sexo);
     var lactante = 'N/A';
 
 
@@ -43,8 +44,12 @@ $(document).ready(function () {
     //Hidding components
     $motivo_selector.hide();
     $diagnostico_selector.hide();
-    $('.embarazos').hide();
-    $('.abortos').hide();
+
+    if (sexo==undefined){
+        $('.embarazos').hide();
+        $('.abortos').hide();
+    }
+
     $('.incompatible').hide();
 
 
@@ -58,9 +63,22 @@ $(document).ready(function () {
     $('.date').datepicker({
         dateFormat: 'mm/dd/yy',
     });
+
+    if ($('#module').val()!='bolsa'){
+        $('.weight').maskWeight({
+            integerDigits: 3,
+            decimalDigits: 2,
+            decimalMark: '.',
+            roundingZeros: true,
+            initVal: $('.weight').val()
+        });
+    }
+
+
     $('.lactante').attr('id', 'lactante');
     /*$('.weight').attr('name', 'peso');
     $('.edad').attr('name', 'edad');*/
+
 
 
     //Restriction functions for the inputs
@@ -179,6 +197,7 @@ $(document).ready(function () {
 
 
     }
+
     function finderEditSol(sol_comp) {
         console.log('pinga de');
         if (sol_comp !== '') {
@@ -236,7 +255,7 @@ $(document).ready(function () {
     }
 
     $('.krytek_databundle_componente').change(function () {
-        console.log('pinga de triya');
+        console.log('empieza la mierda');
         if ($(this).val() !== '') {
             if ($(this).val() === 'Concentrado de eritrocitos') {
                 if ($diagnostico_selector.val() === '') {
@@ -252,7 +271,6 @@ $(document).ready(function () {
                         comp: $diagnostico_selector.val(),
                         diag: 'diag'
                     };
-
                     fillSelect(data);
                     $diagnostico_selector.attr('aria-required','true');
                     $diagnostico_selector.attr('required', 'required');
@@ -267,7 +285,6 @@ $(document).ready(function () {
                 $diagnostico_selector.val('');
                 $diagnostico_selector.removeAttr('required', 'required');
                 $('#solicitud_Diagnosticos-error').remove();
-
 
                 var data = {
                     comp: $(this).val()
@@ -313,7 +330,6 @@ $(document).ready(function () {
     });
 
     function fillSelect(data) {
-
         $.ajax({
             type: 'get',
             url: "{{path('select_motivos')}}",
@@ -349,6 +365,15 @@ $(document).ready(function () {
     //Validation block for the forms
     $('form').validate({
         rules: {
+            'deportes[]': {
+                required: true,
+                minlength: 1
+            },
+            'pruebas[]': {
+
+                required: true,
+                minlength: 1
+            },
 
             'paciente[peso]': {
                 range: [1.00, 400]
@@ -375,6 +400,12 @@ $(document).ready(function () {
             // }
         },
         messages: {
+            'pruebas': {
+                required: "Este campo es obligatorio"
+            },
+
+            'deportes[]': 'Debe seleccionar mínimo un deporte',
+
             'paciente[peso]': {
                 range: "Solo se admiten números decimales entre 1 y 400."
             },
@@ -401,11 +432,11 @@ $(document).ready(function () {
             // Add the `help-block` class to the error element
             error.addClass("help-block");
 
-            if (element.prop("type") === "checkbox") {
-                error.insertAfter(element.parent("label"));
-            } else {
+            // if (element.prop("type") === "checkbox") {
+            //     error.insertAfter(element.parent("label"));
+            // } else {
                 error.insertBefore(element);
-            }
+            // }
         },
         highlight: function (element, errorClass, validClass) {
             $(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
@@ -509,7 +540,7 @@ $(document).ready(function () {
 
     //Managing pruebas acorde al componente a transfundir
 
-    if ($('#recepcion_module')){
+    if ($('#recepcion_module').val()== 'recepcion_new'){
         findPruebaLab();
     }
 
@@ -528,18 +559,17 @@ $(document).ready(function () {
                 var pruebas = data.pruebas;
                 var idpruebas = data.idpruebas;
 
+                $pruebas_selector.append('<div><input id="checkbox_0" value="Prueba de grupo y factor" type="checkbox" name="pruebas[]" >Prueba de grupo y factor</input></div>');
                 for (i in pruebas){
-                    $pruebas_selector.append('<div><input id="checkbox_' + idpruebas[i] + '" value="' + idpruebas[i] + '" type="checkbox" name="pruebas" class="checkbox-inline" aria-required="true" required="required">' + pruebas[i] + '</input></div>');
+                    $pruebas_selector.append('<div><input id="checkbox_' + idpruebas[i] + '" value="' + idpruebas[i] + '" type="checkbox" name="pruebas[]" >' + pruebas[i] + '</input></div>');
                 }
+
             }
         });
-
-
-        $pruebas_selector.attr('required', 'required');
 
 
     }
 
 
 
-})
+});

@@ -102,7 +102,7 @@ class PacienteController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('paciente_edit', array('id' => $paciente->getId()));
+            return $this->redirectToRoute('paciente_index', array('id' => $paciente->getId()));
         }
 
         return $this->render('paciente/edit.html.twig', array(
@@ -145,6 +145,58 @@ class PacienteController extends Controller
             ->setAction($this->generateUrl('paciente_delete', array('id' => $paciente->getId())))
             ->setMethod('DELETE')
             ->getForm();
+    }
+
+
+    /**
+     * Calls the search tmeplate
+     * @Route("/search", name="find_patient")
+     */
+    public function findPatient(Request $request)
+    {
+        return $this->render('searches/find_patient.html.twig');
+    }
+
+    /**
+     * Finds patients acording to a criteria
+     * @Route("/search/{codigo}/", name="search_patient", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
+     */
+    public function searchPatient(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $search_c =  $request->get('cod');
+
+
+        $criteria = $request->get('criterio');
+
+        if ($criteria == 'ci') {
+            $patients = $em->getRepository('KrytekDataBundle:Paciente')->findByCI($search_c, 5);
+        } else {
+            $patients = $em->getRepository('KrytekDataBundle:Paciente')->findByNameOrLastName(strtoupper($search_c), 5);
+        }
+
+
+        $response = new JsonResponse();
+        if ($patients != null) {
+            $enconder = array(new JsonEncoder());
+            $normalizer = array(new ObjectNormalizer());
+
+            $serializer = new Serializer($normalizer, $enconder);
+
+            $response->setStatusCode(200);
+            $response->setData(array(
+                'response' => 'success',
+                'units' => $serializer->serialize($patients, 'json'),
+            ));
+
+            return $response;
+        } else {
+            $response->setData(array(
+                'response' => 'failure'
+            ));
+        }
+
+        return $response;
     }
 
 

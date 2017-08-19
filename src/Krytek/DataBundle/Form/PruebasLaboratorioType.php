@@ -21,6 +21,7 @@ class PruebasLaboratorioType extends AbstractType
             ))
             ->add('componente', ChoiceType::class, array(
                 'choices' => array(
+                    'Sangre Total' => 'Sangre Total',
                     'Eritrocitos' => array(
                         'Concentrado de eritrocitos' => 'Concentrado de eritrocitos',
                         'Concentrado de eritrocitos lavados' => 'Concentrado de eritrocitos lavados',),

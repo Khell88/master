@@ -19,7 +19,6 @@ $(document).ready(function () {
 
 
     $('.paciente_ci').keyup(function () {
-
         var pacienteCI = $(this).val();
 
         if (pacienteCI !== '' && pacienteCI.length > 10) {
@@ -32,12 +31,12 @@ $(document).ready(function () {
                 if ($('#month') && !meses) {
                     var ver = $('<div id="month" class="my-error">El número del mes tiene que estar entre 01 y 12, y el de los días entre 01 y 31. <br> Por Favor rectifique.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
                     meses = true;
-                    disableSumbit();
+                    // disableSumbit();
                 }
             } else {
                 $('#month').slideUp('slow', function () {
                     $('#month').remove();
-                    enableSubmit();
+                    // enableSubmit();
                 });
                 meses = false;
                 validM = true;
@@ -48,12 +47,12 @@ $(document).ready(function () {
                 if ($('#diasF') && !diasF) {
                     var ver = $('<div id="diasF" class="my-error">El número de CI insertado no es válido para el mes de Febrero. <br> Por favor rectifique los días.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
                     diasF = true;
-                    disableSumbit();
+                    // disableSumbit();
                 }
             } else {
                 $('#diasF').slideUp('slow', function () {
                     $('#diasF').remove();
-                    enableSubmit();
+                    // enableSubmit();
                 });
                 diasF = false;
                 validF = true;
@@ -64,12 +63,12 @@ $(document).ready(function () {
                 if ($('#dias') && !dias) {
                     var ver = $('<div id="dias" class="my-error">Los meses de Abril, Junio, Septiembre y Noviembre solo tienen 30 días.  <br> Por favor rectifique.</div>').insertAfter($(this).labels()).hide().slideDown('slow');
                     dias = true;
-                    disableSumbit();
+                    // disableSumbit();
                 }
             } else {
                 $('#dias').slideUp('slow', function () {
                     $('#dias').remove();
-                    enableSubmit();
+                    // enableSubmit();
                 });
                 dias = false;
                 validD = true;
@@ -110,17 +109,17 @@ $(document).ready(function () {
             if (pacienteCI == '') {
                 $('#dias').slideUp('slow', function () {
                     $('#dias').remove();
-                    enableSubmit();
+                    // enableSubmit();
                 });
                 dias = false;
                 $('#diasF').slideUp('slow', function () {
                     $('#diasF').remove();
-                    enableSubmit();
+                    // enableSubmit();
                 });
                 diasF = false;
                 $('#month').slideUp('slow', function () {
                     $('#month').remove();
-                    enableSubmit();
+                    // enableSubmit();
                 });
                 meses = false;
             }
@@ -134,7 +133,7 @@ $(document).ready(function () {
 
             $('#id_pac').slideUp('slow', function () {
                 $('#id_pac').remove();
-                enableSubmit()
+                // enableSubmit()
             });
             existe_ci = false;
             datos1 = false;
@@ -191,7 +190,7 @@ $(document).ready(function () {
                         else {
 
                             var ver_error = $('<div id="id_pac" class="my-error">Ya existe un paciente con ese número de identidad.  <br> Por favor rectifique.</div>').insertAfter($('#paciente_ciPaciente').labels()).hide().slideDown('slow');
-                            disableSumbit();
+                            // disableSumbit();
                         }
                     }
                 } else {
@@ -211,7 +210,6 @@ $(document).ready(function () {
 
     $('.num_hc').keyup(function () {
         var hc_number = $(this).val();
-
         if (hc_number != '' && hc_number.length > 2) {
             var data = {
                 searchNum: hc_number,
@@ -221,15 +219,13 @@ $(document).ready(function () {
         } else {
             $('#id_hc').slideUp('slow', function () {
                 $('#id_hc').remove();
-                enableSubmit();
+                // enableSubmit();
             });
             existe_hc = false;
         }
-
     });
 
     function search(data) {
-
         $.ajax({
             type: 'get',
             url: "{{path ('paciente_search')}}/",
@@ -242,33 +238,28 @@ $(document).ready(function () {
                             var ver = $('<div id="id_hc" class="my-error">Ya existe un paciente con ese número de Historia Clínica.  <br> Por favor rectifique.</div>').insertAfter($('.num_hc').labels()).hide().slideDown('slow');
 
                             existe_hc = true;
-                            disableSumbit()
+                            // disableSumbit()
                         }
                     } else {
                         console.log('cojone');
                         if ($('#id_pac') && !existe_ci) {
                             var ver = $('<div id="id_pac" class="my-error">Ya existe un paciente con ese número de identidad.  <br> Por favor rectifique.</div>').insertAfter($('.paciente_ci').labels()).hide().slideDown('slow');
                             existe_ci = true;
-                            disableSumbit();
+                            // disableSumbit();
                         }
 
                     }
-
-
-
                 }
             }
-        })
-
-
+        });
     }
 
     function disableSumbit() {
-        $('#submit_form').addClass('hidden');
+        // $('#submit_form').addClass('hidden');
     }
 
     function enableSubmit() {
-        $('#submit_form').removeClass('hidden');
+        // $('#submit_form').removeClass('hidden');
 
     }
 

@@ -84,7 +84,7 @@ class BolsaType extends AbstractType
             ->add('grupoSanguineo', ChoiceType::class, array(
                 'choices' => array('A' => 'A', 'B' => 'B', 'O' => 'O', 'AB' => 'AB'),
                 'expanded' => true,
-                'label' => false
+                'label' => false,
             ))
             ->add('rh', ChoiceType::class, array(
                 'choices' => array('Positivo' => 'positivo', 'Negativo' => 'negativo'),

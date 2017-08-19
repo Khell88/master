@@ -26,76 +26,76 @@
                         <div id="pac_data" class="panel-collapse collapse in">
                             <div class="panel-body">
 
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 ">
                                     <h4> CI: {{ solicitudTransfusion.pacienteid.ciPaciente }}</h4>
                                 </div>
-                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4 form-group">
+                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4 ">
                                     <h4>Nombre: {{ solicitudTransfusion.pacienteid.nombre }}</h4>
                                 </div>
 
-                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4 form-group">
+                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4 ">
                                     <h4>Apellidos: {{ solicitudTransfusion.pacienteid.apellidos }}</h4>
                                 </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-2 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-2 ">
                                     <h4>Edad: {{ solicitudTransfusion.pacienteid.edad }}</h4>
                                 </div>
 
-                                <div class="col-md-2 col-sm-6 col-xs-12 col-lg-2 form-group">
+                                <div class="col-md-2 col-sm-6 col-xs-12 col-lg-2 ">
                                     <h4> Sexo: {{ solicitudTransfusion.pacienteid.sexo }}</h4>
                                 </div>
 
-                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 form-group">
+                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 ">
                                     <h4>Historia Clínica: {{ solicitudTransfusion.pacienteid.idHc }}</h4>
                                 </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-2 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-2 ">
                                     <h4>Peso (kgs): {{ solicitudTransfusion.pacienteid.peso }}</h4>
                                 </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 ">
                                     <h4>Grupo Sanguíneo: {{ solicitudTransfusion.pacienteid.tipoSangre }}</h4>
                                 </div>
 
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 ">
                                     <h4>Factor Rh: {{ solicitudTransfusion.pacienteid.rh }}</h4>
                                 </div>
 
-                                <div class="col-md-2 col-sm-6 col-xs-12 col-lg-3 form-group">
+                                <div class="col-md-2 col-sm-6 col-xs-12 col-lg-3 ">
                                     <h4>Lactante: {{ solicitudTransfusion.pacienteid.lactante }}</h4>
                                 </div>
 
                                 {% if solicitudTransfusion.pacienteid.sexo=='F' %}
                                     {% if solicitudTransfusion.pacienteid.lactante != 'NO' %}
-                                        <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 form-group">
+                                        <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 ">
                                             <input id="embarazos" type="hidden"
                                                    value="{{ solicitudTransfusion.pacienteid.embarazos }}">
                                             <h4>Embarazos Previos: {{ solicitudTransfusion.pacienteid.embarazos }}</h4>
                                         </div>
                                         {% if solicitudTransfusion.pacienteid.embarazos == 'SI' %}
 
-                                            <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 form-group">
+                                            <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 ">
                                                 <h4>Abortos Previos: {{ solicitudTransfusion.pacienteid.abortos }}</h4>
                                             </div>
                                         {% endif %}
                                     {% endif %}
                                 {% endif %}
 
-                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-5 form-group">
+                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-5 ">
                                     <h4>Incompatibilidad
                                         Materno-Fetal: {{ solicitudTransfusion.incompatibilidadMF }}</h4>
                                 </div>
 
-                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-2 form-group">
+                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-2 ">
                                     <h4>Hb (gr/dl): {{ solicitudTransfusion.hb }}</h4>
                                 </div>
-                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-2 form-group">
+                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-2 ">
                                     <h4>TP (s):{{ solicitudTransfusion.tp }}</h4>
                                 </div>
-                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-2 form-group">
+                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-2 ">
                                     <h4>TPTK (s){{ solicitudTransfusion.tptk }}</h4>
                                 </div>
-                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 form-group">
+                                <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 ">
                                     <h4>Plaquetas (10<sup>9</sup>/L):{{ solicitudTransfusion.plaquetas }}</h4>
                                 </div>
 
@@ -117,63 +117,60 @@
 
                         <div id="sol_data" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-6 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-6 ">
                                     <h4>Componente a
                                         Transfundir: {{ solicitudTransfusion.motivoTransfusionid.componente }}</h4>
                                 </div>
                                 {% if solicitudTransfusion.diagnosticosid != null %}
-                                    <div class="col-md-3 col-sm-6 col-xs-12 col-lg-6 form-group">
+                                    <div class="col-md-3 col-sm-6 col-xs-12 col-lg-6 ">
                                         <h4>Diagnóstico: {{ solicitudTransfusion.diagnosticosid.descripcion }}</h4>
                                     </div>
                                 {% endif %}
 
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-12 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-12 ">
                                     <h4> Motivo de
                                         tranfusión: {{ solicitudTransfusion.motivoTransfusionid.descripcion }}</h4>
                                 </div>
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-4 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-4 ">
                                     <h4>Fecha a
                                         transfundir: {{ solicitudTransfusion.fechaARealizar|date('d-m-Y') }}</h4>
                                 </div>
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 ">
                                     <h4> Hora a transfundir: {{ solicitudTransfusion.hora|date('h:i') }}</h4>
                                 </div>
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-2 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-2 ">
                                     <h4>Sala: {{ solicitudTransfusion.sala|upper }}</h4>
                                 </div>
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-2 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-2 ">
                                     <h4> Cama: {{ solicitudTransfusion.cama }}</h4>
                                 </div>
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-6 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-6 ">
                                     <h4> Servicio donde se
                                         transfundirá: {{ solicitudTransfusion.serviciosid.descripcion }}</h4>
                                 </div>
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-5 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-5 ">
                                     <h4>Objetivo: {{ solicitudTransfusion.objetivo }}</h4>
                                 </div>
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-4 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-4 ">
                                     <h4>Fecha de confección: {{ solicitudTransfusion.fecha|date('d-m-Y') }}</h4>
                                 </div>
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 ">
                                     <h4>Hora de confección: {{ solicitudTransfusion.hora|date('h:i') }}</h4>
                                 </div>
                                 <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 form-group">
                                     <h4>Urgencia: {{ solicitudTransfusion.urgencia }}</h4>
                                 </div>
-                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 form-group">
+                                <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 ">
                                     <h4>Consentimiento: {{ solicitudTransfusion.consentimiento }}</h4>
                                 </div>
-
-
-                                <div>
-                                    Nombre: {{ solicitudTransfusion.usuarioid.nombre }} {{ solicitudTransfusion.usuarioid.apellidos }}</div>
-                                <div>No. Identificación: {{ solicitudTransfusion.usuarioid.noIdentificacion }}</div>
                             </div>
 
                         </div>
 
                     </div>
-
+                    <div>
+                        Nombre: {{ solicitudTransfusion.usuarioid.nombre }} {{ solicitudTransfusion.usuarioid.apellidos }}</div>
+                    <div>No. Identificación: {{ solicitudTransfusion.usuarioid.noIdentificacion }}</div>
                     <div id="recepcion_data_panel" class="panel panel-info">
                         <div class="panel-heading">
                             <div class="panel-title my-pan-title form-title">
@@ -195,7 +192,7 @@
 
                                     <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
                                         <label for="id_bolsas" class="required control-label" aria-required="true">
-                                            Incluir Unidad(es)
+                                             Unidad(es) a utilizar
                                         </label><input type="text" id="id_bolsas" required="required"
                                                        aria-required="true" class="only_number"/>
 
@@ -215,17 +212,16 @@
                                                Datos de pruebas de laboratorio.
                                             </div>
                                         </div>
+
+
                                         <div class="panel-body">
                                             <input type="hidden" id="prueba_selector"
                                                    value="{{ solicitudTransfusion.motivoTransfusionid.componente }}">
-                                            <div>
-                                                {{ form_label(form.pruebasLaboratorio, 'Pruebas de laboratorio realizadas.') }}
+                                            <div class="col-md-8 col-lg-4 col-xs-12 col-sm-12 top-separator form-group">
                                                 {{ form_row(form.pruebasLaboratorio) }}
                                             </div>
 
-
-                                            <div class="clearfix"></div>
-                                            <div class="col-md-8 col-lg-7 col-xs-12 col-sm-12 form-group">
+                                            <div class="col-md-8 col-lg-8 col-xs-12 col-sm-12 top-separator form-group">
                                                 {{ form_row(form.causaNoPruebas) }}
                                             </div>
                                         </div>

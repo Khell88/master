@@ -1,73 +1,70 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <input id="module" type="hidden" value="paciente">
-    <h1>Paciente</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ paciente.id }}</td>
-            </tr>
-            <tr>
-                <th>Cipaciente</th>
-                <td>{{ paciente.ciPaciente }}</td>
-            </tr>
-            <tr>
-                <th>Nombre</th>
-                <td>{{ paciente.nombre }}</td>
-            </tr>
-            <tr>
-                <th>Apellidos</th>
-                <td>{{ paciente.apellidos }}</td>
-            </tr>
-            <tr>
-                <th>Sexo</th>
-                <td>{{ paciente.sexo }}</td>
-            </tr>
-            <tr>
-                <th>Tiposangre</th>
-                <td>{{ paciente.tipoSangre }}</td>
-            </tr>
-            <tr>
-                <th>Idhc</th>
-                <td>{{ paciente.idHc }}</td>
-            </tr>
-            <tr>
-                <th>Peso</th>
-                <td>{{ paciente.peso }}</td>
-            </tr>
-            <tr>
-                <th>Lactante</th>
-                <td>{{ paciente.lactante }}</td>
-            </tr>
-            <tr>
-                <th>Embarazos</th>
-                <td>{{ paciente.embarazos }}</td>
-            </tr>
-            <tr>
-                <th>Rh</th>
-                <td>{{ paciente.rh }}</td>
-            </tr>
-            <tr>
-                <th>Abortos</th>
-                <td>{{ paciente.abortos }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="shadow">
+        <input id="module" type="hidden" value="paciente">
+        <div id="show_paciente">
+            <div class="panel panel-default my-panels">
+                <div class="panel-heading">
+                    <h2 class="h2 form-title">Información del paciente.</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-7 col-sm-12 col-xs-12 col-lg-6">
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6 top-separator">
+                            <h3>CI: {{ paciente.ciPaciente }}</h3>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6 top-separator">
+                            <h3>No. HC: {{ paciente.idHc }}</h3>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            <h3>Nombre: {{ paciente.nombre }} </h3>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            <h3>Apellidos: {{ paciente.apellidos }}</h3>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 col-lg-4 top-separator">
+                            <h3>Sexo: {{ paciente.sexo }}</h3>
+                        </div>
+                        <div class="col-md-5 col-sm-6 col-xs-6 col-lg-6 top-separator">
+                            <h3>Peso(kg): {{ paciente.peso }}</h3>
+                        </div>
+                    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('paciente_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('paciente_edit', { 'id': paciente.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                    <div class="col-md-5 col-sm-12 col-xs-12 col-lg-6">
+                        <div class="col-md-12 col-sm-6 col-xs-6 col-lg-12 top-separator">
+                            <h3>Tipo de sangre: {{ paciente.tipoSangre }}</h3>
+                        </div>
+                        <div class="col-md-12 col-sm-6 col-xs-6 col-lg-12 top-separator">
+                            <h3>Factor: {{ paciente.rh }}</h3>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            <h3>Es lactante: {{ paciente.lactante }}</h3>
+                        </div>
+
+                        {% if paciente.embarazos=='NO' %}
+                            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                                <h3>Embarazos previos: {{ paciente.embarazos }}</h3>
+                            </div>
+                        {% endif %}
+                        {% if paciente.abortos=='NO' %}
+                            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                                <h3>Abortos previos: {{ paciente.abortos }}</h3>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            <a class="btn btn-primary btn-lg button-separator" href="{{ path('paciente_index') }}"><span
+                                        class="glyphicon glyphicon-arrow-left"></span> Volver</a>
+                            <a class="btn btn-warning btn-lg button-separator" href="{{ path('paciente_edit', { 'id': paciente.id }) }}"><span
+                                        class="glyphicon glyphicon-edit"></span> Editar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

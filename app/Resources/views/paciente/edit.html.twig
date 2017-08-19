@@ -1,45 +1,114 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <input id="module" type="hidden" value="paciente">
-    <h1>Paciente edit</h1>
 
-    {{ form_start(edit_form) }}
-    {{ form_label(edit_form.ciPaciente, 'CI Paciente') }}
-    {{ form_row(edit_form.ciPaciente) }}
-    {{ form_label(edit_form.nombre, 'Nombre') }}
-    {{ form_row(edit_form.nombre) }}
-    {{ form_label(edit_form.apellidos, 'Apellidos') }}
-    {{ form_row(edit_form.apellidos) }}
-    {{ form_label(edit_form.edad, 'Edad') }}
-    {{ form_row(edit_form.edad) }}
-    {{ form_label(edit_form.sexo, 'Sexo') }}
-    {{ form_row(edit_form.sexo) }}
-    {{ form_label(edit_form.idHc, 'No. Historia Clinica') }}
-    {{ form_row(edit_form.idHc) }}
-    {{ form_label(edit_form.peso, 'Peso en Kgs (pacientes pedíatricos)') }}
-    {{ form_row(edit_form.peso) }}
-    {{ form_label(edit_form.tipoSangre, 'Grupo Sanguíneo') }}
-    {{ form_row(edit_form.tipoSangre) }}
-    {{ form_label(edit_form.rh, 'Factor Rh') }}
-    {{ form_row(edit_form.rh) }}
-    {{ form_label(edit_form.lactante, 'Es Lactante') }}
-    {{ form_row(edit_form.lactante) }}
-    {{ form_label(edit_form.embarazos, 'Embarazos previos') }}
-    {{ form_row(edit_form.embarazos) }}
-    {{ form_label(edit_form.abortos, 'Abortos previos') }}
-    {{ form_row(edit_form.abortos) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+    <div class="shadow">
+        <input id="module" type="hidden" value="paciente">
 
-    <ul>
-        <li>
-            <a href="{{ path('paciente_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <div id="new_patient">
+            <div id="patient_data" class="panel panel-default my-panels">
+                <div class="panel-heading">
+                    <h2 class="h2 form-title">Editar información del paciente.</h2>
+
+                </div>
+                <div class="panel-body">
+                    {{ form_start(edit_form) }}
+
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-lg-8">
+                        <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 top-separator">
+                            {{ form_label(edit_form.ciPaciente, 'CI Paciente') }}
+                            {{ form_row(edit_form.ciPaciente) }}
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4 top-separator">
+                            {{ form_label(edit_form.nombre, 'Nombre') }}
+                            {{ form_row(edit_form.nombre) }}
+                        </div>
+                        <div class="col-md-5 col-sm-6 col-xs-12 col-lg-5 top-separator">
+                            {{ form_label(edit_form.apellidos, 'Apellidos') }}
+                            {{ form_row(edit_form.apellidos) }}
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-12 col-lg-2 top-separator">
+                            {{ form_label(edit_form.edad, 'Edad') }}
+                            {{ form_row(edit_form.edad) }}
+                        </div>
+                        <div class="col-md-5 col-sm-6 col-xs-12 col-lg-4 col-md-offset-1 col-lg-offset-1 top-separator">
+                            <input id="sexo_pac" type="hidden" value="{{ paciente.sexo }}">
+                            {{ form_label(edit_form.sexo, 'Sexo') }}
+                            {{ form_row(edit_form.sexo) }}
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12  col-lg-3 col-md-offset-1 col-lg-offset-1 top-separator">
+                            {{ form_label(edit_form.peso, 'Peso en Kgs') }}
+                            {{ form_row(edit_form.peso) }}
+                        </div>
+                        <div id="pac_sexo"  class="col-xs-12  col-sm-12 col-md-12  col-lg-12 top-separator">
+                            <div class="col-md-3 col-sm-3 col-xs-12 col-lg-3  top-separator">
+                                {{ form_label(edit_form.lactante, '¿Lactante?') }}
+                                {{ form_row(edit_form.lactante) }}
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12 col-lg-3 top-separator embarazos">
+                                {{ form_label(edit_form.embarazos, '¿Embarazos?') }}
+                                {{ form_row(edit_form.embarazos) }}
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12 col-lg-3 abortos top-separator">
+                                {{ form_label(edit_form.abortos, '¿Abortos?') }}
+                                {{ form_row(edit_form.abortos) }}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4">
+                        <div class="col-md-8 col-sm-4 col-xs-12 col-lg-9 top-separator">
+                            {{ form_label(edit_form.idHc, 'No. Historia Clinica') }}
+                            {{ form_row(edit_form.idHc) }}
+                        </div>
+                        <div class="col-xs-12 col-sm-8 col-md-12  col-lg-12 ">
+                            <div class="col-md-12 col-sm-6 col-xs-12 col-lg-12 top-separator">
+                                {{ form_label(edit_form.tipoSangre, 'Grupo Sanguíneo') }}
+                                {{ form_row(edit_form.tipoSangre) }}
+                            </div>
+
+                            <div class="col-md-12 col-sm-6 col-xs-12 col-lg-12 top-separator">
+                                {{ form_label(edit_form.rh, 'Factor Rh') }}
+                                {{ form_row(edit_form.rh) }}
+                            </div>
+                        </div>
+
+                        <div id="pac_sexo"  class="col-xs-12 col-sm-pull-4 col-sm-8 col-md-12 col-md-pull-12 col-lg-12 hidden top-separator">
+                            <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4 col-md-pull-7 top-separator">
+                                {{ form_label(edit_form.lactante, '¿Lactante?') }}
+                                {{ form_row(edit_form.lactante) }}
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4 col-md-pull-7 top-separator">
+                                {{ form_label(edit_form.embarazos, '¿Embarazos?') }}
+                                {{ form_row(edit_form.embarazos) }}
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4 col-md-pull-7 top-separator">
+                                {{ form_label(edit_form.abortos, '¿Abortos?') }}
+                                {{ form_row(edit_form.abortos) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 top-separator">
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            <button id="submit_form" type="submit" class="btn btn-success btn-lg button-separator "><span class="glyphicon glyphicon-floppy-save"></span> Editar</button>
+                            {{ form_end(edit_form) }}
+                            <a href="{{ path('paciente_index') }}" class="btn btn-lg btn-danger button-separator"><span class="glyphicon glyphicon-remove"></span> Cancelar</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    {% include 'all-js.html.twig' %}
+
+
+
+
 {% endblock %}

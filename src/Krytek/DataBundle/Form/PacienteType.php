@@ -25,7 +25,6 @@ class PacienteType extends AbstractType
                     'minlength' => '11',
                     'maxlength' => '11',
                     'title' => 'El carnet debe tener 11 dígitos',
-
                 )
             ))
             ->add('nombre', TextType::class, array(

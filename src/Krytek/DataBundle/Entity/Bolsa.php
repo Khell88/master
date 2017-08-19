@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Bolsa
  *
  * @ORM\Table(name="bolsa", uniqueConstraints={@ORM\UniqueConstraint(name="bolsa_codigo_key", columns={"codigo"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Krytek\DataBundle\Entity\BolsaRepository")
  */
 class Bolsa
 {

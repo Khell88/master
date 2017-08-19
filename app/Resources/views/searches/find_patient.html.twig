@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="shadow">
+        <input id="module" type="hidden" value="paciente">
+        <div id="search_bolsas">
+            <div class="panel panel-default my-panels">
+                <div class="panel-heading">
+                    <h2 class="h2 form-title">Buscar paciente(s)</h2>
+                </div>
+
+                <div class="panel-body">
+                    <div class="col-md-5 col-sm-12 col-xs-12 col-lg-4">
+                        {#<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">#}
+                        <div>
+                            <div class="col-md-6 col-sm-8 col-xs-5 col-lg-9 top-separator search-input">
+                                <label for="search_input">Criterio a buscar.</label>
+                                <input type="text" placeholder="Introducir texto" id="search_input_ci"  maxlength="11"
+                                       minlength="1" class="only_number">
+                                <input type="text" placeholder="Introducir texto" id="search_input_name"
+                                       minlength="1" class="hidden">
+                            </div>
+                            {#<div class="clearfix visible-xs"></div>#}
+
+                            <div class="col-md-4 col-sm-4 col-xs-5 col-lg-3 top-separator">
+                                <a id="search" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Buscar</a>
+                            </div>
+                        </div>
+
+                        <div class=" form-group col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            <label class="my-pan-title">
+                                <input type="radio" id="criteria_0" name="criteria" value="ci" checked>Carnet de identidad
+                            </label>
+                            <label class="my-pan-title">
+                                <input type="radio" id="criteria_1" name="criteria" value="name" > Nombre/Apellido
+                            </label>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            <h4 class="h4 notes">Pasos a seguir:</h4>
+                            <p class="notes">
+                                - Introduzca el carnet, nombre o apellido del paciente para su búsqueda en el
+                                sistema.
+                                <br>
+                                - Espere unos segundos mientras se realiza la búsqueda.
+                                <br>
+                                - Presione el botón con la opción deseada.
+                                <br>
+                                <br></p>
+                            <h4 class="h4 notes">Notas:</h4>
+                            <p class="notes">
+                                - Puede escribir todo o parte del carnet, nombre o apellido  a buscar.
+                                <br>
+                                - El sistema brindara las opciones correspondientes al resultado de su búsqueda.
+
+                            </p>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-7 col-sm-12 col-xs-12 col-lg-8">
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                            <div id="empty_msg" class="alert-danger hidden">
+                                <h4>Debe introducir al menos un número o letra.</h4>
+                            </div>
+                            <div id="searched" class="hidden">
+                                <div id="error_msg_ci" class="alert-info hidden">
+                                    <h4>No existen pacientes con esa secuencia de números en su carnet de identidad.</h4>
+                                </div>
+                                <div id="error_msg_name" class="alert-info hidden">
+                                    <h4>No existen pacientes con ese nombre o apellido.</h4>
+                                </div>
+                                <div id="units_data" class="hidden">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 top-separator">
+                                        <table class="table table-responsive">
+                                            <thead>
+                                            <tr>
+                                                <th>Carnet de Identidad</th>
+                                                <th>Nombre</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="search_table_body">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    {#{% include 'all-js.html.twig' %}#}
+
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/myJS/set-styles.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/myJS/searches.js') }}"></script>
+{% endblock %}

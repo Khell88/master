@@ -4,9 +4,13 @@ namespace Krytek\DataBundle\Controller;
 
 use Krytek\DataBundle\Entity\Bolsa;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 
 /**
@@ -34,7 +38,7 @@ class BolsaController extends Controller
     }
 
     /**
-     * List using KnpPaginatior
+     * List using KnpPaginator
      *
      * @Route("/list", name="bolsa_list")
      * @Method("GET")
@@ -159,7 +163,7 @@ class BolsaController extends Controller
 
 
     /**
-     * Finder for the unidades de sangre
+     *Call the search template
      *
      * @Route("/search", name="find_unit")
      *
@@ -167,6 +171,39 @@ class BolsaController extends Controller
     public function findUnidadAction(Request $request){
 
         return $this->render('searches/find_unidad.html.twig');
+    }
 
+    /**
+     * Searches bolsas to edit or show information
+     * @Route("/search/{codigo}", name="search_bolsa", condition="request.headers.get('X-Requested-With') == 'XMLHttpRequest'")
+     */
+    public function searchUnit(Request $request)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $search_c = $request->get('cod');
+        $units = $em->getRepository('KrytekDataBundle:Bolsa')->findByNumber($search_c, 5);
+
+        $response = new JsonResponse();
+        if ($units != null) {
+            $enconder = array(new JsonEncoder());
+            $normalizer = array(new ObjectNormalizer());
+
+            $serializer = new Serializer($normalizer, $enconder);
+
+            $response->setStatusCode(200);
+            $response->setData(array(
+                'response' => 'success',
+                'units' => $serializer->serialize($units, 'json'),
+            ));
+
+            return $response;
+        } else {
+            $response->setData(array(
+                'response' => 'failure'
+            ));
+        }
+
+        return $response;
     }
 }
