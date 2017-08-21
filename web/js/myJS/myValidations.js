@@ -64,7 +64,7 @@ $(document).ready(function () {
         dateFormat: 'mm/dd/yy',
     });
 
-    if ($('#module').val()!='bolsa'){
+    if ($('.weight').val()!=undefined){
         $('.weight').maskWeight({
             integerDigits: 3,
             decimalDigits: 2,
@@ -365,12 +365,7 @@ $(document).ready(function () {
     //Validation block for the forms
     $('form').validate({
         rules: {
-            'deportes[]': {
-                required: true,
-                minlength: 1
-            },
             'pruebas[]': {
-
                 required: true,
                 minlength: 1
             },
@@ -378,11 +373,16 @@ $(document).ready(function () {
             'paciente[peso]': {
                 range: [1.00, 400]
             },
+            'solicitud[pcnt][peso]': {
+                range: [1.00, 400]
+            },
 
             'paciente[edad]': {
                 range: [1, 150]
             },
-
+            'solicitud[pcnt][edad]': {
+                range: [1, 150]
+            },
             'solicitud[hb]': {
                 range: [1.00, 20]
             },
@@ -403,13 +403,16 @@ $(document).ready(function () {
             'pruebas': {
                 required: "Este campo es obligatorio"
             },
-
-            'deportes[]': 'Debe seleccionar mínimo un deporte',
-
             'paciente[peso]': {
                 range: "Solo se admiten números decimales entre 1 y 400."
             },
+            'solicitud[pcnt][peso   ]': {
+                range: "Solo se admiten números decimales entre 1 y 400."
+            },
             'paciente[edad]': {
+                range: "Solo se admiten números enteros entre 1 y 150."
+            },
+            'solicitud[pcnt][edad]': {
                 range: "Solo se admiten números enteros entre 1 y 150."
             },
             'solicitud[hb]': {

@@ -85,16 +85,25 @@ class BolsaType extends AbstractType
                 'choices' => array('A' => 'A', 'B' => 'B', 'O' => 'O', 'AB' => 'AB'),
                 'expanded' => true,
                 'label' => false,
+                'attr'=>array(
+                    'class'=>'radios'
+                )
             ))
             ->add('rh', ChoiceType::class, array(
                 'choices' => array('Positivo' => 'positivo', 'Negativo' => 'negativo'),
                 'expanded' => true,
-                'label' => false
+                'label' => false,
+                'attr'=>array(
+                    'class'=>'radios'
+                )
             ))
             ->add('muestra', ChoiceType::class, array(
                 'label' => false,
                 'choices' => array('SI' => 'SI', 'NO' => 'NO'),
                 'expanded' => true,
+                'attr'=>array(
+                    'class'=>'radios'
+                )
             ))
             ->add('volumen', TextType::class, array(
                 'attr' => array(

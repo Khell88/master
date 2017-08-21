@@ -50,7 +50,10 @@ class PacienteType extends AbstractType
             ->add('sexo', ChoiceType::class, array(
                 'choices' => array('Masculino' => 'M', 'Femenino' => 'F'),
                 'expanded' => true,
-                'label' => false
+                'label' => false,
+                'attr'=>array(
+                    'class'=>'radios'
+                )
             ))
             ->add('idHc', TextType::class, array(
                 'attr' => array(
@@ -73,8 +76,7 @@ class PacienteType extends AbstractType
                 'choices' => array('SI' => 'SI', 'NO' => 'NO'),
                 'expanded' => true,
                 'attr' => array(
-                    'class' => 'lactante',
-
+                    'class' => 'lactante radios',
                 ),
                 'placeholder' => null,
                 'label' => false,
@@ -88,7 +90,7 @@ class PacienteType extends AbstractType
                 'choices' => array('SI' => 'SI', 'NO' => 'NO'),
                 'expanded' => true,
                 'attr' => array(
-                    'class' => 'embarazos'
+                    'class' => 'embarazos radios'
                 ),
                 'placeholder' => null,
                 'required' => false,
@@ -98,7 +100,7 @@ class PacienteType extends AbstractType
                 'choices' => array('SI' => 'SI', 'NO' => 'NO'),
                 'expanded' => true,
                 'attr' => array(
-                    'class' => 'abortos'
+                    'class' => 'abortos radios'
                 ),
                 'placeholder' => null,
                 'required' => false,
@@ -108,12 +110,18 @@ class PacienteType extends AbstractType
             ->add('tipoSangre', ChoiceType::class, array(
                 'choices' => array('A' => 'A', 'B' => 'B', 'O' => 'O', 'AB' => 'AB'),
                 'expanded' => true,
-                'label' => false
+                'label' => false,
+                'attr'=>array(
+                    'class'=>'radios'
+                )
             ))
             ->add('rh', ChoiceType::class, array(
                 'choices' => array('Positivo' => 'positivo', 'Negativo' => 'negativo'),
                 'expanded' => true,
-                'label' => false
+                'label' => false,
+                'attr'=>array(
+                    'class'=>'radios'
+                )
             ));
     }
 

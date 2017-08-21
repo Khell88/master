@@ -27,7 +27,7 @@ class Paciente
      * @var integer
      *
      *
-     * @ORM\Column(name="ci_paciente", type="bigint", nullable=false, unique=true)
+     * @ORM\Column(name="ci_paciente", type="string", nullable=false, unique=true)
      */
     private $ciPaciente;
 

@@ -282,11 +282,13 @@ footer {
     padding-right: 10px;
 }
 
-div.radios label.required{
+div.radios label
+{
     font-weight: normal;
     padding-right: 5px;
     justify-content: center;
     margin-right: 5px;
+    /*display: inline-block;*/
 }
 
 h5.panel-title.form-group{
@@ -332,6 +334,7 @@ a#search{
 a.show_data{
     margin: 5px 5px 0 0;
 }
+
 
 
 

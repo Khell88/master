@@ -171,7 +171,7 @@ class SolicitudPacienteType extends AbstractType
                 ),
                 'expanded' => true,
                 'attr' => array(
-                    'class' => 'incompatiblepac'
+                    'class' => 'incompatiblepac, radios'
                 ),
                 'required' => false,
                 'placeholder' => null,

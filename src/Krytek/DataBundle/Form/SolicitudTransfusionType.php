@@ -23,7 +23,6 @@ class SolicitudTransfusionType extends AbstractType
         $builder
             ->add('pcnt', PacienteType::class, array(
                 'mapped' => false,
-                'label' => 'Datos Paciente:'
             ))
             ->add('ComponenteATransfundir', ChoiceType::class, array(
                 'choices' => array(
@@ -83,8 +82,7 @@ class SolicitudTransfusionType extends AbstractType
                 'format'=>'MM/dd/yyyy',
             ))
             ->add('hora', TimeType::class, array(
-                'widget' => 'choice',
-
+                'widget' => 'single_text',
                 'attr' => array(
                     'class' => 'time time_prim'
                 ),
@@ -109,7 +107,10 @@ class SolicitudTransfusionType extends AbstractType
                 'choices' => array('Reserva' => 'Reserva', 'Urgente' => 'Urgente',
                     'En el día' => 'En el día', 'Emergente' => 'Emergente'),
                 'expanded' => true,
-                'label' => false
+                'label' => false,
+                'attr' => array(
+                    'class' => 'radios'
+                )
             ))
             ->add('hb', TextType::class, array(
                 'attr' => array(
@@ -148,12 +149,18 @@ class SolicitudTransfusionType extends AbstractType
                 ),
                 'label' => false,
                 'expanded' => true,
+                'attr' => array(
+                    'class' => 'radios'
+                )
             ))
             ->add('consentimiento', ChoiceType::class, array(
                 'choices' => array('Si' => 'SI', 'No' => 'NO'),
                 'expanded' => true,
                 'placeholder' => null,
-                'label' => false
+                'label' => false,
+                'attr' => array(
+                    'class' => 'radios'
+                )
 
             ))
             ->add('incompatibilidadMF', ChoiceType::class, array(
@@ -165,7 +172,8 @@ class SolicitudTransfusionType extends AbstractType
                 ),
                 'required' => false,
                 'placeholder' => null,
-                'label' => false
+                'label' => false,
+                'mapped'=>false
 
             ))
             ->add('fechaARealizar', DateType::class, array(
@@ -180,7 +188,7 @@ class SolicitudTransfusionType extends AbstractType
 
             ))
             ->add('horaARealizar', TimeType::class, array(
-                'widget' => 'choice',
+                'widget' => 'single_text',
                 'attr' => array(
                     'class' => 'time time_sec'
                 ),
@@ -201,8 +209,9 @@ class SolicitudTransfusionType extends AbstractType
     {
         $resolver->setDefaults(array(
             'attr' => array(
-                'id' => 'solicitud'
-            )
+                'id' => 'solicitud',
+            ),
+            'allow_extra_fields' => true,
         ));
     }
 

@@ -154,8 +154,6 @@ $(document).ready(function () {
         } else {
             var direccion = "{{path('show_patient')}}";
         }
-
-
         $.ajax({
             type: 'get',
             url: direccion,
@@ -164,50 +162,42 @@ $(document).ready(function () {
                 if (data.hasOwnProperty("response") && data.response === "success") {
                     if (data.hasOwnProperty("patient")) {
                         if ($('#module').val() != 'paciente') {
-                        var patient = JSON.parse(data.patient);
+                            var patient = JSON.parse(data.patient);
 
                             $('#datos_paciente').append('<div><h3 class="h3 form-title">Datos del paciente.</h3></div>');
-
-                        $('#datos_paciente').append('<input id="idPaciente"  type="hidden" value="' + patient.id + '">');
-
-                        $('#datos_paciente').append('<div>CI: ' + patient.ciPaciente + '</div>');
-                        $('#datos_paciente').append('<div>Nombre: ' + patient.nombre + '</div>');
-                        $('#datos_paciente').append('<div>Apellidos: ' + patient.apellidos + '</div>');
-                        $('#datos_paciente').append('<div>Edad: ' + patient.edad + '</div>');
-                        $('#datos_paciente').append('<div>Sexo: ' + patient.sexo + '</div>');
-                        $('#datos_paciente').append('<div>No. HC: ' + patient.idHc + '</div>');
-                        $('#datos_paciente').append('<div>Grupo Sanguíneo: ' + patient.tipoSangre + '</div>');
-                        $('#datos_paciente').append('<div>Factor Rh: ' + patient.rh + '</div>');
-                        if (patient.lactante == 'SI') {
-                            $('#datos_paciente').append('<div>Es lactante: ' + patient.lactante + '</div>');
-                        } else {
-                            $('#datos_paciente').append('<div>Embarazos previos: ' + patient.embarazos + '</div>');
-                            $('#datos_paciente').append('<div>Abortos Previos: ' + patient.abortos + '</div>');
-                        }
-                        $('#datos_paciente').append('<a id="idPaciente" class="btn btn-primary" href="solicitud/' + patient.id + '" value="' + patient.id + '">Agregar solicitud al paciente</a>');
+                            $('#datos_paciente').append('<input id="idPaciente"  type="hidden" value="' + patient.id + '">');
+                            $('#datos_paciente').append('<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6 top-separator">CI: ' + patient.ciPaciente + '</div>');
+                            $('#datos_paciente').append('<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6 top-separator">No. HC: ' + patient.idHc + '</div>');
+                            $('#datos_paciente').append('<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6 top-separator">Nombre: ' + patient.nombre + '</div>');
+                            $('#datos_paciente').append('<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6 top-separator">Apellidos: ' + patient.apellidos + '</div>');
+                            $('#datos_paciente').append('<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6 top-separator">Edad: ' + patient.edad + '</div>');
+                            $('#datos_paciente').append('<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6 top-separator">Sexo: ' + patient.sexo + '</div>');
+                            $('#datos_paciente').append('<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6 top-separator">Grupo Sanguíneo: ' + patient.tipoSangre + '</div>');
+                            $('#datos_paciente').append('<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6 top-separator">Factor Rh: ' + patient.rh + '</div>');
+                            if (patient.lactante == 'SI') {
+                                $('#datos_paciente').append('<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6 top-separator">Es lactante: ' + patient.lactante + '</div>');
+                            } else {
+                                $('#datos_paciente').append('<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6 top-separator">Embarazos previos: ' + patient.embarazos + '</div>');
+                                $('#datos_paciente').append('<div class="col-md-5 col-sm-6 col-xs-6 col-lg-6 top-separator">Abortos Previos: ' + patient.abortos + '</div>');
+                            }
+                            $('#datos_paciente').append('<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 form-group top-separator"><a id="idPaciente" class="btn btn-lg btn-primary" href="solicitud/' + patient.id + '" value="' + patient.id + '"><span class="glyphicon glyphicon-plus-sign"></span> Agregar solicitud al paciente</a></div>');
                         $('#block-patient').removeClass('hidden');
-                        }
-                        else {
-
+                        } else {
                             var ver_error = $('<div id="id_pac" class="my-error">Ya existe un paciente con ese número de identidad.  <br> Por favor rectifique.</div>').insertAfter($('#paciente_ciPaciente').labels()).hide().slideDown('slow');
-                            // disableSumbit();
                         }
                     }
                 } else {
                     if ($('#module').val() != 'paciente') {
                         $('#datos_paciente').append('<div><h3 class="my-h3">El paciente no se encuentra en el sistema.</h3></div>');
-                        $('#datos_paciente').append('<a id="idPaciente" class="btn btn-primary" href="solicitud/">Agregar paciente y solicitud</a>');
+                        $('#datos_paciente').append('<a id="idPaciente" class="btn btn-primary btn-lg" href="solicitud/"><span class="glyphicon glyphicon-plus-sign"></span> Agregar paciente y solicitud</a>');
                         $('#block-patient').removeClass('hidden');
                     }
                 }
             }
-
-
         });
     }
 
     //Validating the patient HC
-
     $('.num_hc').keyup(function () {
         var hc_number = $(this).val();
         if (hc_number != '' && hc_number.length > 2) {

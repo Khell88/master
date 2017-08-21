@@ -3,7 +3,7 @@
  */
 $(document).ready(function () {
     var mod = $('#module').val();
-    if (mod == 'solicitud_pac' || mod =='solicitud' || mod =='edit_solicitud'){
+    if (mod == 'solicitud_pac' || mod =='solicitud' || mod =='edit_solicitud' || mod =='pac_search'){
         mod='solicitudes';
     }
     console.log(mod);
